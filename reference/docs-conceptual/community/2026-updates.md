@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2026.
-ms.date: 06/13/2026
+ms.date: 07/02/2026
 title: What's New in PowerShell-Docs for 2026
 ---
 # What's new in PowerShell Docs for 2026
@@ -14,6 +14,38 @@ get started.
 <!-- Link references -->
 [01]: contributing/overview.md
 <!-- --------------- -->
+
+## 2026-June
+
+Updated content
+
+- Release notes for monthly maintenance releases of PowerShell
+- Major cleanup of PSScriptAnalyzer
+  [rules documentation](/powershell/utility-modules/psscriptanalyzer/rules/readme), including
+  refactoring the rules table. The rules table now shows which rules are always enabled, and which
+  rules can be configured or disabled.
+
+GitHub stats
+
+- 46 PRs merged (8 from Community)
+- 42 issues opened (11 from Community, 31 Spam)
+- 43 issues closed (12 from Community, 31 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+Special thanks to @ArieHein for another large PR to clean up 160 articles.
+
+|       GitHub Id       | PRs merged | Issues opened |
+| --------------------- | :--------: | :-----------: |
+| ArieHein              |     1      |               |
+| baardhermansen        |     4      |               |
+| michael-hollingsworth |     1      |               |
+| naffee                |     1      |               |
+| PtJade-Ceramic        |     1      |       1       |
+| trashCode             |            |       2       |
 
 ## 2026-May
 

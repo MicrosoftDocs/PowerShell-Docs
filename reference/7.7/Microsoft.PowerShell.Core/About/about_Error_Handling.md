@@ -1,7 +1,7 @@
 ---
 description: Describes the types of errors in PowerShell and the mechanisms for handling them.
 Locale: en-US
-ms.date: 06/02/2026
+ms.date: 07/02/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_error_handling?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Error_Handling
@@ -254,19 +254,19 @@ The scope of the escalated error depends on context:
   & {
       param()
       $ErrorActionPreference = 'Stop'
-      Get-Item 'NoSuchPath'
+      1/0  # Divide by zero error
   } 2>$null
   'after'
   ```
 
-- ADVANCED: script-terminating ('after' does NOT print)
+- ADVANCED: statement-terminating ('after' DOES print)
 
   ```powershell
   & {
       [CmdletBinding()]
       param()
       $ErrorActionPreference = 'Stop'
-      Get-Item 'NoSuchPath'
+      1/0  # Divide by zero error
   } 2>$null
   'after'
   ```
