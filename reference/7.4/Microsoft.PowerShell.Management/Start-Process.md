@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/11/2026
+ms.date: 07/06/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -407,12 +407,10 @@ Accept wildcard characters: False
 
 ### -UseNewEnvironment
 
-Indicates that this cmdlet uses new environment variables specified for the process. By default, the
-started process runs with the environment variables inherited from the parent process.
-
-On Windows, when you use **UseNewEnvironment**, the new process starts only containing the default
-environment variables defined for the **Machine** scope. This has the side effect that the
-`$Env:USERNAME` is set to **SYSTEM**. None of the variables from the **User** scope are included.
+By default, the started process runs with the environment variables inherited from the parent
+process. With this parameter, the cmdlet uses the default environment variables for the new process.
+On Windows, the default environment variables are the predefined variables from the **Machine** and
+**User** scopes.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
