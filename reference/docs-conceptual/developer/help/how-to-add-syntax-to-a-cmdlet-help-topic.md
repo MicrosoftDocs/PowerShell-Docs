@@ -1,6 +1,6 @@
 ---
 description: How to add syntax to a cmdlet help topic
-ms.date: 07/10/2023
+ms.date: 07/07/2026
 title: How to add syntax to a cmdlet help topic
 ---
 # How to add syntax to a cmdlet help topic
@@ -225,8 +225,8 @@ syntax diagram. For information on parameter attributes, see [Parameter Attribut
 > [!NOTE]
 > The `<command:parameter>` tag supports a child element `<maml:description>` whose content is never
 > displayed. The parameter descriptions are specified in the parameter node of the XML. To avoid
-> inconsistencies between the information in the syntax item bodes and the parameter node, omit the
-> (`<maml:description>` or leave it empty.
+> inconsistencies between the information in the syntax item nodes and the parameter nodes, omit the
+> `<maml:description>` or leave it empty.
 
 The following example includes a syntax item node for a parameter set with two parameters.
 

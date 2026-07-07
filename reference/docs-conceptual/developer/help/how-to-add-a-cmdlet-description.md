@@ -1,6 +1,6 @@
 ---
 description: How to Add a Cmdlet Description
-ms.date: 07/10/2023
+ms.date: 07/07/2026
 title: How to Add a Cmdlet Description
 ---
 # How to Add a Cmdlet Description
@@ -16,6 +16,18 @@ cmdlet Help. In the Help file, this content is added to the **Command** node for
 > file contains content for several of the PowerShell cmdlets.
 
 ### To Add a Description
+
+The `<maml:description>` node contains the detailed description of the cmdlet. This element contains
+one or more `<maml:para>` elements. The description is enclosed in a `<maml:para>` element. The
+following example shows the structure of the XML:
+
+```xml
+<maml:description>
+  <maml:para>...</maml:para>
+</maml:description>
+```
+
+## Writing tips
 
 - Begin by explaining the basic features of the cmdlet in more detail. In many cases, you can
   explain the terms used in the cmdlet name and illustrate unfamiliar concepts with an example. For
