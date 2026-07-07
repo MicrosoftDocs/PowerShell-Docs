@@ -18,6 +18,8 @@ Starts one or more processes on the local computer.
 
 ## SYNTAX
 
+### Default (Default)
+
 ```
 Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>]
  [-Credential <pscredential>] [-WorkingDirectory <string>] [-LoadUserProfile]
