@@ -1,6 +1,6 @@
 ---
 description: How to add the cmdlet name and synopsis to a cmdlet help topic
-ms.date: 07/10/2023
+ms.date: 07/07/2026
 title: How to add the cmdlet name and synopsis to a cmdlet help topic
 ---
 # How to add the cmdlet name and synopsis to a cmdlet help topic
@@ -17,10 +17,28 @@ of the cmdlet help. In the Help file, this content is added to the Command node 
 
 ## To add the cmdlet name and a synopsis
 
-- The cmdlet Help can display two descriptions for the cmdlet. The first description is a short
-  description that's referred to as the synopsis. The second description is a more detailed
-  description that's discussed in [Adding the Detailed Description to a Cmdlet Help Topic][02]. Both
-  these descriptions should be written as a single paragraph.
+The cmdlet Help can display two descriptions for the cmdlet. The first description is a short
+description that's referred to as the synopsis. The second description is a more detailed
+description that's discussed in [Adding the Detailed Description to a Cmdlet Help Topic][02]. Both
+these descriptions should be written as a single paragraph.
+
+The `<command:details>` node contains the cmdlet name and the synopsis. The cmdlet name is enclosed
+in a `<command:name>` element, and the synopsis is enclosed in a `<maml:description>` element.
+The `<command:verb>` and `<command:noun>` elements contain the cmdlet verb and noun, respectively.
+For example, the following XML shows the `<command:details>` node for the `Get-ChildItem` cmdlet.
+
+```xml
+<command:details>
+  <command:name>Get-ChildItem</command:name>
+  <maml:description>
+    <maml:para>Gets the items and child items in one or more specified locations.</maml:para>
+  </maml:description>
+  <command:verb>Get</command:verb>
+  <command:noun>ChildItem</command:noun>
+</command:details>
+```
+
+## Writing tips
 
 - In the synopsis don't repeat the cmdlet name. Informing the user that the `Get-Server` cmdlet gets
   a server is brief, but not informative. Instead, use synonyms and add details to the description.
