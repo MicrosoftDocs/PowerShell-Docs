@@ -138,7 +138,7 @@ An error occurred.
 When the script encounters "NonsenseString", it causes a terminating error. The
 `catch` block handles the error by running the statement list inside the block.
 
-## USING MULTIPLE CATCH STATEMENTS
+## Using multiple catch statements
 
 A `try` statement can have any number of `catch` blocks. For example, the
 following script has a `try` block that downloads `MyDoc.doc`, and it contains
