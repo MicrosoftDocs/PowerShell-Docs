@@ -5,10 +5,10 @@ title: Cmdlet Overview
 ---
 # Cmdlet Overview
 
-Commands for PowerShell are known as cmdlets (pronounced command-lets). A cmdlet is implemented in a
-.NET class that's compiled into a .NET assembly. The PowerShell runtime invokes these cmdlets within
-the context of automation scripts that are provided at the command line. The PowerShell runtime also
-invokes them programmatically through PowerShell APIs.
+Commands native to PowerShell are known as cmdlets (pronounced command-lets). A cmdlet is
+implemented in a .NET class that's compiled into a .NET assembly. The PowerShell runtime invokes
+these cmdlets within the context of automation scripts that are provided at the command line. The
+PowerShell runtime also invokes them programmatically through PowerShell APIs.
 
 ## Cmdlets
 
