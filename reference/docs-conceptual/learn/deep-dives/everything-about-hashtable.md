@@ -1,7 +1,7 @@
 ---
 description: Hashtables are really important in PowerShell so it's good to have a solid understanding of them.
 ms.custom: contributor-KevinMarquette
-ms.date: 03/09/2026
+ms.date: 07/13/2026
 title: Everything you wanted to know about hashtables
 ---
 # Everything you wanted to know about hashtables
@@ -896,8 +896,8 @@ used with member access (`.`) notation. Or, you can use array index (`[]`) notat
 
 ### $PSBoundParameters
 
-[$PSBoundParameters][PSBoundParameters] is an automatic variable that only exists inside the context of a function.
-It contains all the parameters that the function was called with. This isn't exactly a hashtable but
+`$PSBoundParameters` is an automatic variable that only exists inside the context of a function. It
+contains all the parameters that the function was called with. This isn't exactly a hashtable but
 close enough that you can treat it like one.
 
 That includes removing keys and splatting it to other functions. If you find yourself writing proxy
@@ -1116,7 +1116,6 @@ kind of expected depending on how much you work with PowerShell.
 [splatting]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
 [JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8&preserve-view=true
-[PSBoundParameters]: https://tommymaynard.com/the-psboundparameters-automatic-variable-2016/
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
 [Automatic Defaults]: https://www.simple-talk.com/sysadmin/PowerShell/PowerShell-time-saver-automatic-defaults/
 [Michael Sorens]: http://cleancode.sourceforge.net/wwwdoc/about.html
