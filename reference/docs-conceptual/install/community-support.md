@@ -82,8 +82,8 @@ package from the [releases][09] page onto your Raspberry Pi computer. The links 
 versions are:
 
 - PowerShell 7.6 - latest LTS release
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.3/powershell-7.6.3-linux-arm32.tar.gz`
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.3/powershell-7.6.3-linux-arm64.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-linux-arm32.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-linux-arm64.tar.gz`
 - PowerShell 7.5 - latest stable release
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-linux-arm32.tar.gz`
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-linux-arm64.tar.gz`

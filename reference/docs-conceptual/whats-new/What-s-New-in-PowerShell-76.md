@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.6
 description: New features and changes released in PowerShell 7.6
-ms.date: 06/12/2026
+ms.date: 07/15/2026
 ---
 
 # What's New in PowerShell 7.6
 
-PowerShell 7.6.3 includes the following features, updates, and breaking changes. PowerShell
-7.6.3 is built on the .NET 10.0.9 runtime.
+PowerShell 7.6.4 includes the following features, updates, and breaking changes. PowerShell
+7.6.4 is built on the .NET 10.0.10 runtime.
 
 For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
 
@@ -20,7 +20,7 @@ The macOS PKG package is now notarized and signed by Microsoft. For more informa
 
 ## Updated modules
 
-PowerShell 7.6.2 includes the following updated modules:
+PowerShell 7.6.4 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.2.0
 - **PSReadLine** v2.4.5

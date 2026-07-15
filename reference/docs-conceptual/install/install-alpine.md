@@ -19,7 +19,7 @@ with a previous version, reinstall the previous version using the [binary archiv
 On Alpine Linux, PowerShell is installed from the `tar.gz` package downloaded from the
 [releases][01] page. Select the URL of the package version you want to install.
 
-- PowerShell 7.6 (LTS) - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.3/powershell-7.6.3-linux-musl-x64.tar.gz`
+- PowerShell 7.6 (LTS) - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-linux-musl-x64.tar.gz`
 - PowerShell 7.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-linux-musl-x64.tar.gz`
 - PowerShell 7.4 (LTS) - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell-7.4.18-linux-musl-x64.tar.gz`
 
@@ -48,7 +48,7 @@ apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     openssh-client \
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.6.3/powershell-7.6.3-linux-musl-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-linux-musl-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
