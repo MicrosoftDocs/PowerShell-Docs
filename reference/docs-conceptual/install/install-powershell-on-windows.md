@@ -193,7 +193,7 @@ To manually install the MSIX package, download one of the following packages fro
 releases page and double-click the file to install it.
 
 - Next LTS - [PowerShell-7.6.4.msixbundle][19]
-- Latest stable - [PowerShell-7.5.8.msixbundle][14]
+- Latest stable - [PowerShell-7.5.9.msixbundle][14]
 - Current LTS - [PowerShell-7.4.18.msixbundle][13]
 - Current preview - [PowerShell-7.7.0-preview.2.msixbundle][20]
 
@@ -356,7 +356,7 @@ can't support those methods.
 [11]: #winget
 [12]: #zip
 [13]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/PowerShell-7.4.18.msixbundle
-[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/PowerShell-7.5.8.msixbundle
+[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/PowerShell-7.5.9.msixbundle
 [15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4-win-arm64.msi
 [16]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4-win-arm64.zip
 [17]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4-win-x64.msi

@@ -75,7 +75,7 @@ want to install.
 - PowerShell 7.6 (LTS) universal package for supported versions of Debian
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell_7.6.4-1.deb_amd64.deb`
 - PowerShell 7.5 universal package for supported versions of Debian
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell_7.5.8-1.deb_amd64.deb`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell_7.5.9-1.deb_amd64.deb`
 - PowerShell 7.4 (LTS) universal package for supported versions of Debian
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell_7.4.18-1.deb_amd64.deb`
 

@@ -87,7 +87,7 @@ you want to install.
 - PowerShell 7.6 (LTS) universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell_7.6.4-1.deb_amd64.deb`
 - PowerShell 7.5 universal package
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell_7.5.8-1.deb_amd64.deb`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell_7.5.9-1.deb_amd64.deb`
 - PowerShell 7.4 (LTS) universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell_7.4.18-1.deb_amd64.deb`
 
@@ -106,17 +106,17 @@ sudo apt-get update
 sudo apt-get install -y wget
 
 # Download the PowerShell package file
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell_7.5.8-1.deb_amd64.deb
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell_7.5.9-1.deb_amd64.deb
 
 ###################################
 # Install the PowerShell package
-sudo dpkg -i powershell_7.5.8-1.deb_amd64.deb
+sudo dpkg -i powershell_7.5.9-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
 
 # Delete the downloaded package file
-rm powershell_7.5.8-1.deb_amd64.deb
+rm powershell_7.5.9-1.deb_amd64.deb
 ```
 
 ## Start PowerShell 7

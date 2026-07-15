@@ -29,8 +29,8 @@ install.
   - Arm64 processors - [powershell-7.6.4-osx-arm64.pkg][13]
   - x64 processors - [powershell-7.6.4-osx-x64.pkg][15]
 - PowerShell 7.5
-  - Arm64 processors - [powershell-7.5.8-osx-arm64.pkg][09]
-  - x64 processors - [powershell-7.5.8-osx-x64.pkg][11]
+  - Arm64 processors - [powershell-7.5.9-osx-arm64.pkg][09]
+  - x64 processors - [powershell-7.5.9-osx-x64.pkg][11]
 - PowerShell 7.4 (LTS)
   - Arm64 processors - [powershell-7.4.18-osx-arm64.pkg][05]
   - x64 processors - [powershell-7.4.18-osx-x64.pkg][07]
@@ -114,8 +114,8 @@ you want to install.
   - Arm64 processors - [powershell-7.6.4-osx-arm64.tar.gz][14]
   - x64 processors - [powershell-7.6.4-osx-x64.tar.gz][16]
 - PowerShell 7.5
-  - Arm64 processors - [powershell-7.5.8-osx-arm64.tar.gz][10]
-  - x64 processors - [powershell-7.5.8-osx-x64.tar.gz][12]
+  - Arm64 processors - [powershell-7.5.9-osx-arm64.tar.gz][10]
+  - x64 processors - [powershell-7.5.9-osx-x64.tar.gz][12]
 - PowerShell 7.4 (LTS)
   - Arm64 processors - [powershell-7.4.18-osx-arm64.tar.gz][06]
   - x64 processors - [powershell-7.4.18-osx-x64.tar.gz][08]
@@ -193,10 +193,10 @@ can't support those methods. For more information, see [Alternate ways to instal
 [06]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell-7.4.18-osx-arm64.tar.gz
 [07]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell-7.4.18-osx-x64.pkg
 [08]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell-7.4.18-osx-x64.tar.gz
-[09]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-osx-arm64.pkg
-[10]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-osx-arm64.tar.gz
-[11]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-osx-x64.pkg
-[12]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-osx-x64.tar.gz
+[09]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell-7.5.9-osx-arm64.pkg
+[10]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell-7.5.9-osx-arm64.tar.gz
+[11]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell-7.5.9-osx-x64.pkg
+[12]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell-7.5.9-osx-x64.tar.gz
 [13]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-osx-arm64.pkg
 [14]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-osx-arm64.tar.gz
 [15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-osx-x64.pkg
