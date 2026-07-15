@@ -70,7 +70,7 @@ you want to install.
 - PowerShell 7.5 universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-1.rh.x86_64.rpm`
 - PowerShell 7.4 (LTS) universal package
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.17/powershell-7.4.17-1.rh.x86_64.rpm`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell-7.4.18-1.rh.x86_64.rpm`
 
 The following shell script downloads and installs the current release of PowerShell. You can change
 the URL to download the version of PowerShell that you want to install.
