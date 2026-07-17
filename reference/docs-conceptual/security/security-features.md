@@ -1,6 +1,6 @@
 ---
 description: PowerShell has several features designed to improve the security of your scripting environment.
-ms.date: 08/18/2025
+ms.date: 07/17/2026
 title: PowerShell security features
 ---
 # PowerShell security features
@@ -71,10 +71,12 @@ being enforced. The policy applies certain behaviors when running script blocks,
 loading module files to prevent arbitrary code execution on the system.
 
 App Control for Business is designed as a security feature under the servicing criteria defined by
-the Microsoft Security Response Center (MSRC). App Control is the preferred application control
-system for Windows.
+the Microsoft Security Response Center (MSRC). App Control for Business is the preferred application
+control system for Windows. AppLocker is a legacy application control system that is still supported
+in Windows 10 and Windows 11. AppLocker is not a security feature under the servicing criteria
+defined by MSRC.
 
-For more information about how PowerShell supports AppLocker and App Control, see
+For more information about how PowerShell supports AppLocker and App Control for Business, see
 [Use App Control to secure PowerShell][10].
 
 ### System Lockdown mode
@@ -154,11 +156,14 @@ Security features
 - System Lockdown with App Control for Business
 - Constrained language mode with App Control for Business
 
-Defense in depth features
+Defense-in-depth features
 
+- Constrained language mode with AppLocker or configured manually through `$ExecutionContext` or
+  session configuration
 - System Lockdown with AppLocker
-- Constrained language mode with AppLocker
 - Execution Policy
+
+Defense-in-depth features don't provide security boundaries.
 
 <!-- link references -->
 [01]: /dotnet/fundamentals/runtime-libraries/system-security-securestring
