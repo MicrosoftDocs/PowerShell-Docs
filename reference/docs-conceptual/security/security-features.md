@@ -148,6 +148,13 @@ This change is backward compatible.
 
 ## Security Servicing Criteria
 
+A security boundary provides a logical separation between the code and data of security domains with
+different levels of trust. Security features build upon security boundaries to provide robust
+protection against specific threats. In some cases, a security feature may provide protection
+against a threat without being able to provide a robust defense. These security features are
+typically referred to as defense-in-depth features or mitigations because they provide additional
+security but may have by design limitations that prevent them from fully mitigating a threat.
+
 PowerShell follows the [Microsoft Security Servicing Criteria for Windows][12]. Only security
 features meet the criteria for servicing.
 
@@ -158,12 +165,10 @@ Security features
 
 Defense-in-depth features
 
-- Constrained language mode with AppLocker or configured manually through `$ExecutionContext` or
-  session configuration
+- Constrained language mode with AppLocker or configured through session configuration or by
+  manually setting `$ExecutionContext.SessionState.LanguageMode`
 - System Lockdown with AppLocker
 - Execution Policy
-
-Defense-in-depth features don't provide security boundaries.
 
 <!-- link references -->
 [01]: /dotnet/fundamentals/runtime-libraries/system-security-securestring
