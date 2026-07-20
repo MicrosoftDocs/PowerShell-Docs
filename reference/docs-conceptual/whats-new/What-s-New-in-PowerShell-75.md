@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 07/15/2026
+ms.date: 07/20/2026
 ---
 
 # What's New in PowerShell 7.5
