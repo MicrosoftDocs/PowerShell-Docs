@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows
-ms.date: 06/13/2026
+ms.date: 07/20/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -194,7 +194,7 @@ releases page and double-click the file to install it.
 
 - Next LTS - [PowerShell-7.6.3.msixbundle][19]
 - Latest stable - [PowerShell-7.5.8.msixbundle][14]
-- Current LTS - [PowerShell-7.4.17.msixbundle][13]
+- Current LTS - [PowerShell-7.4.18.msixbundle][13]
 - Current preview - [PowerShell-7.7.0-preview.2.msixbundle][20]
 
 Alternatively, you can use the following command to install the MSIX package from the command line:
@@ -355,7 +355,7 @@ can't support those methods.
 [10]: #msstore
 [11]: #winget
 [12]: #zip
-[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.17/PowerShell-7.4.17.msixbundle
+[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/PowerShell-7.4.18.msixbundle
 [14]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/PowerShell-7.5.8.msixbundle
 [15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.3/PowerShell-7.6.3-win-arm64.msi
 [16]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.3/PowerShell-7.6.3-win-arm64.zip
