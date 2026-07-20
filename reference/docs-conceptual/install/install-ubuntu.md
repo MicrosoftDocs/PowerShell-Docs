@@ -85,7 +85,7 @@ Download the universal package from the GitHub releases page. Select the URL of 
 you want to install.
 
 - PowerShell 7.6 (LTS) universal package
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.3/powershell_7.6.3-1.deb_amd64.deb`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell_7.6.4-1.deb_amd64.deb`
 - PowerShell 7.5 universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell_7.5.8-1.deb_amd64.deb`
 - PowerShell 7.4 (LTS) universal package

@@ -66,7 +66,7 @@ Download the universal package from the GitHub releases page. Select the URL of 
 you want to install.
 
 - PowerShell 7.6 (LTS) universal package
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.3/powershell-7.6.3-1.rh.x86_64.rpm`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-1.rh.x86_64.rpm`
 - PowerShell 7.5 universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-1.rh.x86_64.rpm`
 - PowerShell 7.4 (LTS) universal package
@@ -76,7 +76,7 @@ The following shell script downloads and installs the current release of PowerSh
 the URL to download the version of PowerShell that you want to install.
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.6.3/powershell-7.6.3-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-1.rh.x86_64.rpm
 ```
 
 ## Start PowerShell 7
