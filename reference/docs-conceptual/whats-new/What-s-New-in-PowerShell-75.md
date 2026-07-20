@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 06/12/2026
+ms.date: 07/20/2026
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5.8 includes the following features, updates, and breaking changes. PowerShell
-7.5.8 is built on the .NET 9.0.17 runtime.
+PowerShell 7.5.9 includes the following features, updates, and breaking changes. PowerShell
+7.5.9 is built on the .NET 9.0.18 runtime.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
 information about .NET 9, see [What's new in .NET 9][07].
@@ -30,7 +30,7 @@ The macOS PKG package is now notarized and signed by Microsoft. For more informa
 
 ## Updated modules
 
-PowerShell 7.5.6 includes the following updated modules:
+PowerShell 7.5.9 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.1.1
 - **PSReadLine** v2.3.6

@@ -12,7 +12,7 @@ There are multiple versions of PowerShell 7 that can be installed.
   releases can contain critical fixes, innovations, and new features. Microsoft supports a Stable
   release for about six months after the next LTS release.
 
-  The current Stable release is PowerShell 7.5.8.
+  The current Stable release is PowerShell 7.5.9.
 
 - **Long Term Servicing (LTS) release** - An LTS release of PowerShell is an LTS release of .NET.
   Updates to an LTS release only contain critical security updates and servicing fixes that are
