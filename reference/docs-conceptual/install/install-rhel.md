@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 06/13/2026
+ms.date: 07/20/2026
 title: Install PowerShell 7 on Red Hat Enterprise Linux (RHEL)
 ---
 # Install PowerShell 7 on Red Hat Enterprise Linux (RHEL)

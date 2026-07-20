@@ -1,6 +1,6 @@
 ---
 description: PowerShell can run on Linux distributions that aren't officially supported by Microsoft.
-ms.date: 06/13/2026
+ms.date: 07/20/2026
 title: Community support for PowerShell on Linux
 ---
 # Community support for PowerShell on Linux
