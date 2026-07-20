@@ -195,7 +195,7 @@ releases page and double-click the file to install it.
 - Next LTS - [PowerShell-7.6.4.msixbundle][19]
 - Latest stable - [PowerShell-7.5.9.msixbundle][14]
 - Current LTS - [PowerShell-7.4.18.msixbundle][13]
-- Current preview - [PowerShell-7.7.0-preview.3.msixbundle][20]
+- Current preview - [PowerShellPreview-7.7.0-preview.3.msixbundle  ][20]
 
 Alternatively, you can use the following command to install the MSIX package from the command line:
 
@@ -362,7 +362,7 @@ can't support those methods.
 [17]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4-win-x64.msi
 [18]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4-win-x64.zip
 [19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4.msixbundle
-[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.7.0-preview.2/PowerShellPreview-7.7.0-preview.3.msixbundle
+[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.7.0-preview.3/PowerShellPreview-7.7.0-preview.3.msixbundle
 [21]: https://github.com/PowerShell/PowerShell/releases/latest
 [22]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [23]: media/install-powershell-on-windows/powershell-start-menu.png

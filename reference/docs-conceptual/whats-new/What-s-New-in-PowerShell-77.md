@@ -95,7 +95,7 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Engine improvements
 
-- Fix progress bar rendering with double-width unicode characters ([#26185][26185]) (Thanks
+- Fix progress bar rendering with double-width Unicode characters ([#26185][26185]) (Thanks
   @yotsuda!)
 - Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows
   ([#27328][27328])
@@ -161,6 +161,7 @@ PowerShell 7.7 includes the following experimental features.
 [26692]: https://github.com/PowerShell/PowerShell/pull/26692
 [26719]: https://github.com/PowerShell/PowerShell/pull/26719
 [26785]: https://github.com/PowerShell/PowerShell/pull/26785
+[26929]: https://github.com/PowerShell/PowerShell/pull/26929
 [27033]: https://github.com/PowerShell/PowerShell/pull/27033
 [27095]: https://github.com/PowerShell/PowerShell/pull/27095
 [27106]: https://github.com/PowerShell/PowerShell/pull/27106
