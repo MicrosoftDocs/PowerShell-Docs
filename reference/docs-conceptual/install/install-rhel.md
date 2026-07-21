@@ -68,7 +68,7 @@ you want to install.
 - PowerShell 7.6 (LTS) universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-1.rh.x86_64.rpm`
 - PowerShell 7.5 universal package
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-1.rh.x86_64.rpm`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell-7.5.9-1.rh.x86_64.rpm`
 - PowerShell 7.4 (LTS) universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell-7.4.18-1.rh.x86_64.rpm`
 

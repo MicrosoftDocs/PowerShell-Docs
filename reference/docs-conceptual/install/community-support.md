@@ -85,8 +85,8 @@ versions are:
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-linux-arm32.tar.gz`
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/powershell-7.6.4-linux-arm64.tar.gz`
 - PowerShell 7.5 - latest stable release
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-linux-arm32.tar.gz`
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.8/powershell-7.5.8-linux-arm64.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell-7.5.9-linux-arm32.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/powershell-7.5.9-linux-arm64.tar.gz`
 - PowerShell 7.4 - previous LTS release
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell-7.4.18-linux-arm32.tar.gz`
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/powershell-7.4.18-linux-arm64.tar.gz`

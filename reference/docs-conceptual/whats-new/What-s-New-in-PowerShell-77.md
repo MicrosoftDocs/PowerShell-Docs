@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.7
 description: New features and changes released in PowerShell 7.7
-ms.date: 06/12/2026
+ms.date: 07/20/2026
 ---
 
 # What's New in PowerShell 7.7
 
-PowerShell 7.7-preview.2 includes the following features, updates, and breaking changes. PowerShell
-7.7.0 is built on the .NET 11.0.100-preview.4 runtime.
+PowerShell 7.7.0-preview.3 includes the following features, updates, and breaking changes.
+PowerShell 7.7.0 is built on the .NET 11.0.100-preview.6 runtime.
 
 For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository.
 
@@ -20,6 +20,9 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Breaking Changes
 
+- `New-Guid` now generates Version 7 (time-sortable) UUIDs by default instead of Version 4
+  (random). The output format is unchanged. Scripts that depend on fully random GUIDs should use
+  `[guid]::NewGuid()` directly. ([#27033][27033])
 - Add `ValidateNotNullOrEmpty` attribute to the `-Property` of `Format-Table`, `Format-List`, and
   `Format-Custom` ([#26552][26552])
 - Use ArgumentException.ThrowIfNullOrEmpty for not-null-not-empty argument validation.
@@ -36,6 +39,7 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Cmdlet improvements
 
+- Change `New-Guid` to generate UUID v7 by default ([#27033][27033]) (Thanks @SufficientDaikon!)
 - Handle empty-string and null-value results returned from custom argument completer more properly
   ([#27398][27398])
 - Add missing resource strings for `Get-WinEvent` ([#27397][27397]) (Thanks @MartinGC94!)
@@ -94,6 +98,8 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Engine improvements
 
+- Fix progress bar rendering with double-width Unicode characters ([#26185][26185]) (Thanks
+  @yotsuda!)
 - Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows
   ([#27328][27328])
 - Fix up default value for parameters with the `in` modifier ([#26785][26785]) (Thanks @jborean93!)
@@ -130,6 +136,7 @@ PowerShell 7.7 includes the following experimental features.
 [26141]: https://github.com/PowerShell/PowerShell/pull/26141
 [26144]: https://github.com/PowerShell/PowerShell/pull/26144
 [26157]: https://github.com/PowerShell/PowerShell/pull/26157
+[26185]: https://github.com/PowerShell/PowerShell/pull/26185
 [26235]: https://github.com/PowerShell/PowerShell/pull/26235
 [26252]: https://github.com/PowerShell/PowerShell/pull/26252
 [26269]: https://github.com/PowerShell/PowerShell/pull/26269
@@ -158,9 +165,11 @@ PowerShell 7.7 includes the following experimental features.
 [26719]: https://github.com/PowerShell/PowerShell/pull/26719
 [26785]: https://github.com/PowerShell/PowerShell/pull/26785
 [26929]: https://github.com/PowerShell/PowerShell/pull/26929
+[27033]: https://github.com/PowerShell/PowerShell/pull/27033
 [27095]: https://github.com/PowerShell/PowerShell/pull/27095
 [27106]: https://github.com/PowerShell/PowerShell/pull/27106
 [27109]: https://github.com/PowerShell/PowerShell/pull/27109
+[27033]: https://github.com/PowerShell/PowerShell/pull/27033
 [27123]: https://github.com/PowerShell/PowerShell/pull/27123
 [27266]: https://github.com/PowerShell/PowerShell/pull/27266
 [27328]: https://github.com/PowerShell/PowerShell/pull/27328
