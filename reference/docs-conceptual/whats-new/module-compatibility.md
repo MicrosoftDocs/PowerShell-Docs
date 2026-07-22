@@ -63,11 +63,44 @@ The SqlServer modules require PowerShell version 5.0 or greater.
 
 For more information, see [Install the SQL Server PowerShell module][06].
 
+## Windows management module compatibility details
+
+Several Windows management modules have been tested for compatibility with
+PowerShell 7. Results vary depending on whether the module uses .NET
+Framework-only APIs:
+
+| Module | PowerShell 7 status |
+| ------ | ------------------- |
+| ActiveDirectory | Works natively (RSAT required) |
+| DISM | Requires the compatibility layer |
+| GroupPolicy | Partial support; use the compatibility layer |
+| Hyper-V | Works natively |
+| NetAdapter | Works natively |
+| ScheduledTasks | Works natively |
+| Storage | Works natively |
+
+For modules that don't work natively, use
+`Import-Module <name> -UseWindowsPowerShell` to load them through the
+Windows PowerShell compatibility layer. For limitations and known issues
+with this approach, see
+[Module compatibility strategy for PowerShell 7][07].
+
 ## Finding the status of other modules
 
 You can find a complete list of modules using the [PowerShell Module Browser][04]. Using the Module
 Browser, you can find documentation for other PowerShell modules to determine their PowerShell
 version requirements.
+
+To test a specific module in PowerShell 7, try importing it:
+
+```powershell
+Import-Module <ModuleName> -ErrorAction Stop
+Get-Command -Module <ModuleName>
+```
+
+If the import fails, check whether the module manifest includes
+`CompatiblePSEditions`. For a detailed testing strategy, see
+[Module compatibility strategy for PowerShell 7][07].
 
 <!-- link references -->
 [01]: /powershell/microsoftgraph/overview#microsoft-graph-powershell-features--benefits
@@ -76,3 +109,4 @@ version requirements.
 [04]: /powershell/module
 [05]: /powershell/windows/module-compatibility
 [06]: /sql/powershell/download-sql-server-ps-module
+[07]: ./migration/module-compatibility-strategy.md
