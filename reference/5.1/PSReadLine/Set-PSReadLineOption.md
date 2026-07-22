@@ -17,15 +17,16 @@ Customizes the behavior of command line editing in **PSReadLine**.
 ## SYNTAX
 
 ```
-Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-HistoryNoDuplicates]
- [-AddToHistoryHandler <System.Func[System.String,System.Object]>]
- [-CommandValidationHandler <System.Action[System.Management.Automation.Language.CommandAst]>]
- [-HistorySearchCursorMovesToEnd] [-MaximumHistoryCount <Int32>] [-MaximumKillRingCount <Int32>]
- [-ShowToolTips] [-ExtraPromptLineCount <Int32>] [-DingTone <Int32>] [-DingDuration <Int32>]
- [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
- [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
- [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
- [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>] [<CommonParameters>]
+Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <string>]
+ [-HistoryNoDuplicates] [-AddToHistoryHandler <Func[string,Object]>]
+ [-CommandValidationHandler <Action[CommandAst]>] [-HistorySearchCursorMovesToEnd]
+ [-MaximumHistoryCount <int>] [-MaximumKillRingCount <int>] [-ShowToolTips]
+ [-ExtraPromptLineCount <int>] [-DingTone <int>] [-DingDuration <int>]
+ [-BellStyle <BellStyle>] [-CompletionQueryItems <int>] [-WordDelimiters <string>]
+ [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>]
+ [-HistorySavePath <string>] [-AnsiEscapeTimeout <int>] [-PromptText <string[]>]
+ [-ViModeIndicator <ViModeStyle>] [-ViModeChangeHandler <scriptblock>]
+ [-Colors <hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

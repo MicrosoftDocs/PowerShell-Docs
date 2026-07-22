@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 05/02/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-location?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -33,7 +33,7 @@ Get-Location [-Stack] [-StackName <String[]>] [-UseTransaction] [<CommonParamete
 ## DESCRIPTION
 
 The `Get-Location` cmdlet gets an object that represents the current directory, much like the print
-working directory (pwd) command.
+working directory (`pwd`) command in Unix-like operating systems.
 
 When you move between PowerShell drives, PowerShell retains your location in each drive. You can use
 this cmdlet to find your location in each drive.

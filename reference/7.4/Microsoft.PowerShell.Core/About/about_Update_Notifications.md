@@ -1,7 +1,7 @@
 ---
 description: Notifies users on startup of PowerShell that a new version of PowerShell has been released.
 Locale: en-US
-ms.date: 12/02/2023
+ms.date: 05/26/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Update_Notifications
@@ -17,14 +17,19 @@ been released.
 ## Long description
 
 Beginning with PowerShell 7.0, PowerShell uses update notifications to alert
-users to the existence of updates to PowerShell. Once per day, PowerShell
-queries an online service to determine if a newer version is available.
+users to the existence of updates to PowerShell. Every time PowerShell starts,
+PowerShell waits 3 seconds before it checks for updated versions. Since
+PowerShell waits 3 seconds before checking for updates and the notification
+message is displayed with the startup banner, you might not see the update
+notification until the next time you start PowerShell.
 
-> [!NOTE]
-> While the update check happens during the first session in a given 24-hour
-> period, for performance reasons, PowerShell shows the notification on the
-> start of subsequent sessions. Also for performance reasons, the check for
-> updates starts 3 seconds after the session begins.
+If update notification is enabled, it checks to see if it has been more than 24
+hours since the last check for updates. If it has been more than 24 hours, it
+checks the appropriate endpoint for the latest version of PowerShell.
+PowerShell only displays the update notification when the release date of the
+newer version is more than 7 days old. This delay allows time for the
+publication of the various package types to become available before you are
+notified of the update.
 
 By default, PowerShell subscribes to different notification channels depending
 on its version and branch. Generally Available (GA) versions of PowerShell only

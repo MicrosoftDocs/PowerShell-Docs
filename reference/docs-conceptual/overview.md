@@ -1,6 +1,6 @@
 ---
 description: This article is an introduction to the PowerShell scripting environment and its features.
-ms.date: 10/30/2024
+ms.date: 05/12/2026
 ms.topic: overview
 title: What is PowerShell?
 ---
@@ -50,8 +50,8 @@ Microsoft modules
 Third-party modules
 
 - [AWS][30]
-- [VMware][32]
-- [Google Cloud][31]
+- [VMware][31]
+- [Oracle Cloud][32]
 
 ### Configuration management
 
@@ -124,6 +124,6 @@ Take a look at how PowerShell is being used in different scenarios and on differ
 [28]: /training/browse/?terms=PowerShell
 [29]: discover-powershell.md
 [30]: https://aws.amazon.com/powershell/
-[31]: https://cloud.google.com/powershell/
-[32]: https://developer.broadcom.com/powercli
+[31]: https://developer.broadcom.com/powercli
+[32]: https://docs.oracle.com/iaas/Content/API/SDKDocs/powershell.htm
 [33]: https://github.com/MicrosoftDocs/PowerShell-Docs/blob/main/assets/MonadManifesto.pdf

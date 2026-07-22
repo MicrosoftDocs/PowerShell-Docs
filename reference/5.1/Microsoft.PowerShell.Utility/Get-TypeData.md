@@ -99,9 +99,9 @@ else {
 The command uses the `Get-TypeData` cmdlet to get the extended type data for the **System.DataTime**
 type. The command gets the **Members** property of the **TypeData** object.
 
-The **Members** property contains a hash table of properties and methods that are defined by extended
-type data. Each key in the Members hash table is a property or method name and each value is the
-definition of the property or method value.
+The **Members** property contains a hash table of properties and methods that are defined by
+extended type data. Each key in the Members hash table is a property or method name and each value
+is the definition of the property or method value.
 
 The command gets the **DateTime** key in **Members** and its **GetScriptBlock** property value.
 

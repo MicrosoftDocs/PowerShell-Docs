@@ -255,7 +255,8 @@ in the same way. Similarly, the `$PSCulture` and `$PSUICulture` automatic variab
 objects that the CurrentCulture and CurrentUICulture properties of the host object contain. You can
 use these features interchangeably.
 
-For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ## RELATED LINKS
 

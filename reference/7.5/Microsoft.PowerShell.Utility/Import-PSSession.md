@@ -17,10 +17,11 @@ Imports commands from another session into the current session.
 ## SYNTAX
 
 ```
-Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <String[]>] [-AllowClobber]
- [-ArgumentList <Object[]>] [-CommandType <CommandTypes>] [-Module <String[]>]
- [-FullyQualifiedModule <ModuleSpecification[]>] [[-FormatTypeName] <String[]>]
- [-Certificate <X509Certificate2>] [-Session] <PSSession> [<CommonParameters>]
+Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <String[]>]
+ [-AllowClobber] [-ArgumentList <Object[]>] [-CommandType <CommandTypes>]
+ [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+ [[-FormatTypeName] <String[]>] [-Certificate <X509Certificate2>] [-Session] <PSSession>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -281,8 +282,8 @@ Function        Start-BitsTransfer
 Function        Suspend-BitsTransfer
 ```
 
-This command shows how to use the **Module** parameter of `Get-Command` to find out which commands were
-imported into the session by an `Import-PSSession` command.
+This command shows how to use the **Module** parameter of `Get-Command` to find out which commands
+were imported into the session by an `Import-PSSession` command.
 
 The first command uses the `Import-PSSession` cmdlet to import commands whose names include "bits"
 from the PSSession in the `$S` variable. The `Import-PSSession` command returns a temporary module,
@@ -528,7 +529,8 @@ and module names. Wildcards are not permitted.
 
 `Import-PSSession` cannot import providers from a snap-in.
 
-For more information, see [about_PSSnapins](/powershell/module/Microsoft.PowerShell.Core/About/about_PSSnapins)
+For more information, see
+[about_PSSnapins](/powershell/module/Microsoft.PowerShell.Core/About/about_PSSnapins)
 and [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
 
 ```yaml

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/18/2026
+ms.date: 05/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -19,22 +19,24 @@ Selects objects or object properties.
 ### DefaultParameter (Default)
 
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <psobject>] [-ExcludeProperty <string[]>]
- [-ExpandProperty <string>] [-Unique] [-Last <int>] [-First <int>] [-Skip <int>] [-Wait]
- [<CommonParameters>]
+Select-Object [[-Property] <Object[]>] [-InputObject <psobject>]
+ [-ExcludeProperty <string[]>] [-ExpandProperty <string>] [-Unique] [-Last <int>]
+ [-First <int>] [-Skip <int>] [-Wait] [<CommonParameters>]
 ```
 
 ### SkipLastParameter
 
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <psobject>] [-ExcludeProperty <string[]>]
- [-ExpandProperty <string>] [-Unique] [-SkipLast <int>] [<CommonParameters>]
+Select-Object [[-Property] <Object[]>] [-InputObject <psobject>]
+ [-ExcludeProperty <string[]>] [-ExpandProperty <string>] [-Unique] [-SkipLast <int>]
+ [<CommonParameters>]
 ```
 
 ### IndexParameter
 
 ```
-Select-Object [-InputObject <psobject>] [-Unique] [-Wait] [-Index <int[]>] [<CommonParameters>]
+Select-Object [-InputObject <psobject>] [-Unique] [-Wait] [-Index <int[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -490,7 +492,9 @@ Accept wildcard characters: True
 
 ### -First
 
-Specifies the number of objects to select from the beginning of an array of input objects.
+Specifies the number of objects to select from the beginning of a collection of input objects. When
+you use this parameter with the **Skip** parameter, `Select-Object` selects the first number of
+objects after skipping the number of objects specified by **Skip**.
 
 ```yaml
 Type: System.Int32
@@ -545,7 +549,9 @@ Accept wildcard characters: False
 
 ### -Last
 
-Specifies the number of objects to select from the end of an array of input objects.
+Specifies the number of objects to select from the end of a collection of input objects. If the
+command uses the **Skip** parameter it skips items from the end of the collection, then returns the
+last number of objects specified by the **Last** parameter after skipping.
 
 ```yaml
 Type: System.Int32
@@ -571,7 +577,7 @@ property, use a hash table.
 Valid keys are:
 
 - Name (or Label) - `<string>`
-- Expression - `<string>` or `<script block>`
+- Expression - `<string>` or `<scriptblock>`
 
 For more information, see
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
@@ -591,10 +597,14 @@ Accept wildcard characters: True
 ### -Skip
 
 Skips (doesn't select) the specified number of items. By default, the **Skip** parameter counts from
-the beginning of the collection of objects. If the command uses the **Last** parameter, it counts
-from the end of the collection.
+the beginning of the collection of objects. Unlike the **Index** parameter, which starts counting at
+0, the **Skip** parameter begins at 1.
 
-Unlike the **Index** parameter, which starts counting at 0, the **Skip** parameter begins at 1.
+When you use this parameter with the **First** parameter, `Select-Object` selects the first number
+of objects after skipping the number of objects specified by **Skip**.
+
+If the command uses the **Last** parameter it skips items from the end of the collection, then
+returns the last number of objects specified by the **Last** parameter after skipping.
 
 ```yaml
 Type: System.Int32

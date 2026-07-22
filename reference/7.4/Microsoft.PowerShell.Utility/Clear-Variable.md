@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/16/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/clear-variable?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -18,8 +18,8 @@ Deletes the value of a variable.
 ## SYNTAX
 
 ```
-Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-Force] [-PassThru]
- [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-Force]
+ [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,7 +41,7 @@ This command removes the value of global variables that have names that begin wi
 ### Example 2: Clear a variable in a child scope but not the parent scope
 
 ```powershell
-$a=3
+$a = 3
 &{ Clear-Variable a }
 $a
 ```
@@ -165,7 +165,8 @@ The acceptable values for this parameter are:
 - `Script`
 
 You can also use a number relative to the current scope (0 through the number of scopes, where 0 is
-the current scope and 1 is its parent). Local is the default. For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
+the current scope and 1 is its parent). Local is the default. For more information, see
+[about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: System.String
@@ -215,13 +216,14 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### None
+### System.String
 
-You can't pipe objects to this cmdlet.
+The **Name** parameter accepts string input from pipeline objects with a **Name** property.
 
 ## OUTPUTS
 

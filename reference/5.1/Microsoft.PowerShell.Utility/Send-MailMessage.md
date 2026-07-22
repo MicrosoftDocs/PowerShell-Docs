@@ -212,12 +212,12 @@ user.
 Type a user name, such as **User01** or **Domain01\User01**. Or, enter a **PSCredential** object,
 such as one from the `Get-Credential` cmdlet.
 
-Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
-object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
+Credentials are stored in a [PSCredential](xref:System.Management.Automation.PSCredential)
+object and the password is stored as a [SecureString](xref:System.Security.SecureString).
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> [How secure is SecureString?](/dotnet/fundamentals/runtime-libraries/system-security-securestring#how-secure-is-securestring).
 
 ```yaml
 Type: System.Management.Automation.PSCredential

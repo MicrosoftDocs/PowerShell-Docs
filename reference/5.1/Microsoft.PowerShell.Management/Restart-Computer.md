@@ -18,18 +18,21 @@ Restarts the operating system on local and remote computers.
 ### DefaultSet (Default)
 
 ```
-Restart-Computer [-DcomAuthentication <AuthenticationLevel>] [-Impersonation <ImpersonationLevel>]
- [-WsmanAuthentication <String>] [-Protocol <String>] [[-ComputerName] <String[]>]
- [[-Credential] <PSCredential>] [-Force] [-Wait] [-Timeout <Int32>] [-For <WaitForServiceTypes>]
- [-Delay <Int16>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Restart-Computer [-DcomAuthentication <AuthenticationLevel>]
+ [-Impersonation <ImpersonationLevel>]  [-WsmanAuthentication <String>]
+ [-Protocol <String>] [[-ComputerName] <String[]>]
+ [[-Credential] <PSCredential>] [-Force] [-Wait] [-Timeout <Int32>]
+ [-For <WaitForServiceTypes>]  [-Delay <Int16>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### AsJobSet
 
 ```
 Restart-Computer [-AsJob] [-DcomAuthentication <AuthenticationLevel>]
- [-Impersonation <ImpersonationLevel>] [[-ComputerName] <String[]>] [[-Credential] <PSCredential>]
- [-Force] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Impersonation <ImpersonationLevel>] [[-ComputerName] <String[]>]
+ [[-Credential] <PSCredential>] [-Force] [-ThrottleLimit <Int32>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -220,7 +223,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> [How secure is SecureString?](/dotnet/fundamentals/runtime-libraries/system-security-securestring#how-secure-is-securestring).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -249,7 +252,8 @@ Valid values are:
 - **PacketPrivacy**:   Packet Privacy-level COM authentication.
 - **Unchanged**:       The authentication level is the same as the previous command.
 
-For more information, see [AuthenticationLevel Enumeration](/dotnet/api/system.management.authenticationlevel).
+For more information, see
+[AuthenticationLevel Enumeration](/dotnet/api/system.management.authenticationlevel).
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -455,7 +459,7 @@ The acceptable values for this parameter are: **Basic**, **CredSSP**, **Default*
 **Kerberos**, and **Negotiate**.
 
 For more information, see
-[AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
+[AuthenticationMechanism](xref:System.Management.Automation.Runspaces.AuthenticationMechanism).
 
 > [!WARNING]
 > Credential Security Service Provider (CredSSP) authentication, in which the user credentials are
@@ -513,7 +517,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -533,12 +538,11 @@ When you use the **AsJob** parameter, this cmdlet returns a job object.
 
 ## NOTES
 
-- `Restart-Computer` only work on computers running Windows and requires WinRM and WMI to shutdown a
-  system, including the local system.
-- `Restart-Computer` uses the [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
-  of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
-  class.  This method requires the **SeShutdownPrivilege** privilege be enabled for the user account
-  used to restart the machine.
+- On Windows, `Restart-Computer` uses the
+  [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
+  [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) class. This method
+  requires the **SeShutdownPrivilege** privilege be enabled for the user account used to restart
+  the machine.
 
 In Windows PowerShell 2.0, the **AsJob** parameter doesn't work reliably when you are restarting or
 stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this

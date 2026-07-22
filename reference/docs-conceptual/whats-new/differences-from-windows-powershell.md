@@ -27,6 +27,8 @@ article is to present the current state of PowerShell and how that's different f
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
 
+- [What's new in PowerShell 7.7][38]
+- [What's new in PowerShell 7.6][37]
 - [What's new in PowerShell 7.5][36]
 - [What's new in PowerShell 7.4][35]
 - [What's new in PowerShell 7.3][34]
@@ -46,6 +48,7 @@ Core, see [Breaking changes for migration from .NET Framework to .NET Core][03].
 Each new release of PowerShell is built on a newer version of .NET. There can be breaking changes in
 .NET that affect PowerShell.
 
+- PowerShell 7.7 - Built on .NET 11.0.100-preview.4
 - PowerShell 7.6 - Built on .NET 10.0 (LTS)
 - PowerShell 7.5 - Built on .NET 9.0
 - PowerShell 7.4 - Built on .NET 8.0 (LTS)
@@ -1257,3 +1260,5 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 [35]: What-s-New-in-PowerShell-74.md
 [36]: What-s-New-in-PowerShell-75.md
 [migration-guide]: ./Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
+[37]: What-s-New-in-PowerShell-76.md
+[38]: What-s-New-in-PowerShell-77.md

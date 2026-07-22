@@ -24,7 +24,8 @@ Get-Credential [[-Credential] <PSCredential>] [<CommonParameters>]
 ### MessageSet
 
 ```
-Get-Credential [-Message <String>] [[-UserName] <String>] [-Title <String>] [<CommonParameters>]
+Get-Credential [-Message <String>] [[-UserName] <String>] [-Title <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -177,7 +178,7 @@ and the password is stored as a [SecureString](xref:System.Security.SecureString
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
-> [How secure is SecureString?](xref:System.Security.SecureString#how-secure-is-securestring).
+> [How secure is SecureString?](/dotnet/fundamentals/runtime-libraries/system-security-securestring#how-secure-is-securestring).
 
 ```yaml
 Type: System.Management.Automation.PSCredential

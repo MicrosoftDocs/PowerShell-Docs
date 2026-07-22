@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/16/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -19,9 +19,10 @@ Sets the value of a variable. Creates the variable if one with the requested nam
 ## SYNTAX
 
 ```
-Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Exclude <String[]>]
- [-Description <String>] [-Option <ScopedItemOptions>] [-Force] [-Visibility <SessionStateEntryVisibility>]
- [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Description <String>] [-Option <ScopedItemOptions>] [-Force]
+ [-Visibility <SessionStateEntryVisibility>] [-PassThru] [-Scope <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -377,7 +378,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe an object representing the value of the variable to this cmdlet.
+The **Value** parameter accepts object input from the pipeline by value or from objects with a
+**Value** property.
+
+### System.String
+
+The **Name** parameter accepts string input from pipeline objects with a **Name** property.
 
 ## OUTPUTS
 

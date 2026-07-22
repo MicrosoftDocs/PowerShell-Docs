@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 03/18/2026
+ms.date: 04/20/2026
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -81,19 +81,22 @@ Legend
 - The ![Discontinued][03] icon indicates the version of PowerShell where the experimental feature
   was removed
 
-|                        Name                         |         7.4         |         7.5         |         7.6         |
-| --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: |
-| [PSCommandNotFoundSuggestion][06]                   | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
-| [PSCommandWithArgs][07]                             | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
-| [PSDesiredStateConfiguration.InvokeDscResource][08] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSFeedbackProvider][09]                            | ![Experimental][02] | ![Experimental][02] |  ![Mainstream][01]  |
-| [PSLoadAssemblyFromNativeCode][10]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSModuleAutoLoadSkipOfflineFiles][11]              | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
-| [PSNativeWindowsTildeExpansion][12]                 |                     | ![Experimental][02] |  ![Mainstream][01]  |
-| [PSProfileDSCResource][13]                          |                     |                     | ![Experimental][02] |
-| [PSRedirectToVariable][14]                          |                     | ![Experimental][02] |  ![Mainstream][01]  |
-| [PSSerializeJSONLongEnumAsNumber][15]               |                     | ![Experimental][02] | ![Experimental][02] |
-| [PSSubsystemPluginModel][16]                        | ![Experimental][02] | ![Experimental][02] |  ![Mainstream][01]  |
+|                        Name                         |         7.4         |         7.5         |         7.6         |         7.7         |
+| --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: | :-----------------: |
+| [PSCommandNotFoundSuggestion][06]                   | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |  ![Mainstream][01]  |
+| [PSCommandWithArgs][07]                             | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |  ![Mainstream][01]  |
+| [PSFeedbackProvider][09]                            | ![Experimental][02] | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
+| [PSLoadAssemblyFromNativeCode][10]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSModuleAutoLoadSkipOfflineFiles][11]              | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |  ![Mainstream][01]  |
+| [PSNativeWindowsTildeExpansion][12]                 |                     | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
+| [PSProfileDSCResource][13]                          |                     |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSRedirectToVariable][14]                          |                     | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
+| [PSSerializeJSONLongEnumAsNumber][15]               |                     | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSSubsystemPluginModel][16]                        | ![Experimental][02] | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
+
+PSDesiredStateConfiguration module v2 and higher
+
+- [PSDesiredStateConfiguration.InvokeDscResource][08]
 
 ### PSCommandNotFoundSuggestion
 

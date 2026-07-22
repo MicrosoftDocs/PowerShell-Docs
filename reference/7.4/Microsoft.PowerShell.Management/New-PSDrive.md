@@ -21,9 +21,9 @@ Creates temporary and persistent drives that are associated with a location in a
 ### All
 
 ```
-New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Description <String>]
- [-Scope <String>] [-Persist] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String>
+ [-Description <String>] [-Scope <String>] [-Persist] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -285,7 +285,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> [How secure is SecureString?](/dotnet/fundamentals/runtime-libraries/system-security-securestring#how-secure-is-securestring).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -498,7 +498,7 @@ PowerShell includes the following aliases for `Get-PSDrive`:
 - All platforms:
   - `ndr`
 - Windows:
-  - `mount` 
+  - `mount`
 
 `New-PSDrive` is designed to work with the data exposed by any provider. To list the providers
 available in your session, use `Get-PSProvider`. For more information about providers, see

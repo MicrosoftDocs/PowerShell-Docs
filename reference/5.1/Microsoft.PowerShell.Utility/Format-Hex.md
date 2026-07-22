@@ -33,7 +33,8 @@ Format-Hex -LiteralPath <string[]> [<CommonParameters>]
 ### ByInputObject
 
 ```
-Format-Hex -InputObject <Object> [-Encoding <string>] [-Raw] [<CommonParameters>]
+Format-Hex -InputObject <Object> [-Encoding <string>] [-Raw]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

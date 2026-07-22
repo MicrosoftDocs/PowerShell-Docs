@@ -347,6 +347,8 @@ determine the version of PowerShell and the purpose of execution policies.
 1. How do you determine the current PowerShell execution policy setting?
 1. How do you change the PowerShell execution policy?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 To learn more about the concepts covered in this chapter, read the following PowerShell help
@@ -371,3 +373,4 @@ session.
 [execution-policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [auto-variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
 [chapter-2]: 02-help-system.md
+[appendix]: 11-appendix.md

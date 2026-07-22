@@ -25,7 +25,8 @@ Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [-Count 
 ### RandomListItemParameterSet
 
 ```
-Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>] [<CommonParameters>]
+Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>]
+ [<CommonParameters>]
 ```
 
 ### ShuffleParameterSet

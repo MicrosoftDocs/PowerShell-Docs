@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/18/2026
+ms.date: 06/17/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-typedata?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-TypeData
@@ -37,7 +37,8 @@ Update-TypeData [-MemberType <PSMemberTypes>] [-MemberName <String>] [-Value <Ob
 ### TypeDataSet
 
 ```
-Update-TypeData [-Force] [-TypeData] <TypeData[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-TypeData [-Force] [-TypeData] <TypeData[]> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -615,8 +616,8 @@ Accept wildcard characters: False
 Specifies additional values for **AliasProperty**, **ScriptProperty**, **CodeProperty**, or
 **CodeMethod** members.
 
-Use this parameter with the **TypeName**, **MemberType**, **Value**, and **SecondValue** parameters to add
-or change a property or method of a type.
+Use this parameter with the **TypeName**, **MemberType**, **Value**, and **SecondValue** parameters
+to add or change a property or method of a type.
 
 When the value of the **MemberType** parameter is `AliasProperty`, the value of the **SecondValue**
 parameter must be a data type. PowerShell converts (that is, casts) the value of the alias property
@@ -626,8 +627,8 @@ string value to an integer.
 
 When the value of the **MemberType** parameter is `ScriptProperty`, you can use the **SecondValue**
 parameter to specify an additional scriptblock. The scriptblock in the value of the **Value**
-parameter gets the value of a variable. The scriptblock in the value of the **SecondValue** parameter
-set the value of the variable.
+parameter gets the value of a variable. The scriptblock in the value of the **SecondValue**
+parameter sets the value of the variable.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -898,6 +899,12 @@ parameters to this cmdlet.
 This cmdlet returns no output.
 
 ## NOTES
+
+> [!WARNING]
+> Restricted endpoints, such as JEA, must not expose the `Update-TypeData` command. This command
+> allows you to add **ScriptProperty** members to types. The **ScriptProperty** members might be
+> evaluated in `FullLanguage` mode, even when the session is configured to use a more restrictive
+> language mode.
 
 ## RELATED LINKS
 

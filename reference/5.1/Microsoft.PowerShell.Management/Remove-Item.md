@@ -24,49 +24,51 @@ Deletes the specified items.
 ### Path (Default) - FileSystem provider
 
 ```
-Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
- [-Stream <String[]>] [<CommonParameters>]
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath - FileSystem provider
 
 ```
-Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
- [-Stream <String[]>] [<CommonParameters>]
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>]
+ [<CommonParameters>]
 ```
 
 ### Path (Default) - Certificate provider
 
 ```
-Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
- [-DeleteKey] <CommonParameters>]
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [-DeleteKey] [<CommonParameters>]
 ```
 
 ### LiteralPath - Certificate provider
 
 ```
-Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
- [-DeleteKey] [<CommonParameters>]
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [-DeleteKey] [<CommonParameters>]
 ```
 
 ### Path (Default) - All providers
 
 ```
-Remove-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
- [<CommonParameters>]
+Remove-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath - All providers
 
 ```
-Remove-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
- [<CommonParameters>]
+Remove-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -378,7 +380,7 @@ it in single quotation marks. Single quotation marks tell PowerShell not to inte
 as escape sequences.
 
 For more information, see
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]

@@ -17,11 +17,11 @@ Sets the colors and styles used for rendering Markdown content in the console.
 ### IndividualSetting (Default)
 
 ```
-Set-MarkdownOption [-Header1Color <String>] [-Header2Color <String>] [-Header3Color <String>]
- [-Header4Color <String>] [-Header5Color <String>] [-Header6Color <String>] [-Code <String>]
- [-ImageAltTextForegroundColor <String>] [-LinkForegroundColor <String>]
- [-ItalicsForegroundColor <String>] [-BoldForegroundColor <String>] [-PassThru]
- [<CommonParameters>]
+Set-MarkdownOption [-Header1Color <String>] [-Header2Color <String>]
+ [-Header3Color <String>] [-Header4Color <String>] [-Header5Color <String>]
+ [-Header6Color <String>] [-Code <String>] [-ImageAltTextForegroundColor <String>]
+ [-LinkForegroundColor <String>] [-ItalicsForegroundColor <String>]
+ [-BoldForegroundColor <String>] [-PassThru] [<CommonParameters>]
 ```
 
 ### Theme
@@ -362,4 +362,3 @@ The string values used to define the color and style must match the regular expr
 [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
 [CommonMark](https://commonmark.org/)
-

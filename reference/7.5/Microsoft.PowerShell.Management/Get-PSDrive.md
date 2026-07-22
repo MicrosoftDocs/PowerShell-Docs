@@ -20,13 +20,15 @@ Gets drives in the current session.
 ### Name (Default)
 
 ```
-Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>] [<CommonParameters>]
+Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>]
+ [<CommonParameters>]
 ```
 
 ### LiteralName
 
 ```
-Get-PSDrive [-LiteralName] <String[]> [-Scope <String>] [-PSProvider <String[]>] [<CommonParameters>]
+Get-PSDrive [-LiteralName] <String[]> [-Scope <String>] [-PSProvider <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -20,65 +20,73 @@ Creates or changes the value of a property of an item.
 ### propertyValuePathSet (Default) - All providers
 
 ```
-Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru]
+ [-Force] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ### propertyPSObjectPathSet - All providers
 
 ```
 Set-ItemProperty [-Path] <string[]> -InputObject <psobject> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>]  [-WhatIf] [-Confirm] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ### propertyValueLiteralPathSet - All providers
 
 ```
-Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru]
+ [-Force] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ### propertyPSObjectLiteralPathSet - All providers
 
 ```
 Set-ItemProperty -LiteralPath <string[]> -InputObject <psobject> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ### propertyValuePathSet (Default) - Registry provider
 
 ```
-Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [-Type <RegistryValueKind>] [<CommonParameters>]
+Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru]
+ [-Force] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ### propertyPSObjectPathSet - Registry provider
 
 ```
 Set-ItemProperty [-Path] <string[]> -InputObject <psobject> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [-Type <RegistryValueKind>] [<CommonParameters>]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ### propertyValueLiteralPathSet - Registry provider
 
 ```
-Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [-Type <RegistryValueKind>] [<CommonParameters>]
+Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru]
+ [-Force] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ### propertyPSObjectLiteralPathSet - Registry provider
 
 ```
 Set-ItemProperty -LiteralPath <string[]> -InputObject <psobject> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [-Type <RegistryValueKind>] [<CommonParameters>]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Type <RegistryValueKind>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -1,6 +1,6 @@
 ---
 description: PowerShell has several features designed to improve the security of your scripting environment.
-ms.date: 08/18/2025
+ms.date: 07/17/2026
 title: PowerShell security features
 ---
 # PowerShell security features
@@ -71,11 +71,26 @@ being enforced. The policy applies certain behaviors when running script blocks,
 loading module files to prevent arbitrary code execution on the system.
 
 App Control for Business is designed as a security feature under the servicing criteria defined by
-the Microsoft Security Response Center (MSRC). App Control is the preferred application control
-system for Windows.
+the Microsoft Security Response Center (MSRC). App Control for Business is the preferred application
+control system for Windows. For more information about how PowerShell supports AppLocker and App
+Control for Business, see [Use App Control to secure PowerShell][10].
 
-For more information about how PowerShell supports AppLocker and App Control, see
-[Use App Control to secure PowerShell][10].
+AppLocker is a legacy application control system that's still supported in and Windows 11. AppLocker
+isn't a security feature under the servicing criteria defined by MSRC. For more information about
+servicing criteria, see [Microsoft Security Servicing Criteria for Windows][12].
+
+### System Lockdown mode
+
+In PowerShell, System Lockdown mode is an abstraction of the system-wide application control policy
+enforced by Windows through App Control for Business or AppLocker. When an application control
+policy is active, PowerShell enters System Lockdown mode. In System Lockdown mode, the application
+control policy determines the language mode for each runspace.
+
+> [!IMPORTANT]
+> Without System Lockdown mode, language mode doesn't propagate between runspaces. Each runspace
+> independently queries the Windows application control policy to determine its language mode.
+> Setting the language mode on one runspace doesn't affect other runspaces. Without an active
+> application control policy, new runspaces default to `FullLanguage` mode.
 
 ## Software Bill of Materials (SBOM)
 
@@ -133,18 +148,31 @@ This change is backward compatible.
 
 ## Security Servicing Criteria
 
-PowerShell follows the [Microsoft Security Servicing Criteria for Windows][12]. Only security
-features meet the criteria for servicing.
+A security boundary provides a logical separation between the code and data of security domains with
+different levels of trust. Security features build upon security boundaries to provide robust
+protection against specific threats. For security features in this category, Microsoft intends to
+address reported vulnerabilities through servicing.
 
-Security features
+Security features of PowerShell
 
 - System Lockdown with App Control for Business
 - Constrained language mode with App Control for Business
 
-Defense in depth features
+For more information, see the [Microsoft Security Servicing Criteria for Windows][12] documentation.
 
+In some cases, a security feature may provide protection against a threat without being able to
+provide a robust defense. These security features are typically referred to as _defense-in-depth_
+features or mitigations because they provide additional security but may have by-design limitations
+that prevent them from fully mitigating a threat. A bypass for a defense-in-depth security feature
+by itself does not pose a direct risk because an attacker must also have found a vulnerability that
+affects a security boundary, or they must rely on additional techniques, such as social engineering
+to achieve the initial stage of a device compromise.
+
+Defense-in-depth features of PowerShell
+
+- Constrained language mode with AppLocker or configured through session configuration or by
+  manually setting `$ExecutionContext.SessionState.LanguageMode`
 - System Lockdown with AppLocker
-- Constrained language mode with AppLocker
 - Execution Policy
 
 <!-- link references -->

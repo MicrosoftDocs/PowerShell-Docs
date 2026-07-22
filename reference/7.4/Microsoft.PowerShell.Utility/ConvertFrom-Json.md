@@ -16,7 +16,8 @@ Converts a JSON-formatted string to a custom object or a hash table.
 ## SYNTAX
 
 ```
-ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [-NoEnumerate] [<CommonParameters>]
+ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [-NoEnumerate]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -84,7 +85,8 @@ that can be managed in PowerShell.
 ```powershell
 # Ensures that Invoke-WebRequest uses TLS 1.2
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' | ConvertFrom-Json
+$j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' |
+    ConvertFrom-Json
 ```
 
 You can also use the `Invoke-RestMethod` cmdlet, which automatically converts JSON content to

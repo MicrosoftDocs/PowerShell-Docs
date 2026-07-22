@@ -607,8 +607,8 @@ Accept wildcard characters: False
 Specifies additional values for **AliasProperty**, **ScriptProperty**, **CodeProperty**, or
 **CodeMethod** members.
 
-Use this parameter with the **TypeName**, **MemberType**, **Value**, and **SecondValue** parameters to add
-or change a property or method of a type.
+Use this parameter with the **TypeName**, **MemberType**, **Value**, and **SecondValue** parameters
+to add or change a property or method of a type.
 
 When the value of the **MemberType** parameter is `AliasProperty`, the value of the **SecondValue**
 parameter must be a data type. PowerShell converts (that is, casts) the value of the alias property
@@ -618,8 +618,8 @@ string value to an integer.
 
 When the value of the **MemberType** parameter is `ScriptProperty`, you can use the **SecondValue**
 parameter to specify an additional scriptblock. The scriptblock in the value of the **Value**
-parameter gets the value of a variable. The scriptblock in the value of the **SecondValue** parameter
-set the value of the variable.
+parameter gets the value of a variable. The scriptblock in the value of the **SecondValue**
+parameter sets the value of the variable.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

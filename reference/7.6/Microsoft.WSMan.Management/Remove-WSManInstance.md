@@ -18,10 +18,11 @@ Deletes a management resource instance.
 ### ComputerName (Default)
 
 ```
-Remove-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-OptionSet <Hashtable>]
- [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>]
- [-UseSSL] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
- [-CertificateThumbprint <String>] [<CommonParameters>]
+Remove-WSManInstance [-ApplicationName <String>] [-ComputerName <String>]
+ [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet] <Hashtable>
+ [-SessionOption <SessionOption>] [-UseSSL] [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+ [<CommonParameters>]
 ```
 
 ### URI
@@ -29,7 +30,8 @@ Remove-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-Opti
 ```
 Remove-WSManInstance [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-ResourceURI] <Uri>
  [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>] [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

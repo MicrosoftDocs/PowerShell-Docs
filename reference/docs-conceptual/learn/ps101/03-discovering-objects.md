@@ -774,6 +774,8 @@ properties returned by default.
 1. How can some commands that don't return output by default be made to generate output?
 1. What should you consider doing when prototyping a command that produces a large amount of output?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 - [Get-Member][get-member]
@@ -799,3 +801,4 @@ In [Chapter 4][chapter-4], you'll learn about one-liners and the pipeline.
 [about-methods]: /powershell/module/microsoft.powershell.core/about/about_methods
 [use-methods]: https://mikefrobbins.com/2016/12/15/no-powershell-cmdlet-to-start-or-stop-something-dont-forget-to-check-for-methods-on-the-get-cmdlets/
 [chapter-4]: 04-pipelines.md
+[appendix]: 11-appendix.md

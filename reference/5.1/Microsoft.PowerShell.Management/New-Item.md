@@ -22,21 +22,24 @@ Creates a new item.
 
 ```
 New-Item [-Path] <string[]> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ### nameSet - All providers
 
 ```
-New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>]
+ [-Value <Object>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
+ [-UseTransaction] [<CommonParameters>]
 ```
 
 ### pathSet (Default) - WSMan provider
 
 ```
-New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-OptionSet <hashtable>]
+New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>]
+ [-Value <Object>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
+ [-UseTransaction] [-OptionSet <hashtable>]
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <string>]
  [-SessionOption <SessionOption>] [-Port <int>] [<CommonParameters>]
 ```
@@ -44,11 +47,11 @@ New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>] [-Value <O
 ### nameSet - WSMan provider
 
 ```
-New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-OptionSet <hashtable>]
- [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <string>]
- [-SessionOption <SessionOption>] [-ApplicationName <string>] [-Port <int>] [-UseSSL]
- [<CommonParameters>]
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>]
+ [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-OptionSet <hashtable>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <string>] [-SessionOption <SessionOption>]
+ [-ApplicationName <string>] [-Port <int>] [-UseSSL] [<CommonParameters>]
 ```
 
 ### pathSet (Default)
@@ -62,8 +65,8 @@ New-Item [-Path] <string[]> [-ItemType <string>] [-Value <Object>] [-Force]
 ### nameSet
 
 ```
-New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>]
+ [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
  [-Options <ScopedItemOptions>] [<CommonParameters>]
 ```
 
@@ -112,7 +115,8 @@ profile path, even when the directories in the path do not exist.
 After you create a profile, you can enter aliases, functions, and scripts in the profile to
 customize your shell.
 
-For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 and [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 ```powershell

@@ -4,7 +4,7 @@
     Delete this comment block and summarize your changes and list
     related issues here. For example:
 
-    This changes fixes problem X in the documentation for Y.
+    This change fixes problem X in the documentation for Y.
 
     - Fixes #1234
     - Resolves #1235

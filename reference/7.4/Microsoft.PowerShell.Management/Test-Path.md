@@ -17,31 +17,33 @@ Determines whether all elements of a path exist.
 ### Path (Default) - FileSystem provider
 
 ```
-Test-Path [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
+Test-Path [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
  [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
 ### LiteralPath - FileSystem provider
 
 ```
-Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
+Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
  [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
 ### Path (Default) - All providers
 
 ```
-Test-Path [-Path] <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>] [<CommonParameters>]
+Test-Path [-Path] <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath - All providers
 
 ```
-Test-Path -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>] [<CommonParameters>]
+Test-Path -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -164,7 +166,7 @@ False
 This command uses the **NewerThan** dynamic parameter to determine whether the `pwsh.exe` file on
 the computer is newer than `July 13, 2009`.
 
-The NewerThan parameter works only in file system drives.
+The **NewerThan** parameter works only in file system drives.
 
 ```powershell
 Test-Path $PSHOME\pwsh.exe -NewerThan "July 13, 2009"
@@ -313,8 +315,8 @@ exist. PowerShell returns false because it doesn't know which drive provider to 
 > A breaking change in the Path APIs was introduced in .NET 2.1. Those methods no longer check for
 > invalid path characters. This change caused a regression in PowerShell where the **IsValid** check
 > no longer tests for invalid characters. The regression will be addressed in a future release. For
-> more information,
-> see [Breaking changes in .NET Core 2.1](/dotnet/core/compatibility/2.1#path-apis-dont-throw-an-exception-for-invalid-characters).
+> more information, see
+> [Breaking changes in .NET Core 2.1](/dotnet/core/compatibility/2.1#path-apis-dont-throw-an-exception-for-invalid-characters).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

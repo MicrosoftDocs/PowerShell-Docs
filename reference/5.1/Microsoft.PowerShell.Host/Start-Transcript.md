@@ -17,22 +17,22 @@ Creates a record of all or part of a PowerShell session to a text file.
 ### ByPath (Default)
 
 ```
-Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber]
+ [-IncludeInvocationHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber]
+ [-IncludeInvocationHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByOutputDirectory
 
 ```
-Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber]
+ [-IncludeInvocationHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ By default, `Start-Transcript` stores the transcript in the following location u
 name:
 
 - Default location: `$HOME\Documents`
-- Default filename: `PowerShell_transcript.<computername>.<random>.<timestamp>.txt`
+The default filename is `PowerShell_transcript.<computername>.<random>.<timestamp>.txt`.
 
 Starting in Windows PowerShell 5.0, `Start-Transcript` includes the hostname in the generated file
 name of all transcripts. The filename also includes random characters in names to prevent potential
@@ -98,6 +98,7 @@ Start-Transcript
 The full path to the transcript file is stored in the `$Transcript` preference variable. For more
 information about the `$Transcript` preference variable, see
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md#transcript).
+
 ### Example 4: Start a transcript using a relative path on Windows systems
 
 When you use a relative path with the **OutputDirectory** parameter on Windows, the path is relative
@@ -110,7 +111,6 @@ Start-Transcript -Path .\transcripts
 ```Output
 Transcript started, output file is C:\Users\username\Documents\.\transcripts\PowerShell_transcript.HOSTNAME.8S6RpEfN.20251105152247.txt
 ```
-
 
 ## PARAMETERS
 
@@ -258,8 +258,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet isn't run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

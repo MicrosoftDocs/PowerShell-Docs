@@ -388,6 +388,8 @@ protocols.
    `Get-CimInstance`?
 1. How do you close or remove CIM sessions?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 - [about_WMI][about-wmi]
@@ -411,3 +413,4 @@ remoting enables scalable automation across multiple computers.
 [video-using-cim-cmdlets]: https://mikefrobbins.com/2013/09/12/phillyposh-user-group-meeting-presentation-follow-up-powershell-second-hop-problem-with-cimsessions/
 [cimsessions-with-fallback-to-dcom]: https://mikefrobbins.com/2014/08/28/powershell-function-to-create-cimsessions-to-remote-computers-with-fallback-to-dcom/
 [chapter-8]: 08-powershell-remoting.md
+[appendix]: 11-appendix.md

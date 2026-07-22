@@ -19,15 +19,15 @@ Sets a breakpoint on a line, command, or variable.
 ### Line (Default)
 
 ```
-Set-PSBreakpoint [-Action <ScriptBlock>] [[-Column] <Int32>] [-Line] <Int32[]> [-Script] <String[]>
- [-Runspace <Runspace>] [<CommonParameters>]
+Set-PSBreakpoint [-Action <ScriptBlock>] [[-Column] <Int32>] [-Line] <Int32[]>
+ [-Script] <String[]> [-Runspace <Runspace>] [<CommonParameters>]
 ```
 
 ### Command
 
 ```
-Set-PSBreakpoint [-Action <ScriptBlock>] -Command <String[]> [[-Script] <String[]>] [-Runspace <Runspace>]
- [<CommonParameters>]
+Set-PSBreakpoint [-Action <ScriptBlock>] -Command <String[]> [[-Script] <String[]>]
+ [-Runspace <Runspace>] [<CommonParameters>]
 ```
 
 ### Variable
@@ -241,7 +241,8 @@ When the **Action** parameter is used, the Action scriptblock runs at each break
 does not stop unless the scriptblock includes the `break` keyword. If you use the `continue`
 keyword in the scriptblock, execution resumes until the next breakpoint.
 
-For more information, see [about_Script_Blocks](../Microsoft.PowerShell.Core/About/about_Script_Blocks.md),
+For more information, see
+[about_Script_Blocks](../Microsoft.PowerShell.Core/About/about_Script_Blocks.md),
 [about_Break](../Microsoft.PowerShell.Core/About/about_Break.md), and
 [about_Continue](../Microsoft.PowerShell.Core/About/about_Continue.md).
 
@@ -351,6 +352,7 @@ Accept wildcard characters: False
 ```
 
 ### -Runspace
+
 Specifies the Id of a **Runspace** object so you can interact with breakpoints in the specified
 runspace.
 

@@ -21,75 +21,85 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 
 ```
 Invoke-RestMethod [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
- [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
- [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing]
+ [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>]
+ [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>]
+ [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
+ [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
  [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect]
  [-UnixSocket <UnixDomainSocketEndPoint>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [<CommonParameters>]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
+ [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
 
 ```
 Invoke-RestMethod [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
- [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
- [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing]
+ [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>]
+ [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>]
+ [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
+ [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
  [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect]
- [-UnixSocket <UnixDomainSocketEndPoint>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
- [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
- [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
+ [-UnixSocket <UnixDomainSocketEndPoint>] [-NoProxy] [-Body <Object>]
+ [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
+ [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck]
+ [<CommonParameters>]
 ```
 
 ### CustomMethod
 
 ```
 Invoke-RestMethod [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
- [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
- [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing]
+ [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>]
+ [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
- -CustomMethod <String> [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
- [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
- [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
- [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>]
+ [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
+ [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>] -CustomMethod <String>
+ [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>] [-Proxy <Uri>]
+ [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
+ [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
+ [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck]
+ [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
 
 ```
 Invoke-RestMethod [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
- [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
- [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing]
+ [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>]
+ [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
- -CustomMethod <String> [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
- [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>]
+ [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
+ [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>] -CustomMethod <String>
+ [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>] [-NoProxy]
+ [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
  [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
@@ -581,7 +591,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> [How secure is SecureString?](/dotnet/fundamentals/runtime-libraries/system-security-securestring#how-secure-is-securestring).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -935,7 +945,7 @@ is to have the results written to the file and to the pipeline.
 
 > [!NOTE]
 > When you use the **PassThru** parameter, the output is written to the pipeline but the file isn't
-> created. This is fixed in PowerShell 7.5-preview.4. For more information, see
+> created. This is fixed in PowerShell 7.5. For more information, see
 > [PowerShell Issue #15409](https://github.com/PowerShell/PowerShell/issues/15409).
 
 ```yaml

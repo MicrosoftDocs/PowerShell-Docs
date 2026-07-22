@@ -17,22 +17,22 @@ Creates a record of all or part of a PowerShell session to a text file.
 ### ByPath (Default)
 
 ```
-Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader]
- [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
+Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
 Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber]
- [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByOutputDirectory
 
 ```
 Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber]
- [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,8 +115,8 @@ Transcript started, output file is C:\Users\username\Documents\.\transcripts\Pow
 
 ### Example 5: Start a transcript using a relative path on non-Windows systems
 
-When you use a relative path with the **OutputDirectory** parameter on non-Windows systems, the path is relative
-to your home directory.
+When you use a relative path with the **OutputDirectory** parameter on non-Windows systems, the
+path is relative to your home directory.
 
 ```powershell
 Start-Transcript -Path ./transcripts

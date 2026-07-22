@@ -103,8 +103,10 @@ $PSDefaultParameterValues = @{
 
 Now when you run a `Show-Command` command, the new defaults are applied automatically. To use these
 default values in every PowerShell session, add the `$PSDefaultParameterValues` variable to your
-PowerShell profile. For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md)
-and [about_Parameters_Default_Values](../Microsoft.PowerShell.Core/About/about_Parameters_Default_Values.md).
+PowerShell profile. For more information, see
+[about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md)
+and
+[about_Parameters_Default_Values](../Microsoft.PowerShell.Core/About/about_Parameters_Default_Values.md).
 
 ### Example 5: Send output to a grid view
 
@@ -303,7 +305,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

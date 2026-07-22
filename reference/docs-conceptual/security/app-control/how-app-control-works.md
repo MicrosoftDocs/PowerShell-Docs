@@ -12,7 +12,9 @@ and PowerShell you're using.
 ## How PowerShell detects a system lockdown policy
 
 PowerShell detects both **AppLocker** and **App Control for Business** system
-wide polices. AppLocker is deprecated. App Control is the preferred application control system for Windows.
+wide polices. Microsoft is no longer investing in AppLocker. AppLocker will 
+only receive security fixes. App Control is the preferred application control
+system for Windows.
 
 ### Legacy App Control policy enforcement detection
 

@@ -20,16 +20,17 @@ Gets the properties of a specified item.
 ### Path (Default)
 
 ```
-Get-ItemProperty [-Path] <String[]> [[-Name] <String[]>] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
+Get-ItemProperty [-Path] <String[]> [[-Name] <String[]>] [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+ [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Get-ItemProperty -LiteralPath <String[]> [[-Name] <String[]>] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-UseTransaction]
- [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+ [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -100,8 +101,8 @@ PSCompatibleVersion     : 1.0,2.0
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with Windows PowerShell. To impersonate
-> another user, or elevate your credentials when running this cmdlet, use
+> This parameter is not supported by any providers installed with PowerShell. To impersonate another
+> user, or elevate your credentials when running this cmdlet, use
 > [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
@@ -252,10 +253,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -275,8 +276,8 @@ You can pipe a string that contains a path to this cmdlet.
 
 ### System.IO.DirectoryInfo
 
-This cmdlet returns an object for each item property that it gets. The object type depends on
-the object that is retrieved. For example, in a file system drive, it might return a file or folder.
+This cmdlet returns an object for each item property that it gets. The object type depends on the
+object that is retrieved. For example, in a file system drive, it might return a file or folder.
 
 ## NOTES
 

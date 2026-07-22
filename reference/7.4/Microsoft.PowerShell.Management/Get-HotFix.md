@@ -25,8 +25,8 @@ Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredent
 ### DESCRIPTION
 
 ```
-Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
- [<CommonParameters>]
+Get-HotFix [-Description <String[]>] [-ComputerName <String[]>]
+ [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,12 @@ The `Get-HotFix` command uses parameters to get hotfixes installed on remote com
 are filtered by a specified description string.
 
 ```powershell
-Get-HotFix -Description Security* -ComputerName Server01, Server02 -Credential Domain01\admin01
+$hotFixParams = @{
+    Description = "Security*"
+    ComputerName = "Server01", "Server02"
+    Credential = "Domain01\admin01"
+}
+Get-HotFix @hotFixParams
 ```
 
 `Get-HotFix` filters the output with the **Description** parameter and the string **Security** that
@@ -135,7 +140,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> [How secure is SecureString?](/dotnet/fundamentals/runtime-libraries/system-security-securestring#how-secure-is-securestring).
 
 ```yaml
 Type: System.Management.Automation.PSCredential

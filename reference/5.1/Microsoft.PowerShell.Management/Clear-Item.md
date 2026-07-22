@@ -20,31 +20,33 @@ Clears the contents of an item, but does not delete the item.
 ### Path (Default)
 
 ```
-Clear-Item [-Path] <String[]> [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+Clear-Item [-Path] <String[]> [-Force] [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Clear-Item -LiteralPath <String[]> [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+Clear-Item -LiteralPath <String[]> [-Force] [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Clear-Item` cmdlet clears the content of an item, but it does not delete the item.
-For example, the `Clear-Item` cmdlet can delete the value of a variable, but it does not delete the
-variable. The value that used to represent a cleared item is defined by each PowerShell provider.
-This cmdlet is similar to `Clear-Content`, but it works on aliases and variables, instead of files.
+The `Clear-Item` cmdlet clears the content of an item, but it does not delete the item. For example,
+the `Clear-Item` cmdlet can delete the value of a variable, but it does not delete the variable. The
+value that used to represent a cleared item is defined by each PowerShell provider. This cmdlet is
+similar to `Clear-Content`, but it works on aliases and variables, instead of files.
 
 ## EXAMPLES
 
 ### Example 1: Clear the value of a variable
 
-This command clears the value of the variable named `TestVar1`.
-The variable remains and is valid, but its value is set to `$null`.
-The variable name is prefixed with `Variable:` to indicate the PowerShell Variable provider.
+This command clears the value of the variable named `TestVar1`. The variable remains and is valid,
+but its value is set to `$null`. The variable name is prefixed with `Variable:` to indicate the
+PowerShell Variable provider.
 
 The alternate commands show that, to get the same result, you can switch to the PowerShell
 `Variable:` drive and then run the `Clear-Item` command.
@@ -77,9 +79,9 @@ Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with PowerShell.
-> To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
+> This parameter is not supported by any providers installed with PowerShell. To impersonate another
+> user, or elevate your credentials when running this cmdlet, use
+> [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -138,10 +140,9 @@ Accept wildcard characters: True
 ### -Force
 
 Indicates that the cmdlet clears items that cannot otherwise be changed, such as read- only aliases.
-The cmdlet cannot clear constants.
-Implementation varies from provider to provider.
-For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
-The cmdlet cannot override security restrictions, even when the **Force** parameter is used.
+The cmdlet cannot clear constants. Implementation varies from provider to provider. For more
+information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md). The
+cmdlet cannot override security restrictions, even when the **Force** parameter is used.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -182,7 +183,8 @@ typed. No characters are interpreted as wildcards. If the path includes escape c
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -198,9 +200,8 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to the items being cleared.
-Wildcard characters are permitted.
-This parameter is required, but the parameter name **Path** is optional.
+Specifies the path to the items being cleared. Wildcard characters are permitted. This parameter is
+required, but the parameter name **Path** is optional.
 
 ```yaml
 Type: System.String[]
@@ -216,9 +217,9 @@ Accept wildcard characters: True
 
 ### -UseTransaction
 
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+Includes the command in the active transaction. This parameter is valid only when a transaction is
+in progress. For more information, see
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -250,8 +251,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -267,10 +267,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

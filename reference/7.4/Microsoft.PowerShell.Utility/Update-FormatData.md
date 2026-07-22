@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/17/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-formatdata?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-FormatData
@@ -16,8 +16,8 @@ Updates the formatting data in the current session.
 ## SYNTAX
 
 ```
-Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,7 +37,8 @@ create custom format.ps1xml files to update formatting in the current session. Y
 PowerShell. This is useful when you have added or changed a formatting file, but do not want to
 interrupt the session.
 
-For more information about formatting files in PowerShell, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
+For more information about formatting files in PowerShell, see
+[about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
 
 ## EXAMPLES
 
@@ -58,8 +59,8 @@ Update-FormatData -AppendPath Trace.format.ps1xml, Log.format.ps1xml
 This command reloads the formatting files into the session, including two new files,
 `Trace.format.ps1xml` and `Log.format.ps1xml`.
 
-Because the command uses the **AppendPath** parameter, the formatting data in the new files is loaded
-after the formatting data from the built-in files.
+Because the command uses the **AppendPath** parameter, the formatting data in the new files is
+loaded after the formatting data from the built-in files.
 
 The **AppendPath** parameter is used because the new files contain formatting data for objects that
 are not referenced in the built-in files.
@@ -119,8 +120,8 @@ Specifies formatting files that this cmdlet adds to the session. The files are l
 PowerShell loads the built-in formatting files.
 
 When formatting .NET objects, PowerShell uses the first formatting definition that it finds for each
-.NET type. If you use the **PrependPath** parameter, PowerShell searches the data from the files that
-you are adding before it encounters the formatting data from the built-in files.
+.NET type. If you use the **PrependPath** parameter, PowerShell searches the data from the files
+that you are adding before it encounters the formatting data from the built-in files.
 
 Use this parameter to add a file that formats a .NET object that is also referenced in the built-in
 formatting files.
@@ -174,7 +175,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -190,10 +192,16 @@ This cmdlet returns no output.
 
 ## NOTES
 
-- `Update-FormatData` also updates the formatting data for commands in the session that were
-  imported from modules. If the formatting file for a module changes, you can run an
-  `Update-FormatData` command to update the formatting data for imported commands. You do not need
-  to import the module again.
+`Update-FormatData` also updates the formatting data for commands in the session that were imported
+from modules. If the formatting file for a module changes, you can run an `Update-FormatData`
+command to update the formatting data for imported commands. You do not need to import the module
+again.
+
+> [!WARNING]
+> Restricted endpoints, such as JEA, must not expose the `Update-FormatData` command. This command
+> allows you to add **ScriptBlock** elements to the formatting for a type. The **ScriptBlock** might
+> be evaluated in `FullLanguage` mode, even when the session is configured to use a more restrictive
+> language mode.
 
 ## RELATED LINKS
 

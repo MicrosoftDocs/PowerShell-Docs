@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/02/2026
+ms.date: 07/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -21,48 +21,54 @@ Finds text in strings and files.
 
 ```
 Select-String [-Culture <String>] [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch]
- [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
- [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+ [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>]
+ [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
+ [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### ObjectRaw
 
 ```
-Select-String [-Culture <String>] -InputObject <PSObject> [-Pattern] <String[]> -Raw [-SimpleMatch]
- [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
- [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] -InputObject <PSObject> [-Pattern] <String[]>
+ -Raw [-SimpleMatch] [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>]
+ [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
+ [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### Object
 
 ```
-Select-String [-Culture <String>] -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch]
- [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
- [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] -InputObject <PSObject> [-Pattern] <String[]>
+ [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>]
+ [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
+ [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### FileRaw
 
 ```
-Select-String [-Culture <String>] [-Pattern] <String[]> [-Path] <String[]> -Raw [-SimpleMatch]
- [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
- [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> [-Path] <String[]> -Raw
+ [-SimpleMatch] [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>]
+ [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
+ [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFileRaw
 
 ```
-Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch]
- [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
- [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> -Raw
+ [-SimpleMatch] [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>]
+ [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
+ [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFile
 
 ```
-Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch]
- [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
- [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]>
+ [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>]
+ [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
+ [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,6 +89,11 @@ match is found.
 You can also specify that `Select-String` should expect a particular character encoding, such as
 when you're searching files of Unicode text. `Select-String` uses the byte-order-mark (BOM) to
 detect the encoding format of the file. If the file has no BOM, it assumes the encoding is UTF8.
+
+> [!NOTE]
+> Poorly designed or maliciously crafted regular expressions can create denial of service
+> conditions. For more information, see the _Regular expression safety_ section of
+> [about_Comparison_Operators](/powershell/module/microsoft.powershell.core/about/about_comparison_operators#regular-expression-safety).
 
 ## EXAMPLES
 
@@ -630,7 +641,8 @@ Accept wildcard characters: False
 Specifies the path to the files to be searched. The value of the **LiteralPath** parameter is used
 exactly as it's typed. No characters are interpreted as wildcards. If the path includes escape
 characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
-interpret any characters as escape sequences. For more information, see
+interpret any characters as escape sequences. Paths containing spaces must be enclosed in quotes.
+For more information, see
 [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
@@ -687,10 +699,10 @@ Accept wildcard characters: False
 ### -Path
 
 Specifies the path to the files to search. Wildcards are permitted. The default location is the
-local directory.
-
-Specify files in the directory, such as `log1.txt`, `*.doc`, or `*.*`. If you specify only a
-directory, the command fails.
+local directory. Specify files in the directory, such as `log1.txt`, `*.doc`, or `*.*`. If you
+specify only a directory, the command fails. Paths containing spaces must be enclosed in quotes. For
+more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]

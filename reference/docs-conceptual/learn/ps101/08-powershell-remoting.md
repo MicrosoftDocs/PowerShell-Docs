@@ -380,6 +380,8 @@ running multiple commands against the same remote computer.
 1. What's the difference between the objects returned by cmdlets run locally and objects returned
    when the same cmdlets are executed on remote computers using `Invoke-Command`?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 - [about_Remote][about-remote]
@@ -404,3 +406,4 @@ one-liners and scripts into reliable tools.
 [about-remote-variables]: /powershell/module/microsoft.powershell.core/about/about_remote_variables
 [remoting-faq]: /powershell/scripting/learn/remoting/powershell-remoting-faq
 [chapter-9]: 09-functions.md
+[appendix]: 11-appendix.md

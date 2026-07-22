@@ -22,19 +22,19 @@ file.
 ### Delimiter (Default)
 
 ```
-Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-Append] [[-Delimiter] <Char>] [-IncludeTypeInformation]
- [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force]
+ [-NoClobber] [-Encoding <Encoding>] [-Append] [[-Delimiter] <Char>]
+ [-IncludeTypeInformation] [-NoTypeInformation] [-QuoteFields <String[]>]
+ [-UseQuotes <QuoteKind>] [-NoHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
- [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force]
+ [-NoClobber] [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation]
+ [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,7 +56,7 @@ file.
 
 ```powershell
 Get-Process -Name WmiPrvSE |
-    Select-Object -Property BasePriority,Id,SessionId,WorkingSet |
+    Select-Object -Property BasePriority, Id, SessionId, WorkingSet |
     Export-Csv -Path .\WmiData.csv -NoTypeInformation
 Import-Csv -Path .\WmiData.csv
 ```
@@ -145,11 +145,12 @@ Get-Content -Path .\Processes.csv
 The `Get-Culture` cmdlet uses the nested properties **TextInfo** and **ListSeparator** and displays
 the current culture's default list separator. The `Get-Process` cmdlet gets **Process** objects. The
 process objects are sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv` converts the
-process objects to a series of CSV strings. The **Path** parameter specifies that the `Processes.csv`
-file is saved in the current directory. The **UseCulture** parameter uses the current culture's
-default list separator as the delimiter. The **NoTypeInformation** parameter removes the **#TYPE**
-information header from the CSV output and is not required in PowerShell 6. The `Get-Content` cmdlet
-uses the **Path** parameter to display the file located in the current directory.
+process objects to a series of CSV strings. The **Path** parameter specifies that the
+`Processes.csv` file is saved in the current directory. The **UseCulture** parameter uses the
+current culture's default list separator as the delimiter. The **NoTypeInformation** parameter
+removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.
+The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current
+directory.
 
 ### Example 5: Export processes with type information
 
@@ -180,13 +181,13 @@ This example describes how to export objects to a CSV file and use the **Append*
 objects to an existing file.
 
 ```powershell
-$AppService = Get-Service -DisplayName *Application* | 
+$AppService = Get-Service -DisplayName *Application* |
     Select-Object -Property DisplayName, Status
 
 $AppService | Export-Csv -Path .\Services.Csv -NoTypeInformation
 Get-Content -Path .\Services.Csv
 
-$WinService = Get-Service -DisplayName *Windows* | 
+$WinService = Get-Service -DisplayName *Windows* |
     Select-Object -Property DisplayName, Status
 
 $WinService | Export-Csv -Path .\Services.csv -NoTypeInformation -Append
@@ -256,10 +257,10 @@ Get-Content -Path .\FTDateTime.csv
 The `Get-Date` cmdlet gets the **DateTime** object. The object is sent down the pipeline to the
 `Select-Object` cmdlet. `Select-Object` uses the **Property** parameter to select a subset of object
 properties. The object is sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv` converts
-the object to a CSV format. The **Path** parameter specifies that the `DateTime.csv` file is saved in
-the current directory. The **NoTypeInformation** parameter removes the **#TYPE** information header
-from the CSV output and is not required in PowerShell 6. The `Get-Content` cmdlet uses the **Path**
-parameter to display the CSV file located in the current directory.
+the object to a CSV format. The **Path** parameter specifies that the `DateTime.csv` file is saved
+in the current directory. The **NoTypeInformation** parameter removes the **#TYPE** information
+header from the CSV output and is not required in PowerShell 6. The `Get-Content` cmdlet uses the
+**Path** parameter to display the CSV file located in the current directory.
 
 When the `Format-Table` cmdlet is used within the pipeline to select properties unexpected results
 are received. `Format-Table` sends table format objects down the pipeline to the `Export-Csv` cmdlet
@@ -365,7 +366,7 @@ the file located in the current directory.
 This example converts a **DateTime** object to a CSV string.
 
 ```powershell
-Get-Date | Export-Csv  -QuoteFields "DateTime","Date" -Path .\FTDateTime.csv
+Get-Date | Export-Csv -QuoteFields "DateTime", "Date" -Path .\FTDateTime.csv
 Get-Content -Path .\FTDateTime.csv
 ```
 
@@ -379,7 +380,7 @@ DateTime,"Thursday, August 22, 2019 11:27:34 AM","8/22/2019 12:00:00 AM",22,Thur
 This example converts a **DateTime** object to a CSV string.
 
 ```powershell
-Get-Date | Export-Csv  -UseQuotes AsNeeded -Path .\FTDateTime.csv
+Get-Date | Export-Csv -UseQuotes AsNeeded -Path .\FTDateTime.csv
 Get-Content -Path .\FTDateTime.csv
 ```
 
@@ -401,7 +402,7 @@ $person1 = @{
 
 $person2 = @{
     Name = 'Jane Smith'
-    Number = 1
+    Number = 2
 }
 
 $allPeople = $person1, $person2
@@ -449,6 +450,10 @@ Use this parameter so that `Export-Csv` adds CSV output to the end of the specif
 this parameter, `Export-Csv` replaces the file contents without warning.
 
 This parameter was introduced in Windows PowerShell 3.0.
+
+Beginning with PowerShell 7.7, using the **Append** parameter with the **NoHeader** parameter throws
+an error message instead of accepting the invalid combination and creating a headerless CSV file
+that causes subsequent append operations to fail.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -503,7 +508,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2A).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.

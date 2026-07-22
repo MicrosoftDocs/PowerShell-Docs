@@ -20,8 +20,8 @@ Renames an item in a PowerShell provider namespace.
 ### ByPath (Default)
 
 ```
-Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm]  [<CommonParameters>]
+Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
 ### ByLiteralPath
@@ -78,8 +78,8 @@ Use the `Move-Item` cmdlet, instead.
 
 ### Example 3: Rename a registry key
 
-This example renames a registry key from **Advertising** to **Marketing**. When the command is complete,
-the key is renamed, but the registry entries in the key are unchanged.
+This example renames a registry key from **Advertising** to **Marketing**. When the command is
+complete, the key is renamed, but the registry entries in the key are unchanged.
 
 ```powershell
 Rename-Item -Path "HKLM:\Software\MyCompany\Advertising" -NewName "Marketing"

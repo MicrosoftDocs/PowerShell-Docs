@@ -18,28 +18,30 @@ Gets events from event logs and event tracing log files on local and remote comp
 
 ```
 Get-WinEvent [[-LogName] <String[]>] [-MaxEvents <Int64>] [-ComputerName <String>]
- [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
+ [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest]
+ [<CommonParameters>]
 ```
 
 ### ListLogSet
 
 ```
-Get-WinEvent [-ListLog] <String[]> [-ComputerName <String>] [-Credential <PSCredential>] [-Force]
- [<CommonParameters>]
+Get-WinEvent [-ListLog] <String[]> [-ComputerName <String>] [-Credential <PSCredential>]
+ [-Force] [<CommonParameters>]
 ```
 
 ### ListProviderSet
 
 ```
-Get-WinEvent [-ListProvider] <String[]> [-ComputerName <String>] [-Credential <PSCredential>]
- [<CommonParameters>]
+Get-WinEvent [-ListProvider] <String[]> [-ComputerName <String>]
+ [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### GetProviderSet
 
 ```
 Get-WinEvent [-ProviderName] <String[]> [-MaxEvents <Int64>] [-ComputerName <String>]
- [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
+ [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest]
+ [<CommonParameters>]
 ```
 
 ### FileSet
@@ -150,9 +152,9 @@ with the asterisk (`*`) wildcard to display each property.
 
 ### Example 3: Configure the classic Security log
 
-This command gets an **EventLogConfiguration** object that represents the classic **Security** log. The
-object is then used to configure settings for the log, such as max file size, file path, and whether the
-log is enabled.
+This command gets an **EventLogConfiguration** object that represents the classic **Security** log.
+The object is then used to configure settings for the log, such as max file size, file path, and
+whether the log is enabled.
 
 ```powershell
 $log = Get-WinEvent -ListLog Security
@@ -195,11 +197,12 @@ ProviderLatency                : 1000
 ProviderControlGuid            :
 ```
 
-The `Get-WinEvent` cmdlet uses the **ListLog** parameter to specify the **Security** log. The object is
-saved to a variable. The **MaximumSizeInBytes** property is set to 1 gigabyte on the object. The
+The `Get-WinEvent` cmdlet uses the **ListLog** parameter to specify the **Security** log. The object
+is saved to a variable. The **MaximumSizeInBytes** property is set to 1 gigabyte on the object. The
 **SaveChanges** method is called to push the change to the system inside of a try block to handle
-access violations. The `Get-WinEvent` cmdlet is called again on the **Security** log and piped to the
-`Format-List` cmdlet to verify that the **MaximumSizeInBytes** property has been saved on the machine.
+access violations. The `Get-WinEvent` cmdlet is called again on the **Security** log and piped to
+the `Format-List` cmdlet to verify that the **MaximumSizeInBytes** property has been saved on the
+machine.
 
 ### Example 4: Get event logs from a server
 
@@ -232,7 +235,8 @@ is a property of the object with a non-null value.
 
 This example gets objects that represent the **Application** event logs on three computers:
 Server01, Server02, and Server03. The `foreach` keyword is used because the **ComputerName**
-parameter accepts only one value. For more information, see [about_Foreach](../Microsoft.PowerShell.Core/about/about_Foreach.md).
+parameter accepts only one value. For more information, see
+[about_Foreach](../Microsoft.PowerShell.Core/about/about_Foreach.md).
 
 ```powershell
 $S = 'Server01', 'Server02', 'Server03'

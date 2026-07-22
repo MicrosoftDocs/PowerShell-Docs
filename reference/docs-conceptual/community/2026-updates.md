@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2026.
-ms.date: 04/01/2026
+ms.date: 07/02/2026
 title: What's New in PowerShell-Docs for 2026
 ---
 # What's new in PowerShell Docs for 2026
@@ -13,7 +13,102 @@ get started.
 
 <!-- Link references -->
 [01]: contributing/overview.md
-<!--------------------->
+<!-- --------------- -->
+
+## 2026-June
+
+Updated content
+
+- Release notes for monthly maintenance releases of PowerShell
+- Major cleanup of PSScriptAnalyzer
+  [rules documentation](/powershell/utility-modules/psscriptanalyzer/rules/readme), including
+  refactoring the rules table. The rules table now shows which rules are always enabled, and which
+  rules can be configured or disabled.
+
+GitHub stats
+
+- 46 PRs merged (8 from Community)
+- 42 issues opened (11 from Community, 31 Spam)
+- 43 issues closed (12 from Community, 31 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+Special thanks to @ArieHein for another large PR to clean up 160 articles.
+
+|       GitHub Id       | PRs merged | Issues opened |
+| --------------------- | :--------: | :-----------: |
+| ArieHein              |     1      |               |
+| baardhermansen        |     4      |               |
+| michael-hollingsworth |     1      |               |
+| naffee                |     1      |               |
+| PtJade-Ceramic        |     1      |       1       |
+| trashCode             |            |       2       |
+
+## 2026-May
+
+Updated content
+
+- Updated release notes for minor releases of 7.4, 7.5, 7.6, and 7.7-preview.
+- Update release notes for Microsoft.PowerShell.PSResourceGet v1.3.0-preview1
+- Start work on PSScriptAnalyzer rule documentation refresh
+  - Standardizing the structure and formatting
+  - Add links to related documentation
+  - Grammar and style edits
+
+GitHub stats
+
+- 30 PRs merged (4 from Community)
+- 44 issues opened (10 from Community, 33 Spam)
+- 46 issues closed (10 from Community, 33 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| Anyplace7803    |     1      |               |
+| exchange12rocks |     1      |               |
+| Gijsreyn        |     1      |               |
+| jsuther1974     |     1      |               |
+
+## 2026-April
+
+New content
+
+- [about_Error_Handling](/powershell/module/microsoft.powershell.core/about/about_error_handling)
+  - Special thanks to @SufficientDaikon for their hard work creating this new article and updating
+    all related content.
+- PowerShell 7.7-preview.1 release
+  - [What's New in PowerShell 7.7 - PowerShell](/powershell/scripting/whats-new/what-s-new-in-powershell-77)
+  - Now, you can select PowerShell 7.7 from the version selector to view documentation PowerShell
+    7.7 cmdlet reference.
+
+Updated content
+
+- Updated release notes for minor releases of 7.4, 7.5, and 7.6.
+
+GitHub stats
+
+- 26 PRs merged (4 from Community)
+- 40 issues opened (8 from Community, 29 Spam)
+- 40 issues closed (9 from Community, 29 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|    GitHub Id     | PRs merged | Issues opened |
+| ---------------- | :--------: | :-----------: |
+| Anyplace7803     |     1      |               |
+| Gijsreyn         |     1      |               |
+| MukundaKatta     |     1      |               |
+| SufficientDaikon |     1      |       1       |
 
 ## 2026-March
 

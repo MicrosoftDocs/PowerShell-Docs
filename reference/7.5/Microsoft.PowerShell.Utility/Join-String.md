@@ -17,32 +17,33 @@ Combines objects from the pipeline into a single string.
 ### Default (Default)
 
 ```
-Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
- [-OutputSuffix <String>] [-UseCulture] [-InputObject <PSObject[]>] [<CommonParameters>]
+Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>]
+ [-OutputPrefix <String>] [-OutputSuffix <String>] [-UseCulture]
+ [-InputObject <PSObject[]>] [<CommonParameters>]
 ```
 
 ### SingleQuote
 
 ```
-Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
- [-OutputSuffix <String>] [-SingleQuote] [-UseCulture] [-InputObject <PSObject[]>]
- [<CommonParameters>]
+Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>]
+ [-OutputPrefix <String>] [-OutputSuffix <String>] [-SingleQuote] [-UseCulture]
+ [-InputObject <PSObject[]>] [<CommonParameters>]
 ```
 
 ### DoubleQuote
 
 ```
-Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
- [-OutputSuffix <String>] [-DoubleQuote] [-UseCulture] [-InputObject <PSObject[]>]
- [<CommonParameters>]
+Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>]
+ [-OutputPrefix <String>] [-OutputSuffix <String>] [-DoubleQuote] [-UseCulture]
+ [-InputObject <PSObject[]>] [<CommonParameters>]
 ```
 
 ### Format
 
 ```
-Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
- [-OutputSuffix <String>] [-FormatString <String>] [-UseCulture] [-InputObject <PSObject[]>]
- [<CommonParameters>]
+Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>]
+ [-OutputPrefix <String>] [-OutputSuffix <String>] [-FormatString <String>] [-UseCulture]
+ [-InputObject <PSObject[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

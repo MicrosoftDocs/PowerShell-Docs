@@ -18,7 +18,8 @@ Gets a random number, or selects objects randomly from a collection.
 ### RandomNumberParameterSet (Default)
 
 ```
-Get-SecureRandom [[-Maximum] <Object>] [-Minimum <Object>] [-Count <Int32>] [<CommonParameters>]
+Get-SecureRandom [[-Maximum] <Object>] [-Minimum <Object>] [-Count <Int32>]
+ [<CommonParameters>]
 ```
 
 ### RandomListItemParameterSet
@@ -205,8 +206,8 @@ In this example, the **InputObject** parameter specifies an array that contains 
 Get-SecureRandom -InputObject @('a','',$null)
 ```
 
-`Get-SecureRandom` returns either `a`, empty string, or `$null`. The empty string displays as a blank
-line and `$null` returns to a PowerShell prompt.
+`Get-SecureRandom` returns either `a`, empty string, or `$null`. The empty string displays as a
+blank line and `$null` returns to a PowerShell prompt.
 
 ## PARAMETERS
 

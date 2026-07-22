@@ -872,6 +872,8 @@ In this chapter, you learned the basics of writing functions in PowerShell, incl
 1. How do you turn a nonterminating error into a terminating one?
 1. Why should you add comment-based help to your functions?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 - [about_Functions][about_Functions]
@@ -901,3 +903,4 @@ sharing, and maintaining reusable PowerShell tooling.
 [Video: PowerShell Toolmaking with Advanced Functions and Script Modules]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/
 [Pascal case]: /dotnet/standard/design-guidelines/capitalization-conventions
 [chapter-10]: 10-script-modules.md
+[appendix]: 11-appendix.md

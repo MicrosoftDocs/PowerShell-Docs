@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows
-ms.date: 03/30/2026
+ms.date: 07/20/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -12,7 +12,7 @@ Windows PowerShell 5.1. For more information, see [PowerShell 7 module compatibi
 
 There are multiple package versions of PowerShell 7 that can be installed. This article focuses on
 installing the latest stable release package. For more information about the package versions, see
-the [PowerShell Support Lifecycle][26] article.
+the [PowerShell Support Lifecycle][25] article.
 
 ## Choose an installation method
 
@@ -21,13 +21,12 @@ different scenarios and workflows. Choose the method that best suits your needs.
 
 - [WinGet][11] - Recommended way to install PowerShell on Windows clients
 - [MSI package][09] - Best choice for Windows Servers and enterprise deployment scenarios
-- [ZIP package][12] - Easiest way to _side load_ or install multiple versions
-  - Use this method for Windows Nano Server, Windows IoT, and Arm-based systems
+- [MSIX package][10] - An easy way to install for casual users of PowerShell but has limitations
+- [ZIP package][12] - Easiest way to _side load_ or install multiple versions or install on Windows
+  Server Core, Windows IoT, and Arm-based systems
 - [.NET Global tool][08] - A good choice for .NET developers that install and use other global tools
-- [Microsoft Store package][10] - An easy way to install for casual users of PowerShell but has
-  limitations
 
-### Install PowerShell using WinGet (recommended)
+### Install PowerShell using WinGet
 
 <a id="winget"></a>WinGet, the Windows Package Manager, is a command-line tool that enables you to
 discover, install, upgrade, remove, and configure applications on Windows client computers. This
@@ -46,30 +45,39 @@ Use the following `winget` commands to install PowerShell:
 Search for the latest version of PowerShell
 
 ```powershell
-winget search --id Microsoft.PowerShell
+winget search --id Microsoft.PowerShell --exact
 ```
 
 ```Output
 Name               Id                           Version   Source
 -----------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.6.0.0   winget
-PowerShell Preview Microsoft.PowerShell.Preview 7.6.0.101 winget
+PowerShell         Microsoft.PowerShell         7.6.4.0   winget
 ```
 
-Install PowerShell 7:
+Beginning with the winget package for PowerShell 7.6.0, winget installs the MSIX package by default.
+
+Install the PowerShell 7 MSIX package:
 
 ```powershell
 winget install --id Microsoft.PowerShell --source winget
 ```
 
-If you want to install PowerShell 7 Preview, use the following command:
+Use the following command to install the PowerShell 7 MSI package:
+
+```powershell
+winget install --id Microsoft.PowerShell --source winget --installer-type wix
+```
+
+Alternatively, you can manually download and install the [MSI package][09].
+
+Use the following command to install PowerShell 7.7-preview packages:
 
 ```powershell
 winget install --id Microsoft.PowerShell.Preview --source winget
 ```
 
-> [!NOTE]
-> On systems using the Arm64 processor, `winget` installs the Microsoft Store (MSIX) package.
+Beginning with the PowerShell 7.7.0 release, there is no MSI package available. WinGet only installs
+the MSIX package.
 
 ### Install the MSI package
 
@@ -78,19 +86,12 @@ package from GitHub.
 
 Latest stable release:
 
-- [PowerShell-7.6.0-win-x64.msi][15]
-- [PowerShell-7.6.0-win-arm64.msi][13]
-
-<!-- Update the links below to the latest preview release when available.
-Latest Preview release:
-
-- [PowerShell-7.6.0-rc.1-win-x64.msi][20]
-- [PowerShell-7.6.0-rc.1-win-arm64.msi][19]
--->
+- [PowerShell-7.6.4-win-x64.msi][17]
+- [PowerShell-7.6.4-win-arm64.msi][15]
 
 Once downloaded, double-click the installer file and follow the prompts.
 
-### Install the MSI package from the command line
+### Install the MSI package with command-line options
 
 MSI packages can be installed from the command line allowing administrators to deploy packages
 without user interaction. The MSI package includes the following properties to control the
@@ -129,18 +130,29 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.6.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1
+$msiParams = @(
+    '/package PowerShell-7.6.4-win-x64.msi'
+    '/quiet'
+    'ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1'
+    'ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1'
+    'ENABLE_PSREMOTING=1'
+    'REGISTER_MANIFEST=1'
+    'USE_MU=1'
+    'ENABLE_MU=1'
+    'ADD_PATH=1'
+)
+msiexec.exe @msiParams
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see [Command line options][05].
 
-### Install from the ZIP package
+### Install the ZIP package
 
 <a id="zip"></a>PowerShell binary ZIP archives are provided to enable advanced deployment scenarios.
-Download one of the following ZIP archives from the [current release][22] page.
+Download one of the following ZIP archives from the [current release][21] page.
 
-- [PowerShell-7.6.0-win-x64.zip][16]
-- [PowerShell-7.6.0-win-arm64.zip][14]
+- [PowerShell-7.6.4-win-x64.zip][18]
+- [PowerShell-7.6.4-win-arm64.zip][16]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -166,10 +178,10 @@ The dotnet tool installer adds `$HOME\.dotnet\tools` to your `$Env:PATH` environ
 However, the currently running shell doesn't have the updated `$Env:PATH`. You can start PowerShell
 from a new shell by typing `pwsh`.
 
-### Install from the Microsoft Store
+### Install the MSIX package
 
-<a id="msstore"></a>PowerShell can be installed from the Microsoft Store. You can find the
-PowerShell release in the [Microsoft Store][23] site or in the Store application in Windows.
+<a id="msstore"></a>PowerShell can be installed from the [Microsoft Store][22] or by manually
+downloading the MSIX package.
 
 Benefits of the Microsoft Store package:
 
@@ -177,12 +189,26 @@ Benefits of the Microsoft Store package:
 - Integrates with other software distribution mechanisms like Intune and Configuration Manager
 - Can install on Windows systems using x64 or Arm64 processors
 
-#### Limitations of a Store-based installation
+To manually install the MSIX package, download one of the following packages from the GitHub
+releases page and double-click the file to install it.
+
+- Next LTS - [PowerShell-7.6.4.msixbundle][19]
+- Latest stable - [PowerShell-7.5.9.msixbundle][14]
+- Current LTS - [PowerShell-7.4.18.msixbundle][13]
+- Current preview - [PowerShellPreview-7.7.0-preview.3.msixbundle  ][20]
+
+Alternatively, you can use the following command to install the MSIX package from the command line:
+
+```powershell
+Add-AppxPackage -Path ".\PowerShell-7.6.4.msixbundle"
+```
+
+#### Limitations of a MSIX-based installation
 
 Store-based installations are installed for a single user. There is no option to install it for all
-users. By default, Microsoft Store packages run in an application sandbox that virtualizes access to
-some filesystem and registry locations. Changes to virtualized file and registry locations don't
-persist outside of the application sandbox.
+users. Microsoft Store packages run in an application sandbox that virtualizes access to some
+filesystem and registry locations. Changes to virtualized file and registry locations don't persist
+outside of the application sandbox.
 
 Store-based installations don't support PowerShell remoting. The application sandbox blocks all
 changes to the application's root folder. Any system-level configuration settings stored in
@@ -198,11 +224,15 @@ need write access to `$PSHOME`.
 - `Enable-ExperimentalFeature -Scope AllUsers`
 - `Set-ExecutionPolicy -Scope LocalMachine`
 
-For more information, see [Understanding how packaged desktop apps run on Windows][06].
+For MSIX-based installations, you can't create or modify the all-users profile scripts
+`$PROFILE.AllUsersAllHosts` and `$PROFILE.AllUsersCurrentHost` because those profiles must be
+stored in `$PSHOME`. Current-user profiles are still supported.
 
-Beginning in PowerShell 7.2, the PowerShell package is now exempt from file and registry
-virtualization. Changes to virtualized file and registry locations now persist outside of the
-application sandbox. However, changes to the application's root folder are still blocked.
+The PowerShell package is exempt from file and registry virtualization. Changes to virtualized file
+and registry locations now persist outside of the application sandbox. However, changes to the
+application's root folder are still blocked.
+
+For more information, see [Understanding how packaged desktop apps run on Windows][06].
 
 > [!IMPORTANT]
 > You must be running on Windows build 1903 or higher for this exemption to work.
@@ -225,7 +255,7 @@ to your `$Env:PATH` environment variable.
 The following screenshot shows multiple versions of PowerShell in the Start Menu. Select the item
 labeled **PowerShell 7**.
 
-![PowerShell in the Start Menu.][24]
+![PowerShell in the Start Menu.][23]
 
 The selected entry is for PowerShell 7. Preview versions of PowerShell 7 install side-by-side with
 stable versions. Select the item labeled **PowerShell 7-preview** to start the preview version.
@@ -241,7 +271,7 @@ PowerShell 7 supports updates through Microsoft Update. When you enable this fea
 the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
 that's with Windows Update for Business, WSUS, Microsoft Endpoint Configuration Manager, or the
 interactive MU dialog in **Settings**. For more information, see the
-[PowerShell Microsoft Update FAQ][25].
+[PowerShell Microsoft Update FAQ][24].
 
 If you want to upgrade to the latest version of PowerShell 7 before it's available through Microsoft
 Update, you should use the same install method you used when you first installed PowerShell. Newer
@@ -253,14 +283,12 @@ If you aren't sure how PowerShell was installed, you can check the value of the 
 which always points to the directory containing PowerShell that the current session is running.
 
 - If the value is `$HOME\.dotnet\tools`, PowerShell was installed with the [.NET Global tool][08].
-- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was installed as an [MSI package][09]
-  or with [WinGet][11] on a computer with an x64 processor.
-- If the value starts with `$Env:ProgramFiles\WindowsApps\`, PowerShell was installed as a
-  [Microsoft Store package][10] or with [WinGet][11] on computer with an ARM processor.
+- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was probably installed using the
+  [MSI package][09]. You can verify this by looking for PowerShell in the **Programs and Features**
+  Control Panel.
+- If the value starts with `$Env:ProgramFiles\WindowsApps\`, PowerShell was installed using the
+  [MSIX package][10].
 - If the value is anything else, it's likely that PowerShell was installed as a [ZIP package][12].
-
-If you installed via the MSI package, that information also appears in the
-**Programs and Features** Control Panel.
 
 To determine whether PowerShell may be upgraded with WinGet, run the following command:
 
@@ -274,6 +302,10 @@ following command to upgrade PowerShell using WinGet:
 ```powershell
 winget upgrade --id Microsoft.PowerShell
 ```
+
+If available in the new version, WinGet uses the same package format (MSI or MSIX) that was used to
+install the current version of PowerShell. Alternatively, you can manually download and install
+the package you want.
 
 ## Uninstall PowerShell 7
 
@@ -323,12 +355,16 @@ can't support those methods.
 [10]: #msstore
 [11]: #winget
 [12]: #zip
-[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/PowerShell-7.6.0-win-arm64.msi
-[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/PowerShell-7.6.0-win-arm64.zip
-[15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/PowerShell-7.6.0-win-x64.msi
-[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/PowerShell-7.6.0-win-x64.zip
-[22]: https://github.com/PowerShell/PowerShell/releases/latest
-[23]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
-[24]: media/install-powershell-on-windows/powershell-start-menu.png
-[25]: microsoft-update-faq.yml
-[26]: PowerShell-Support-Lifecycle.md
+[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.18/PowerShell-7.4.18.msixbundle
+[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.9/PowerShell-7.5.9.msixbundle
+[15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4-win-arm64.msi
+[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4-win-arm64.zip
+[17]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4-win-x64.msi
+[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4-win-x64.zip
+[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.4/PowerShell-7.6.4.msixbundle
+[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.7.0-preview.3/PowerShellPreview-7.7.0-preview.3.msixbundle
+[21]: https://github.com/PowerShell/PowerShell/releases/latest
+[22]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
+[23]: media/install-powershell-on-windows/powershell-start-menu.png
+[24]: microsoft-update-faq.yml
+[25]: PowerShell-Support-Lifecycle.md

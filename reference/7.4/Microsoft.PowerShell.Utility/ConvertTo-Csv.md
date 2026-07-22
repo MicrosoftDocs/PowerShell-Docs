@@ -11,7 +11,6 @@ title: ConvertTo-Csv
 # ConvertTo-Csv
 
 ## SYNOPSIS
-
 Converts .NET objects into a series of character-separated value (CSV) strings.
 
 ## SYNTAX
@@ -27,8 +26,9 @@ ConvertTo-Csv [-InputObject] <PSObject> [[-Delimiter] <Char>] [-IncludeTypeInfor
 ### UseCulture
 
 ```
-ConvertTo-Csv [-InputObject] <PSObject> [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
- [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader] [<CommonParameters>]
+ConvertTo-Csv [-InputObject] <PSObject> [-UseCulture] [-IncludeTypeInformation]
+ [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,7 +90,8 @@ This example converts the Windows event log for PowerShell to a series of CSV st
 
 ```powershell
 (Get-Culture).TextInfo.ListSeparator
-Get-WinEvent -LogName 'PowerShellCore/Operational' | ConvertTo-Csv -UseCulture -NoTypeInformation
+Get-WinEvent -LogName 'PowerShellCore/Operational' |
+    ConvertTo-Csv -UseCulture -NoTypeInformation
 ```
 
 ```Output

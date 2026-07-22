@@ -30,17 +30,18 @@ Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
 ### ByContent
 
 ```
-Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<CommonParameters>]
+Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
-The `Get-AuthenticodeSignature` cmdlet gets information about the Authenticode signature for a
-file or file content as a byte array. If the file is both embedded signed and Windows catalog
-signed, the Windows catalog signature is used. If the file is not signed, the information is
-retrieved, but the fields are blank.
+The `Get-AuthenticodeSignature` cmdlet gets information about the Authenticode signature for a file
+or file content as a byte array. If the file is both embedded signed and Windows catalog signed, the
+Windows catalog signature is used. If the file is not signed, the information is retrieved, but the
+fields are blank.
 
 ## EXAMPLES
 
@@ -66,7 +67,8 @@ omitted.
 ### Example 3: Get only valid Authenticode signatures for multiple files
 
 ```powershell
-Get-ChildItem $PSHOME\*.* | ForEach-Object {Get-AuthenticodeSignature $_} |
+Get-ChildItem $PSHOME\*.* |
+    ForEach-Object {Get-AuthenticodeSignature $_} |
     Where-Object {$_.Status -eq "Valid"}
 ```
 
@@ -101,9 +103,9 @@ example, the file extension is specified along with the content of the file.
 
 ### -Content
 
-Contents of a file as a byte array for which the Authenticode signature is retrieved. This
-parameter must be used with **SourcePathOrExtension** parameter. Prior to PowerShell 7.4, the
-contents of the file must be in Unicode (UTF-16LE) format.
+Contents of a file as a byte array for which the Authenticode signature is retrieved. This parameter
+must be used with **SourcePathOrExtension** parameter. Prior to PowerShell 7.4, the contents of the
+file must be in Unicode (UTF-16LE) format.
 
 ```yaml
 Type: System.Byte[]

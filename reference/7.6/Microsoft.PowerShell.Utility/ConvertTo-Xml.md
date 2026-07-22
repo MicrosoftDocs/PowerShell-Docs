@@ -16,8 +16,8 @@ Creates an XML-based representation of an object.
 ## SYNTAX
 
 ```
-ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-As <String>]
- [<CommonParameters>]
+ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation]
+ [-As <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,10 +30,10 @@ When you pipe multiple objects to `ConvertTo-Xml` or use the **InputObject** par
 multiple objects, `ConvertTo-Xml` returns a single, in-memory XML document that includes
 representations of all the objects.
 
-This cmdlet is similar to [Export-Clixml](./Export-Clixml.md) except that `Export-Clixml` stores the
+This cmdlet is similar to [Export-Clixml](Export-Clixml.md) except that `Export-Clixml` stores the
 resulting XML in a
 [Common Language Infrastructure (CLI)](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/)
-file that can be reimported as objects with [Import-Clixml](./Import-Clixml.md). `ConvertTo-Xml`
+file that can be reimported as objects with [Import-Clixml](Import-Clixml.md). `ConvertTo-Xml`
 returns an in-memory representation of an XML document, so you can continue to process it in
 PowerShell. `ConvertTo-Xml` doesn't have an option to convert objects to CLI XML.
 

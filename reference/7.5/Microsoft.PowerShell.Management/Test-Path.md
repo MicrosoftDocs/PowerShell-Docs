@@ -17,31 +17,33 @@ Determines whether all elements of a path exist.
 ### Path (Default) - FileSystem provider
 
 ```
-Test-Path [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
+Test-Path [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
  [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
 ### LiteralPath - FileSystem provider
 
 ```
-Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
+Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
  [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
 ### Path (Default) - All providers
 
 ```
-Test-Path [-Path] <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>] [<CommonParameters>]
+Test-Path [-Path] <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath - All providers
 
 ```
-Test-Path -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>] [<CommonParameters>]
+Test-Path -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -468,8 +470,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
-
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

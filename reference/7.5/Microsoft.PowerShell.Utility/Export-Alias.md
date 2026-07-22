@@ -47,52 +47,52 @@ profile.
 ### Example 1: Export an alias
 
 ```powershell
-Export-Alias -Path "Alias.csv"
+Export-Alias -Path Alias.csv
 ```
 
-This command exports current alias information to a file named Alias.csv in the current directory.
+This command exports current alias information to a file named `Alias.csv` in the current directory.
 
 ### Example 2: Export an alias unless the export file already exists
 
 ```powershell
-Export-Alias -Path "Alias.csv" -NoClobber
+Export-Alias -Path Alias.csv -NoClobber
 ```
 
-This command exports the aliases in the current session to an Alias.csv file.
+This command exports the aliases in the current session to an `Alias.csv` file.
 
-Because the **NoClobber** parameter is specified, the command will fail if an Alias.csv file already
+Because the **NoClobber** parameter is specified, the command will fail if an `Alias.csv` file already
 exists in the current directory.
 
 ### Example 3: Append aliases to a file
 
 ```powershell
-Export-Alias -Path "Alias.csv" -Append -Description "Appended Aliases" -Force
+Export-Alias -Path Alias.csv -Append -Description "Appended Aliases" -Force
 ```
 
-This command appends the aliases in the current session to the Alias.csv file.
+This command appends the aliases in the current session to the `Alias.csv` file.
 
 The command uses the **Description** parameter to add a description to the comments at the top of
 the file.
 
-The command also uses the **Force** parameter to overwrite any existing Alias.csv files, even if
+The command also uses the **Force** parameter to overwrite any existing `Alias.csv` files, even if
 they have the read-only attribute.
 
 ### Example 4: Export aliases as a script
 
 ```powershell
-Export-Alias -Path "alias.ps1" -As Script
-Add-Content -Path $PROFILE -Value (Get-Content alias.ps1)
+Export-Alias -Path Alias.ps1 -As Script
+Add-Content -Path $PROFILE -Value (Get-Content Alias.ps1)
 $S = New-PSSession -ComputerName Server01
-Invoke-Command -Session $S -FilePath .\alias.ps1
+Invoke-Command -Session $S -FilePath .\Alias.ps1
 ```
 
 This example shows how to use the script file format that `Export-Alias` generates.
 
-The first command exports the aliases in the session to the Alias.ps1 file. It uses the **As**
+The first command exports the aliases in the session to the `Alias.ps1` file. It uses the **As**
 parameter with a value of Script to generate a file that contains a Set-Alias command for each
 alias.
 
-The second command adds the aliases in the Alias.ps1 file to the CurrentUser-CurrentHost profile.
+The second command adds the aliases in the `Alias.ps1` file to the CurrentUser-CurrentHost profile.
 The path to the profile is saved in the `$PROFILE` variable. The command uses the `Get-Content`
 cmdlet to get the aliases from the Alias.ps1 file and the `Add-Content` cmdlet to add them to the
 profile. For more information, see

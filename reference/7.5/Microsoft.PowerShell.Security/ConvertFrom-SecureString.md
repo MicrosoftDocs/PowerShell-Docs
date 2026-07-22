@@ -25,13 +25,15 @@ ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureStr
 ### AsPlainText
 
 ```
-ConvertFrom-SecureString [-SecureString] <SecureString> [-AsPlainText] [<CommonParameters>]
+ConvertFrom-SecureString [-SecureString] <SecureString> [-AsPlainText]
+ [<CommonParameters>]
 ```
 
 ### Open
 
 ```
-ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<CommonParameters>]
+ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
