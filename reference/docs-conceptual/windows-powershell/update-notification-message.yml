@@ -2,7 +2,7 @@
 metadata:
   description: >-
     This article explains the intent of the update notification message in Windows PowerShell.
-  ms.date: 03/06/2026
+  ms.date: 07/30/2026
   ms.topic: faq
   title: Windows PowerShell update message FAQ
 
@@ -68,4 +68,6 @@ sections:
           update channels.
 
       - question: Can I disable the message?
-        answer: No. There is no way to disable the message.
+        answer: |
+          No. There is no way to remove the message. However, you can avoid all startup messages
+          by running `powershell.exe -nologo`.
