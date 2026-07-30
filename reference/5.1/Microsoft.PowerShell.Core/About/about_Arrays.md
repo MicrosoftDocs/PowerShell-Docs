@@ -1,7 +1,7 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 03/24/2026
+ms.date: 07/29/2026
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -593,7 +593,7 @@ Consider the following example where the object `$myObject` has a property with
 single value and a property containing an array of 11 integers.
 
 ```powershell
-$myObject = [pscustomobject]@{
+$myObject = @{
     singleValue = 'Hello'
     arrayValue  = @(0..10)
 }
