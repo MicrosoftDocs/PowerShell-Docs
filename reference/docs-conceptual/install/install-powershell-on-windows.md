@@ -1,5 +1,5 @@
 ---
-description: How to install PowerShell on Windows
+description: Learn how to install the latest version of PowerShell 7, which runs side-by-side with Windows PowerShell 5.1.
 ms.date: 07/20/2026
 title: Install PowerShell 7 on Windows
 ---
