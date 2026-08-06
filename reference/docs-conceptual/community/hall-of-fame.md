@@ -1,6 +1,6 @@
 ---
 description: List of the GitHub users that have the most contributions to PowerShell documentation.
-ms.date: 07/02/2026
+ms.date: 08/06/2026
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -18,16 +18,16 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 |     PRs Merged     | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----: |
-| Community          |    8 |  189 |  452 |  468 |  321 |  165 |  101 |  134 |  117 |   95 |  160 |   28 |  2238 |
+| Community          |    8 |  189 |  452 |  468 |  321 |  165 |  101 |  120 |  108 |   83 |  149 |   26 |  2190 |
 | matt9ucci          |      |      |  157 |   80 |   30 |    1 |    6 |      |      |      |      |      |   274 |
 | nschonni           |      |      |      |   14 |  138 |   10 |      |      |      |      |      |      |   162 |
 | kiazhi             |      |   25 |   79 |   12 |      |      |      |      |      |      |      |      |   116 |
-| alexandair         |      |   57 |    7 |   24 |    2 |    1 |      |      |      |    1 |      |      |    92 |
+| alexandair         |      |   57 |    7 |   24 |    2 |    1 |      |      |      |      |      |      |    91 |
 | sethvs             |      |      |    1 |   42 |      |   20 |    1 |   10 |      |    6 |    2 |    1 |    83 |
 | doctordns          |      |    5 |   32 |   20 |    7 |    9 |    5 |      |    1 |      |      |      |    79 |
 | surfingoldelephant |      |      |      |      |      |      |      |      |      |      |   58 |    5 |    63 |
 | ehmiiz             |      |      |      |      |      |      |      |   22 |   14 |      |      |      |    36 |
-| ArieHein           |      |      |      |      |    1 |      |      |      |      |    8 |   25 |    1 |    35 |
+| ArieHein           |      |      |      |      |    1 |      |      |      |      |    7 |   25 |    1 |    34 |
 | yecril71pl         |      |      |      |      |      |   21 |    3 |    3 |      |      |      |      |    27 |
 | changeworld        |      |      |      |      |      |      |      |    3 |      |      |   22 |      |    25 |
 | skycommand         |      |      |    1 |    3 |    3 |    6 |      |    1 |    4 |    1 |    4 |      |    23 |
@@ -36,13 +36,11 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | it-praktyk         |      |      |      |   16 |    1 |      |      |      |      |      |      |      |    17 |
 | vors               |      |   15 |    1 |      |      |      |      |      |      |      |      |      |    16 |
 | kvprasoon          |      |    2 |    1 |    6 |    2 |    2 |    2 |      |      |      |      |      |    15 |
-| purdo17            |      |      |      |   13 |      |      |      |      |      |      |      |      |    13 |
 | k-takai            |      |      |      |    5 |    1 |    7 |      |      |      |      |      |      |    13 |
-| bergmeister        |      |      |    1 |    3 |    3 |    1 |    1 |    2 |    1 |    1 |      |      |    13 |
+| purdo17            |      |      |      |   13 |      |      |      |      |      |      |      |      |    13 |
 | markekraus         |      |      |   11 |    1 |      |      |      |      |      |      |      |      |    12 |
 | exchange12rocks    |      |      |    7 |    3 |      |      |    1 |      |      |      |      |    1 |    12 |
-| hrxn               |      |      |      |      |      |      |    2 |    2 |    2 |    5 |      |      |    11 |
-| baardhermansen     |      |      |      |      |    2 |    1 |      |    1 |    2 |      |      |    5 |    11 |
+| bergmeister        |      |      |    1 |    3 |    3 |    1 |    1 |    1 |    1 |      |      |      |    11 |
 
 ## GitHub issues opened
 
@@ -50,15 +48,15 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 |   Issues Opened    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----: |
-| Community          |    6 |   52 |   96 |  213 |  567 |  563 |  367 |  244 |  291 |  243 |  182 |   74 |  2898 |
+| Community          |    6 |   52 |   96 |  214 |  568 |  564 |  364 |  230 |  276 |  232 |  162 |   88 |  2852 |
 | mklement0          |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   20 |   24 |    2 |      |   278 |
-| ehmiiz             |      |      |      |      |      |      |      |   21 |   14 |      |      |      |    35 |
+| ehmiiz             |      |      |      |      |      |      |      |   20 |   14 |      |      |      |    34 |
 | iRon7              |      |      |      |      |      |    2 |    2 |    2 |   10 |    8 |    8 |      |    32 |
 | iSazonov           |      |      |    1 |    4 |   10 |    8 |    4 |    3 |      |    1 |      |      |    31 |
-| jszabo98           |      |      |      |    2 |   15 |    6 |    1 |      |    1 |    2 |      |    1 |    28 |
+| jszabo98           |      |      |      |    2 |   15 |    6 |    1 |      |    1 |    2 |      |    2 |    29 |
 | surfingoldelephant |      |      |      |      |      |      |      |      |      |    6 |   19 |    2 |    27 |
-| kilasuit           |      |      |      |      |    3 |    2 |    1 |    4 |    1 |    4 |    5 |    3 |    23 |
 | juvtib             |      |      |      |      |      |   15 |    7 |      |      |      |      |      |    22 |
+| kilasuit           |      |      |      |      |    3 |    2 |    1 |    4 |    1 |    3 |    4 |    4 |    22 |
 | peetrike           |      |      |      |    1 |      |    4 |    2 |    6 |    4 |    3 |    1 |      |    21 |
 | doctordns          |      |      |    5 |    3 |    5 |    7 |    1 |      |      |      |      |      |    21 |
 | JustinGrote        |      |      |      |    1 |    3 |    6 |    1 |    1 |    3 |    2 |    3 |      |    20 |
@@ -68,14 +66,12 @@ GitHub issues help us identify errors and gaps in our documentation.
 | alexandair         |      |    9 |    4 |    2 |      |      |      |      |      |      |      |      |    15 |
 | clamb123           |      |      |      |      |      |      |   14 |      |      |      |      |      |    14 |
 | tabad              |      |      |      |      |      |      |      |      |   11 |    2 |      |      |    13 |
-| ThomasNieto        |      |      |      |      |      |    3 |      |    2 |    4 |    3 |      |      |    12 |
 | trollyanov         |      |      |      |      |      |      |   11 |    1 |      |      |      |      |    12 |
-| LaurentDardenne    |      |      |    3 |    2 |      |      |      |    5 |    2 |      |      |      |    12 |
 | Liturgist          |      |      |      |      |    1 |    1 |    1 |    2 |    5 |    2 |      |      |    12 |
+| LaurentDardenne    |      |      |    3 |    2 |      |      |      |    5 |    2 |      |      |      |    12 |
 | jsilverm           |      |      |      |      |      |    8 |      |      |    4 |      |      |      |    12 |
 | CarloToso          |      |      |      |      |      |      |      |      |   11 |      |      |      |    11 |
-| vors               |    1 |    6 |    2 |    1 |      |      |      |      |      |      |      |      |    10 |
 | UberKluger         |      |      |      |      |      |    1 |    7 |    2 |      |      |      |      |    10 |
-| matt9ucci          |      |      |    2 |    5 |      |      |    2 |      |    1 |      |      |      |    10 |
+| vors               |    1 |    6 |    2 |    1 |      |      |      |      |      |      |      |      |    10 |
 | o-l-a-v            |      |      |      |      |    1 |      |    1 |      |    4 |    2 |    2 |      |    10 |
-| ArmaanMcleod       |      |      |      |      |      |      |      |      |    4 |    6 |      |      |    10 |
+| matt9ucci          |      |      |    2 |    5 |      |      |    2 |      |    1 |      |      |      |    10 |
