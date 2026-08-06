@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2026.
-ms.date: 07/02/2026
+ms.date: 08/06/2026
 title: What's New in PowerShell-Docs for 2026
 ---
 # What's new in PowerShell Docs for 2026
@@ -14,6 +14,32 @@ get started.
 <!-- Link references -->
 [01]: contributing/overview.md
 <!-- --------------- -->
+
+## 2026-July
+
+Updated content
+
+- Release notes for monthly maintenance releases of PowerShell
+- More updates to PSScriptAnalyzer rules
+- `New-Guid` changed in PowerShell 7.7 to create v7 format UUIDs
+
+GitHub stats
+
+- 23 PRs merged (2 from Community)
+- 38 issues opened (7 from Community, 30 Spam)
+- 38 issues closed (8 from Community, 30 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+Special thanks to @ArieHein for another large PR to clean up 160 articles.
+
+|    GitHub Id     | PRs merged | Issues opened |
+| ---------------- | :--------: | :-----------: |
+| janv8000         |     1      |               |
+| SufficientDaikon |     1      |               |
 
 ## 2026-June
 
