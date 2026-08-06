@@ -1,7 +1,7 @@
 ---
 title: Add Credential support to PowerShell functions
 description: How to add credential parameters to your PowerShell scripts, functions, and cmdlets.
-ms.date: 11/16/2022
+ms.date: 08/06/2026
 ms.custom:
   - contributor-JoshDuffney
   - sfi-image-nochange
@@ -9,9 +9,9 @@ ms.custom:
 # Add Credential support to PowerShell functions
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by [@joshduffney][@joshduffney]. This
-> article has been edited for inclusion on this site. The PowerShell team thanks Josh for sharing
-> this content with us. Please check out his blog at [duffney.io][duffney.io].
+> The [original version][08] of this article appeared on the blog written by [@joshduffney][12].
+> This article has been edited for inclusion on this site. The PowerShell team thanks Josh for
+> sharing this content with us. Please check out his blog at [duffney.io][09].
 
 This article shows you how to add credential parameters to PowerShell functions and why you'd want
 to. A credential parameter is to allow you to run the function or cmdlet as a different user. The
@@ -23,7 +23,7 @@ PowerShell session doesn't have that access already.
 
 ## Creating credential object
 
-The [PSCredential][PSCredential] object represents a set of security credentials such as a user name and
+The [PSCredential][03] object represents a set of security credentials such as a user name and
 password. The object can be passed as a parameter to a function that runs as the user account in
 that credential object. There are a few ways that you can create a credential object. The first way
 to create a credential object is to use the PowerShell cmdlet `Get-Credential`. When you run without
@@ -103,16 +103,16 @@ things you can add to make it more robust.
 > [!TIP]
 > Some cmdlets that accept a credential parameter do not support
 > `[System.Management.Automation.PSCredential]::Empty` as they should. See the
-> [Dealing with Legacy Cmdlets](#dealing-with-legacy-cmdlets) section for a workaround.
+> [Dealing with Legacy Cmdlets][05] section for a workaround.
 
 ## Using credential parameters
 
 The following example demonstrates how to use credential parameters. This example shows a function
-called `Set-RemoteRegistryValue`, which is out of [The Pester Book][The Pester Book]. This function defines the
-credential parameter using the techniques describe in the previous section. The function calls
-`Invoke-Command` using the `$Credential` variable created by the function. This allows you to change
-the user who's running `Invoke-Command`. Because the default value of `$Credential` is an empty
-credential, the function can run without providing credentials.
+called `Set-RemoteRegistryValue`. This function defines the credential parameter using the
+techniques describe in the previous section. The function calls `Invoke-Command` using the
+`$Credential` variable created by the function. This allows you to change the user who's running
+`Invoke-Command`. Because the default value of `$Credential` is an empty credential, the function
+can run without providing credentials.
 
 ```powershell
 function Set-RemoteRegistryValue {
@@ -140,7 +140,7 @@ Using `Get-Credential` in parentheses `()` at run time causes the `Get-Credentia
 are prompted for a username and password. You could use the **Credential** or **UserName**
 parameters of `Get-Credential` to pre-populate the username and domain. The following example uses a
 technique called splatting to pass parameters to the `Set-RemoteRegistryValue` function. For more
-information about splatting, check out the [about_Splatting][about_Splatting] article.
+information about splatting, check out the [about_Splatting][04] article.
 
 ```powershell
 $remoteKeyParams = @{
@@ -153,7 +153,7 @@ $remoteKeyParams = @{
 Set-RemoteRegistryValue @remoteKeyParams -Credential (Get-Credential)
 ```
 
-![Get a credential at runtime](./media/add-credentials-to-powershell-functions/GetCredAtRunTime.gif)
+![Get a credential at runtime][01]
 
 Using `(Get-Credential)` seems cumbersome. Normally, when you use the **Credential** parameter with
 only a username, the cmdlet automatically prompts for the password. The
@@ -170,7 +170,7 @@ $remoteKeyParams = @{
 Set-RemoteRegistryValue @remoteKeyParams -Credential duffney
 ```
 
-![Prompt for credentials](./media/add-credentials-to-powershell-functions/GetCredsPrompt.gif)
+![Prompt for credentials][02]
 
 > [!NOTE]
 > To set the registry value shown, these examples assume you have the **Web Server** features of
@@ -183,7 +183,7 @@ You can also populate a credential variable ahead of time and pass it to the **C
 parameter of `Set-RemoteRegistryValue` function. Use this method with Continuous Integration /
 Continuous Deployment (CI/CD) tools such as Jenkins, TeamCity, and Octopus Deploy. For an example
 using Jenkins, check out Hodge's blog post
-[Automating with Jenkins and PowerShell on Windows - Part 2][Automating with Jenkins and PowerShell on Windows - Part 2].
+[Automating with Jenkins and PowerShell on Windows - Part 2][11].
 
 This example uses the .NET method to create the credential object and a secure string to pass in the
 password.
@@ -202,10 +202,9 @@ $remoteKeyParams = @{
 Set-RemoteRegistryValue @remoteKeyParams -Credential $Cred
 ```
 
-For this example, the secure string is created using a clear text password. All of the
-previously mentioned CI/CD have a secure method of providing that password at run time. When using
-those tools, replace the plain text password with the variable defined within the CI/CD tool you
-use.
+For this example, the secure string is created using a clear text password. All of the previously
+mentioned CI/CD have a secure method of providing that password at run time. When using those tools,
+replace the plain text password with the variable defined within the CI/CD tool you use.
 
 ### Run without credentials
 
@@ -264,7 +263,7 @@ function Set-RemoteRegistryValue {
 This example uses parameter splatting to call the legacy cmdlet. The `$Credential` object is
 conditionally added to the hash table for splatting and avoids the need to repeat the
 `Invoke-Command` script block. To learn more about splatting inside functions, see the
-[Splatting Parameters Inside Advanced Functions][Splatting Parameters Inside Advanced Functions] blog post.
+[Splatting Parameters Inside Advanced Functions][10] blog post.
 
 ```powershell
 function Set-RemoteRegistryValue {
@@ -347,21 +346,23 @@ Get-AllSQLDatabases -SQLServer SQL01 -Credential $Credential
 Creating and storing credential objects securely can be difficult. The following resources can help
 you maintain PowerShell credentials.
 
-- [BetterCredentials][BetterCredentials]
-- [Azure Key Vault][Azure Key Vault]
-- [Vault Project][Vault Project]
-- [SecretManagement module][SecretManagement module]
+- [BetterCredentials][13]
+- [Azure Key Vault][06]
+- [Vault Project][14]
+- [SecretManagement module][07]
 
 <!-- link references -->
-[original version]: https://duffney.io/addcredentialstopowershellfunctions/
-[@joshduffney]: https://twitter.com/joshduffney
-[duffney.io]: https://duffney.io/posts/
-[BetterCredentials]: https://www.powershellgallery.com/packages/BetterCredentials/
-[Azure Key Vault]: https://azure.microsoft.com/services/key-vault/
-[Vault Project]: https://www.vaultproject.io/
-[Splatting Parameters Inside Advanced Functions]: https://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
-[Automating with Jenkins and PowerShell on Windows - Part 2]: https://hodgkins.io/automating-with-jenkins-and-powershell-on-windows-part-2
-[PSCredential]: /dotnet/api/system.management.automation.pscredential
-[The Pester Book]: https://leanpub.com/the-pester-book
-[about_Splatting]: /powershell/module/microsoft.powershell.core/about/about_splatting
-[SecretManagement module]: https://devblogs.microsoft.com/powershell/secretmanagement-and-secretstore-updates/
+[01]: ./media/add-credentials-to-powershell-functions/GetCredAtRunTime.gif
+[02]: ./media/add-credentials-to-powershell-functions/GetCredsPrompt.gif
+[03]: /dotnet/api/system.management.automation.pscredential
+[04]: /powershell/module/microsoft.powershell.core/about/about_splatting
+[05]: #dealing-with-legacy-cmdlets
+[06]: https://azure.microsoft.com/services/key-vault/
+[07]: https://devblogs.microsoft.com/powershell/secretmanagement-and-secretstore-updates/
+[08]: https://duffney.io/addcredentialstopowershellfunctions/
+[09]: https://duffney.io/posts/
+[10]: https://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
+[11]: https://hodgkins.io/automating-with-jenkins-and-powershell-on-windows-part-2
+[12]: https://twitter.com/joshduffney
+[13]: https://www.powershellgallery.com/packages/BetterCredentials/
+[14]: https://www.vaultproject.io/
