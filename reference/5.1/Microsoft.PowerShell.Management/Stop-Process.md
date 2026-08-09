@@ -304,9 +304,7 @@ Windows PowerShell includes the following aliases for `Stop-Process`:
 - `kill`
 - `spps`
 
-The `Stop-Process` cmdlet executes asynchronously. After calling the `Stop-Process` cmdlet, call the
-`Wait-Process` cmdlet to wait for the process to exit, or check the **HasExited** property of the
-**Process** object to determine if the process has exited.
+The `Stop-Process` cmdlet doesn't wait for the process to exit. After calling `Stop-Process`, use `Wait-Process` to wait for the process to exit, or use `-PassThru` and check the returned **Process** object's **HasExited** property.
 
 You can also use the properties and methods of the Windows Management Instrumentation (WMI)
 **Win32_Process** object in Windows PowerShell. For more information, see `Get-CimInstance` and
