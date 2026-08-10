@@ -132,7 +132,6 @@ fails.
 > [!NOTE]
 > Starting in Windows version 1909, specifying the file type in the **Path** parameter when using
 > the **Recurse** parameter does recursively discover child items with the given file extension.
->
 > In Windows version 1909 and later, the following statements will discover and remove the same
 > files:
 >
@@ -408,8 +407,6 @@ Accept wildcard characters: True
 
 Indicates that this cmdlet deletes the items in the specified locations and in all child items of
 the locations.
-
-The **Recurse** parameter might not delete all subfolders or all child items. This is a known issue.
 
 > [!NOTE]
 > Starting in Windows version 1909, specifying the file type in the **Path** parameter when using
