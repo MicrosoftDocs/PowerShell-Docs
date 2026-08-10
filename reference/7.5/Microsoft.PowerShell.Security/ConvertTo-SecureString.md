@@ -46,12 +46,12 @@ in a file for later use.
 If the standard string being converted was encrypted with `ConvertFrom-SecureString` using a
 specified key, that same key must be provided as the value of the **Key** or **SecureKey** parameter
 of the `ConvertTo-SecureString` cmdlet. If you don't specify a key when creating the secure string,
-the string is not encrypted. If you don't specify a key when converting from an encrypted secure
-string, the value returned is invalid.
+the string is encrypted by the Windows Data Protection API (DPAPI).
 
 > [!NOTE]
-> Note that per [DotNet](xref:System.Security.SecureString#remarks), the
-> contents of a SecureString aren't encrypted on non-Windows systems.
+> The contents of a SecureString aren't encrypted on non-Windows systems. For more information about
+> **SecureString** data protection, see
+> [How secure is SecureString?](xref:System.Security.SecureString#how-secure-is-securestring).
 
 ## EXAMPLES
 
@@ -182,7 +182,9 @@ Accept wildcard characters: False
 ### -Key
 
 Specifies the encryption key used to convert the original secure string into the encrypted standard
-string. Valid key lengths are 16, 24 and 32 bytes.
+string. Valid key lengths are 16, 24 and 32 bytes. If the key doesn't match the key used to encrypt
+the original secure string, the value returned is invalid. If the encrypted string was created
+without a key, you shouldn't use a key to convert it back to a secure string.
 
 ```yaml
 Type: System.Byte[]
@@ -199,9 +201,10 @@ Accept wildcard characters: False
 ### -SecureKey
 
 Specifies the encryption key used to convert the original secure string into the encrypted standard
-string. The key must be provided in the format of a secure string. The secure string will be
-converted to a byte array to be used as the key. Valid secure key lengths are 8, 12 and 16 code
-points.
+string. The key must be provided in the format of a secure string. Valid secure key lengths are 8,
+12 and 16 code points. If the key doesn't match the key used to encrypt the original secure string,
+the value returned is invalid. If the encrypted string was created without a key, you shouldn't use
+a key to convert it back to a secure string.
 
 ```yaml
 Type: System.Security.SecureString
