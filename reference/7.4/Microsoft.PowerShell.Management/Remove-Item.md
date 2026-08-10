@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/28/2026
+ms.date: 08/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -412,7 +412,11 @@ the locations.
 The **Recurse** parameter might not delete all subfolders or all child items. This is a known issue.
 
 > [!NOTE]
-> This behavior was fixed in Windows versions 1909 and newer.
+> Starting in Windows version 1909, specifying the file type in the **Path** parameter when using
+> the **Recurse** parameter does recursively discover child items with the given file extension. Use
+> the `Get-ChildItem` cmdlet to get the desired files , then pipe the results to `Remove-Item` to
+> delete them. See [Example 4](#example-4-delete-files-in-subfolders-recursively) for more
+> information.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
