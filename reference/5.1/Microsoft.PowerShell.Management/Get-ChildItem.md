@@ -393,7 +393,7 @@ Get-ChildItem -Path C:\Test -Filter '*.log'
 
 # Returns only .log files in C:\Test (filtering is performed by Get-ChildItem after the
 # FileSystem provider enumerates all files)
-Get-ChildItem -Path 'C:\Test -Include '*.log'
+Get-ChildItem -Path C:\Test -Include '*.log'
 ```
 
 ## PARAMETERS
@@ -617,9 +617,9 @@ or `-Path C:\Test\Logs\*`. If a trailing asterisk (`*`) is included, the command
 **Path** parameter's subdirectories. Without the asterisk (`*`), the contents of the **Path**
 parameter are displayed. More details are included in Example 5 and the Notes section.
 
-The **Include** and **Exclude** are applied by PowerShell after file enumeration. Both parameters
-can be used together. However, the exclusions are applied after the inclusions, which can affect the
-final output.
+The **Include** and **Exclude** parameters are applied by PowerShell after file enumeration. Both
+parameters can be used together. However, the exclusions are applied after the inclusions, which can
+affect the final output.
 
 > [!NOTE]
 > The **Include** and **Exclude** parameters have no effect when used with the **LiteralPath**
@@ -685,8 +685,8 @@ Accept wildcard characters: False
 
 Specifies a filter to qualify the **Path** parameter. The FileSystem provider is the only installed
 PowerShell provider that supports filters. Filters are more efficient than other parameters. The
-provider applies filter when the cmdlet gets the objects rather than having PowerShell filter the
-objects after they're retrieved.
+provider applies the filter when the cmdlet gets the objects rather than having PowerShell filter
+the objects after they're retrieved.
 
 The filter string is passed to the .NET API to enumerate files. The parameter only accepts a single
 string. The value of the **Filter** parameter can include wildcard characters, however the API only
