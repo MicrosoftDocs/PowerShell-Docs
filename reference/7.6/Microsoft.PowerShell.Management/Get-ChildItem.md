@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/17/2025
+ms.date: 08/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -15,6 +15,7 @@ title: Get-ChildItem
 # Get-ChildItem
 
 ## SYNOPSIS
+
 Gets the items and child items in one or more specified locations.
 
 ## SYNTAX
@@ -434,6 +435,17 @@ la---                     MicrosoftEdge.exe
 At this time, Windows doesn't provide a way to get the target information for an AppX reparse point.
 The **LinkTarget** and **LinkType** properties of the filesystem object are empty.
 
+### Example 13: Use a filter to get only log files in a directory
+
+```powershell
+# Returns only .log files in C:\Test (filtering is performed by the FileSystem provider)
+Get-ChildItem -Path C:\Test -Filter '*.log'
+
+# Returns only .log files in C:\Test (filtering is performed by Get-ChildItem after the
+# FileSystem provider enumerates all files)
+Get-ChildItem -Path C:\Test -Include '*.log'
+```
+
 ## PARAMETERS
 
 ### -Attributes
@@ -651,8 +663,9 @@ or `-Path C:\Test\Logs\*`. If a trailing asterisk (`*`) is included, the command
 **Path** parameter's subdirectories. Without the asterisk (`*`), the contents of the **Path**
 parameter are displayed. More details are included in Example 5 and the Notes section.
 
-The **Include** and **Exclude** parameters can be used together. However, the exclusions are applied
-after the inclusions, which can affect the final output.
+The **Include** and **Exclude** parameters are applied by PowerShell after file enumeration. Both
+parameters can be used together. However, the exclusions are applied after the inclusions, which can
+affect the final output.
 
 ```yaml
 Type: System.String[]
@@ -712,12 +725,17 @@ Accept wildcard characters: False
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. The
-[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
-installed PowerShell provider that supports filters. Filters are more efficient than other
-parameters. The provider applies filter when the cmdlet gets the objects rather than having
-PowerShell filter the objects after they're retrieved. The filter string is passed to the .NET API
-to enumerate files. The API only supports `*` and `?` wildcards.
+Specifies a filter to qualify the **Path** parameter. The FileSystem provider is the only installed
+PowerShell provider that supports filters. Filters are more efficient than other parameters. The
+provider applies the filter when the cmdlet gets the objects rather than having PowerShell filter
+the objects after they're retrieved.
+
+The filter string is passed to the .NET API to enumerate files. The parameter only accepts a single
+string. The value of the **Filter** parameter can include wildcard characters, however the API only
+supports `*` and `?` wildcards.
+
+The **Include** and **Exclude** parameters support the `*`, `?`, and `[]` wildcard patterns and can
+accept an array of strings.
 
 ```yaml
 Type: System.String
@@ -805,8 +823,9 @@ Wildcard characters are permitted. The **Include** parameter is effective only w
 includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the
 contents of the `C:\Windows` directory.
 
-The **Include** and **Exclude** parameters can be used together. However, the exclusions are applied
-after the inclusions, which can affect the final output.
+The **Include** and **Exclude** are applied by PowerShell after file enumeration. Both parameters
+can be used together. However, the exclusions are applied after the inclusions, which can affect the
+final output.
 
 ```yaml
 Type: System.String[]
@@ -822,10 +841,10 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it's
-typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
-it in single quotation marks. Single quotation marks tell PowerShell to not interpret any characters
-as escape sequences.
+Specifies a path to one or more locations, or target paths, to be searched. The value of
+**LiteralPath** is used exactly as it's typed. No characters are interpreted as wildcards. If the
+path includes escape characters, enclose it in single quotation marks. Single quotation marks tell
+PowerShell to not interpret any characters as escape sequences.
 
 For more information, see
 [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
@@ -862,9 +881,10 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies a path to one or more locations. If not specified, the default location is the current
-directory (`.`). Wildcards are accepted. Use care when using the **Path** parameter with the
-**Recurse** parameter. For more information, see the [NOTES](#notes) section of this article.
+Specifies a path to one or more locations, or target paths, to be searched. If not specified, the
+target path is the current directory (`.`). Wildcards are accepted. Use care when using the **Path**
+parameter with the **Recurse** parameter. For more information, see the [NOTES](#notes) section of
+this article.
 
 ```yaml
 Type: System.String[]
@@ -1027,7 +1047,7 @@ PowerShell includes the following aliases for `Get-ChildItem`:
 - Windows:
   - `ls`
 
-**Recursion behavior with the Path parameter:**
+**Recursion behavior with the `-Path` parameter:**
 
 When you use `Get-ChildItem -Recurse` with the **Path** parameter, the cmdlet searches for the last
 path component whether or not it's a wildcard pattern or a literal name.

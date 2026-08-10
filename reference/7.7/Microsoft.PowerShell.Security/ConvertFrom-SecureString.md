@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 12/12/2022
+ms.date: 08/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SecureString
@@ -50,8 +50,9 @@ key is specified, the Windows Data Protection API (DPAPI) is used to encrypt the
 representation.
 
 > [!NOTE]
-> For more information about **SecureString** data protection, see
-> [How secure is SecureString?](xref:System.Security.SecureString#how-secure-is-securestring).
+> The contents of a SecureString aren't encrypted on non-Windows systems For more information about
+> **SecureString** data protection, see
+> [How secure is > SecureString?](xref:System.Security.SecureString#how-secure-is-securestring).
 
 ## EXAMPLES
 
@@ -125,7 +126,9 @@ Accept wildcard characters: False
 
 ### -Key
 
-Specifies the encryption key as a byte array.
+Specifies the encryption key as a byte array. If the key doesn't match the key used to encrypt
+the original secure string, the value returned is invalid. If the encrypted string was created
+without a key, you shouldn't use a key to convert it back to a secure string.
 
 ```yaml
 Type: System.Byte[]
@@ -142,7 +145,9 @@ Accept wildcard characters: False
 ### -SecureKey
 
 Specifies the encryption key as a secure string. The secure string value is converted to a byte
-array before being used as the key.
+array before being used as the key. If the key doesn't match the key used to encrypt the original
+secure string, the value returned is invalid. If the encrypted string was created without a key, you
+shouldn't use a key to convert it back to a secure string.
 
 ```yaml
 Type: System.Security.SecureString

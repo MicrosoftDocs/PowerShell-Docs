@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/05/2023
+ms.date: 08/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-process?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -306,12 +306,21 @@ PowerShell includes the following aliases for `Stop-Process`:
 - Windows:
   - `kill`
 
+The `Stop-Process` cmdlet executes asynchronously. After calling the `Stop-Process` cmdlet, you can
+call the `Wait-Process` cmdlet to wait for the process to exit, or check the **HasExited** property
+of the **Process** object that can be an input, or output if using the **PassThru** parameter of the
+`Stop-Process` cmdlet, to determine if the process has exited.
+
 You can also use the properties and methods of the Windows Management Instrumentation (WMI)
 **Win32_Process** object in Windows PowerShell. For more information, see `Get-CimInstance` and
 the WMI SDK.
 
-- When stopping processes, realize that stopping a process can stop process and services that depend
-  on the process. In an extreme case, stopping a process can stop Windows.
+When stopping processes, realize that stopping a process can stop processes and services that depend
+on the process. In an extreme case, stopping a process can stop Windows.
+
+This cmdlet is implemented using the **Kill** method of the **System.Diagnostics.Process** class.
+For more information about this method, see
+[Process.Kill Method](/dotnet/api/system.diagnostics.process.kill).
 
 ## RELATED LINKS
 

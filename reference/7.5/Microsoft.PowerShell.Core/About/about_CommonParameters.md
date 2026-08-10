@@ -1,9 +1,9 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 04/02/2026
+ms.date: 08/10/2026
 no-loc: [Confirm, Debug, ErrorAction, ErrorVariable, InformationAction, InformationVariable, OutBuffer, OutVariable, PipelineVariable, ProgressAction, Verbose, WarningAction, WarningVariable, WhatIf]
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.5&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
 ---
@@ -732,16 +732,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The `Confirm` parameter overrides the value of the `$ConfirmPreference`
-variable for the current command. The default value is true. For more
-information, see [about_Preference_Variables][03].
+The `Confirm` parameter works with the value of the `$ConfirmPreference`
+variable for the current command. When you use the parameter, the value is
+true. For more information, see [about_Preference_Variables][03].
 
-- `$true` has the same effect as `-Confirm`.
-- `$false` suppresses automatic confirmation, which occurs when the value of
-  `$ConfirmPreference` is less than or equal to the estimated risk of the
-  cmdlet.
+- `-Confirm:$true` has the same effect as `-Confirm`.
+- `-Confirm:$false` suppresses automatic confirmation, which occurs when the
+  value of `$ConfirmPreference` is less than or equal to the estimated risk of
+  the cmdlet.
 
-For example, the following command uses the `Confirm` parameter with a
+For example, the following command uses the `-Confirm` parameter with a
 `Remove-Item` command. Before removing the item, PowerShell lists the
 operations it would do and the items that would be affected, and asks for
 approval.
@@ -771,9 +771,9 @@ The Confirm response options are as follows:
 
 The `Suspend` option places the command on hold and creates a temporary nested
 session in which you can work until you're ready to choose a `Confirm` option.
-The command prompt for the nested session has two extra carets (>>) to indicate
-that it's a child operation of the original parent command. You can run
-commands and scripts in the nested session. To end the nested session and
+The command prompt for the nested session has two greater-than signs (`>>`) to
+indicate that it's a child operation of the original parent command. You can
+run commands and scripts in the nested session. To end the nested session and
 return to the Confirm options for the original command, type "exit".
 
 In the following example, the `Suspend` option (S) is used to halt a command
@@ -823,6 +823,7 @@ Mode                LastWriteTime     Length Name
 
 <!-- Using backtick on cmdlet names to avoid localization -->
 - [about_Preference_Variables][03]
+- [about_Error_Handling][15]
 - [`Write-Debug`][11]
 - [`Write-Error`][12]
 - [`Write-Verbose`][13]
@@ -838,4 +839,5 @@ Mode                LastWriteTime     Length Name
 [12]: xref:Microsoft.PowerShell.Utility.Write-Error
 [13]: xref:Microsoft.PowerShell.Utility.Write-Verbose
 [14]: xref:Microsoft.PowerShell.Utility.Write-Warning
+[15]: about_Error_Handling.md
 

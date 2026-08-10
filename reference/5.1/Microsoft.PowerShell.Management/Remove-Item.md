@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/28/2026
+ms.date: 08/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -134,7 +134,6 @@ fails.
 > [!NOTE]
 > Starting in Windows version 1909, specifying the file type in the **Path** parameter when using
 > the **Recurse** parameter does recursively discover child items with the given file extension.
->
 > In Windows version 1909 and later, the following statements will discover and remove the same
 > files:
 >
@@ -416,10 +415,12 @@ Accept wildcard characters: True
 Indicates that this cmdlet deletes the items in the specified locations and in all child items of
 the locations.
 
-The **Recurse** parameter might not delete all subfolders or all child items. This is a known issue.
-
 > [!NOTE]
-> This behavior was fixed in Windows versions 1909 and newer.
+> Starting in Windows version 1909, specifying the file type in the **Path** parameter when using
+> the **Recurse** parameter does recursively discover child items with the given file extension. Use
+> the `Get-ChildItem` cmdlet to get the desired files , then pipe the results to `Remove-Item` to
+> delete them. See [Example 4](#example-4-delete-files-in-subfolders-recursively) for more
+> information.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -483,8 +484,8 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet. For more information, see the following
 articles:
 
-- [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
-- [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
+- [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md#confirmpreference)
+- [about_Functions_CmdletBindingAttribute](../Microsoft.PowerShell.Core/About/about_Functions_CmdletBindingAttribute.md#confirmimpact)
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -574,6 +575,6 @@ design.
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
-[about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md#confirmpreference)
 
-[about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
+[about_Functions_CmdletBindingAttribute](../Microsoft.PowerShell.Core/About/about_Functions_CmdletBindingAttribute.md#confirmimpact)
