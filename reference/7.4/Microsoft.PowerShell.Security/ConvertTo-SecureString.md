@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 12/12/2022
+ms.date: 08/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-SecureString
@@ -45,11 +45,13 @@ in a file for later use.
 
 If the standard string being converted was encrypted with `ConvertFrom-SecureString` using a
 specified key, that same key must be provided as the value of the **Key** or **SecureKey** parameter
-of the `ConvertTo-SecureString` cmdlet.
+of the `ConvertTo-SecureString` cmdlet. If you don't specify a key when creating the secure string,
+the string is not encrypted. If you don't specify a key when converting from an encrypted secure
+string, the value returned is invalid.
 
 > [!NOTE]
 > Note that per [DotNet](xref:System.Security.SecureString#remarks), the
-> contents of a SecureString are not encrypted on non-Windows systems.
+> contents of a SecureString aren't encrypted on non-Windows systems.
 
 ## EXAMPLES
 
