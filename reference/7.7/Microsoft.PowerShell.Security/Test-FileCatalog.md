@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 12/12/2022
+ms.date: 08/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
@@ -28,11 +28,15 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 > **This cmdlet is only available on the Windows platform.**
 
 `Test-FileCatalog` validates the authenticity of files by comparing the file hashes of a catalog
-file (.cat) with the hashes of actual files on disk. If it detects any mismatches, it returns the
-status as ValidationFailed. Users can retrieve all this information by using the -Detailed
-parameter. It also displays signing status of catalog in Signature property, which is equivalent to
-calling `Get-AuthenticodeSignature` cmdlet on the catalog file. Users can also skip any file during
-validation by using the -FilesToSkip parameter.
+file (`.cat`) with the hashes of actual files on disk. If it detects any mismatches, it returns the
+status as ValidationFailed. Users can retrieve all this information by using the `-Detailed`
+parameter. It also displays signing status of catalog in **Signature** property, which is equivalent
+to calling `Get-AuthenticodeSignature` cmdlet on the catalog file. Users can also skip any file
+during validation by using the `-FilesToSkip` parameter.
+
+> [!IMPORTANT]
+> Version 1.0 (SHA1-based) catalogs are deprecated and shouldn't be trusted for security-sensitive
+> workflows.
 
 This cmdlet is only supported on Windows.
 

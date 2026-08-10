@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 03/05/2026
+ms.date: 08/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
@@ -30,6 +30,9 @@ changes have been made to the folders since catalog creation time.
 
 Catalog versions 1 and 2 are supported. Version 1 uses the (deprecated) SHA1 hashing algorithm to
 create file hashes, and version 2 uses SHA256.
+
+> [!IMPORTANT]
+> SHA1-based catalogs are deprecated and shouldn't be trusted for security-sensitive workflows.
 
 ## EXAMPLES
 
@@ -71,9 +74,12 @@ Accept wildcard characters: False
 
 ### -CatalogVersion
 
-Accepts `1.0` or `2.0` as possible values for specifying the catalog version. `1.0` should be
-avoided whenever possible because it uses the insecure SHA-1 hash algorithm. Version `2.0` uses the
-secure SHA-256 algorithm.
+Accepts `1.0` or `2.0` as possible values for specifying the catalog version. Version `2.0` uses
+the secure SHA-256 algorithm.
+
+> [!IMPORTANT]
+> Version 1.0 (SHA1-based) catalogs are deprecated and shouldn't be trusted for security-sensitive
+> workflows.
 
 ```yaml
 Type: System.Int32
