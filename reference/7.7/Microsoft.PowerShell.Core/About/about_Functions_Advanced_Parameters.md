@@ -230,7 +230,7 @@ a value is required.
 
 - Always base the behavior controlled by the `[switch]` parameter on the
   _value_ of the parameter, not its _presence_. There are several ways to test
-  for the presence of a `[switch]` parameters:
+  for the presence of a `[switch]` parameter:
 
   - `$PSBoundParameters` contains the `[switch]` parameter name as a key
   - `$MyInvocation.BoundParameters` contains the `[switch]` parameter name as a

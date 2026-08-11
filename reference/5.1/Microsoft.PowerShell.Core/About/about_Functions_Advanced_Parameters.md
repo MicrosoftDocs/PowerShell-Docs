@@ -1006,8 +1006,9 @@ param(
 In the following example, the value of the variable `$number` must be between
 zero and ten.
 
-```powershell
+````powershell
 [ValidateRange(0,10)] [int]$number = 5
+````
 
 > [!NOTE]
 > When validating a range of numbers, you should ensure that the values in the
