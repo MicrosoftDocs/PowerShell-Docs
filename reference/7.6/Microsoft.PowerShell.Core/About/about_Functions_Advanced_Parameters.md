@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 04/08/2026
+ms.date: 08/11/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -1060,6 +1060,34 @@ than zero.
 
 ```powershell
 [ValidateRange("Positive")] [int]$number = 1
+```
+
+> [!NOTE]
+> When validating a range of numbers, you should ensure that the values in the
+> range are the same type as the parameter or variable. In the following
+> example, The range values are integers, but the variable is a double. For
+> validation, the value is converted to an integer (10), which results in a
+> value of 10.5 being valid even though it is outside the range of 0 to 10. The
+> value of 10.6 is also converted to an integer, which results in a value of
+> 11, which is outside the range of 0 to 10 and generates an error.
+
+```powershell
+PS> [ValidateRange(0,10)] [double]$number = 10.5
+PS> $number
+10.5
+PS> [ValidateRange(0,10)] [double]$number = 10.6
+MetadataError: The variable cannot be validated because the value 10.6 is not a
+valid value for the number variable.
+```
+
+To avoid rounding issues with type conversion, you can specify the type of the
+range values to match the type of the parameter or variable. In the following
+example, the range values are doubles, which avoids the rounding issue.
+
+```powershell
+PS> [ValidateRange([double]0,[double]10)] [double]$number = 10.5
+MetadataError: The variable cannot be validated because the value 10.5 is not a
+valid value for the number variable.
 ```
 
 ### ValidateScript validation attribute
