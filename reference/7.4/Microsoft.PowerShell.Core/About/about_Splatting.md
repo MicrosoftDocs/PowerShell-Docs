@@ -1,7 +1,7 @@
 ---
 description: Describes how to use splatting to pass parameters to commands in PowerShell.
 Locale: en-US
-ms.date: 06/17/2026
+ms.date: 08/11/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Splatting
@@ -26,8 +26,7 @@ splatting values in different command calls and use splatting to pass parameter
 values from the `$PSBoundParameters` automatic variable to other scripts and
 functions.
 
-Beginning in Windows PowerShell 3.0, you can also use splatting to represent
-all parameters of a command.
+Splatting was introduced in Windows PowerShell 2.0.
 
 ## Syntax
 
@@ -37,11 +36,11 @@ all parameters of a command.
 ```
 
 To provide parameter values for positional parameters, in which parameter names
-are not required, use the array syntax. To provide parameter name and value
+aren't required, use the array syntax. To provide parameter name and value
 pairs, use the hash table syntax. The splatted value can appear anywhere in the
 parameter list.
 
-When splatting, you do not need to use a hash table or an array to pass all
+When splatting, you don't need to use a hash table or an array to pass all
 parameters. You may pass some parameters by using splatting and pass others by
 position or by parameter name. Also, you can splat multiple objects in a single
 command so you don't pass more than one value for each parameter.
@@ -90,11 +89,21 @@ Copy-Item @HashArguments
 
 ## Splatting with arrays
 
-Use an array to splat values for positional parameters, which do not require
-parameter names. The values must be in position-number order in the array.
+Use an array to splat values for positional parameters, which don't require
+parameter names. The values must be in position-number order in the array. You
+can also use array splatting to pass values to native commands.
 
-The following examples compare two `Copy-Item` commands that copy the Test.txt
-file to the Test2.txt file in the same directory.
+The following example shows how to use array splatting to pass values to a
+native command. The `cmd` command receives three parameters: `/c`, `dir`, and
+`/ogn`.
+
+```powershell
+$array = '/c', 'dir', '/ogn'
+cmd.exe @array
+```
+
+The following examples compare two `Copy-Item` commands that copy the
+`Test.txt` file to the `Test2.txt` file in the same directory.
 
 The first example uses the traditional format in which parameter names are
 omitted. The parameter values appear in position order in the command.
@@ -158,15 +167,15 @@ the elements of the inner array.
 
 ### Using the ArgumentList parameter
 
-Several cmdlets have an **ArgumentList** parameter that is used to pass
-parameter values to a scriptblock that is executed by the cmdlet. The
-**ArgumentList** parameter takes an array of values that is passed to the
+Several cmdlets have an **ArgumentList** parameter that's used to pass
+parameter values to a scriptblock that's executed by the cmdlet. The
+**ArgumentList** parameter takes an array of values that's passed to the
 scriptblock. PowerShell is effectively using array splatting to bind the
 values to the parameters of the scriptblock. When using **ArgumentList**, if
 you need to pass an array as a single object bound to a single parameter, you
 must wrap the array as the only element of another array.
 
-The following example has a scriptblock that takes a single parameter that is
+The following example has a scriptblock that takes a single parameter that's
 an array of strings.
 
 ```powershell
@@ -224,7 +233,7 @@ The second and third commands use the `$Colors` variable for splatting in a
 Write-Host "This is a test." @Colors
 
 #Write second message with same colors. The position of splatted
-#hash table does not matter.
+#hash table doesn't matter.
 Write-Host @Colors "This is another test."
 ```
 
@@ -435,8 +444,8 @@ If you make a function into an advanced function by using either the
 is no longer available in the function. Advanced functions require explicit
 parameter definition.
 
-PowerShell Desired State Configuration (DSC) was not designed to use splatting.
-You cannot use splatting to pass values into a DSC resource. For more
+PowerShell Desired State Configuration (DSC) wasn't designed to use splatting.
+You can't use splatting to pass values into a DSC resource. For more
 information, see Gael Colas' article [Pseudo-Splatting DSC Resources][05].
 
 ## See also
