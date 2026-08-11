@@ -572,7 +572,7 @@ Accept wildcard characters: False
 Specifies the number of objects to select from the end of a collection of input objects. If the
 command uses the **Skip** parameter it skips items from the end of the collection, then returns the
 last number of objects specified by the **Last** parameter after skipping. If you use the **Skip**
-parameter with both **First** and **Last**, `Select-Object` skips object from the beginning.
+parameter with both **First** and **Last**, `Select-Object` skips objects from the beginning.
 
 
 ```yaml
