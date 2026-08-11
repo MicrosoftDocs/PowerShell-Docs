@@ -1013,7 +1013,7 @@ zero and ten.
 > [!NOTE]
 > When validating a range of numbers, you should ensure that the values in the
 > range are the same type as the parameter or variable. In the following
-> example, The range values are integers, but the variable is a double. For
+> example, the range values are integers, but the variable is a double. For
 > validation, the value is converted to an integer (10), which results in a
 > value of 10.5 being valid even though it is outside the range of 0 to 10. The
 > value of 10.6 is also converted to an integer, which results in a value of
