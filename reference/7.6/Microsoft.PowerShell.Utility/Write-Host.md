@@ -1,23 +1,27 @@
----
+﻿---
+document type: cmdlet
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.6&WT.mc_id=ps-gethelp
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/01/2026
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.6&WT.mc_id=ps-gethelp
-schema: 2.0.0
+ms.date: 08/11/2026
+PlatyPS schema version: 2024-05-01
 title: Write-Host
 ---
 
 # Write-Host
 
 ## SYNOPSIS
+
 Writes customized output to a host.
 
 ## SYNTAX
 
+### __AllParameterSets
+
 ```
-Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>]
- [-ForegroundColor <ConsoleColor>] [-BackgroundColor <ConsoleColor>] [<CommonParameters>]
+Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundColor <ConsoleColor>]
+ [-BackgroundColor <ConsoleColor>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,15 +144,35 @@ Specifies the background color. There is no default. The acceptable values for t
 
 ```yaml
 Type: System.ConsoleColor
-Parameter Sets: (All)
-Aliases:
-Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues:
+- Black
+- DarkBlue
+- DarkGreen
+- DarkCyan
+- DarkRed
+- DarkMagenta
+- DarkYellow
+- Gray
+- DarkGray
+- Blue
+- Green
+- Cyan
+- Red
+- Magenta
+- Yellow
+- White
+HelpMessage: ''
 ```
 
 ### -ForegroundColor
@@ -174,15 +198,35 @@ Specifies the text color. There is no default. The acceptable values for this pa
 
 ```yaml
 Type: System.ConsoleColor
-Parameter Sets: (All)
-Aliases:
-Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues:
+- Black
+- DarkBlue
+- DarkGreen
+- DarkCyan
+- DarkRed
+- DarkMagenta
+- DarkYellow
+- Gray
+- DarkGray
+- Blue
+- Green
+- Cyan
+- Red
+- Magenta
+- Yellow
+- White
+HelpMessage: ''
 ```
 
 ### -NoNewline
@@ -192,14 +236,19 @@ newlines are inserted between the output strings. No newline is added after the 
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -Object
@@ -208,14 +257,21 @@ Objects to display in the host.
 
 ```yaml
 Type: System.Object
-Parameter Sets: (All)
-Aliases: Msg, Message
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
+DefaultValue: None
+SupportsWildcards: false
+Aliases:
+- Msg
+- Message
+ParameterSets:
+- Name: (All)
+  Position: 0
+  IsRequired: false
+  ValueFromPipeline: true
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: true
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -Separator
@@ -224,21 +280,26 @@ Specifies a separator string to insert between objects displayed by the host.
 
 ```yaml
 Type: System.Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
+-InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+-ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -285,18 +346,11 @@ cmdlet sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](../Microsoft.PowerShell.Core/Clear-Host.md)
-
-[Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
-
-[Write-Debug](Write-Debug.md)
-
-[Write-Error](Write-Error.md)
-
-[Write-Output](Write-Output.md)
-
-[Write-Progress](Write-Progress.md)
-
-[Write-Verbose](Write-Verbose.md)
-
-[Write-Warning](Write-Warning.md)
+- [Clear-Host](../Microsoft.PowerShell.Core/Clear-Host.md)
+- [Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
+- [Write-Debug](Write-Debug.md)
+- [Write-Error](Write-Error.md)
+- [Write-Output](Write-Output.md)
+- [Write-Progress](Write-Progress.md)
+- [Write-Verbose](Write-Verbose.md)
+- [Write-Warning](Write-Warning.md)
