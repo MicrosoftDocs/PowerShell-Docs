@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/08/2026
+ms.date: 08/11/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/join-path?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Join-Path
@@ -15,7 +15,7 @@ Combines a path and a child path into a single path.
 ## SYNTAX
 
 ```
-Join-Path [-Path] <String[]> [-ChildPath] <String> [[-AdditionalChildPath] <String[]>] [-Resolve]
+Join-Path [-Path] <String[]> [-ChildPath] <String[]> [[-AdditionalChildPath] <String[]>] [-Resolve]
  [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
@@ -176,9 +176,9 @@ Accept wildcard characters: False
 
 Specifies the elements to append to the value of the `Path` parameter. Wildcards are permitted.
 
-Beginning in PowerShell 7.6-preview.4, this parameter accepts an array of strings. This allows you
-to specify multiple child paths to join with the main path. You can use this parameter instead of
-the **AdditionalChildPath** parameter.
+Beginning in PowerShell 7.6, this parameter accepts an array of strings. This allows you to specify
+multiple child paths to join with the main path. You can use this parameter instead of the
+**AdditionalChildPath** parameter.
 
 ```yaml
 Type: System.String[]
