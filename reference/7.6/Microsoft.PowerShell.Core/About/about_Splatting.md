@@ -94,8 +94,8 @@ parameter names. The values must be in position-number order in the array. You
 can also use array splatting to pass values to native commands.
 
 The following example shows how to use array splatting to pass values to a
-native command. The `cmd` command receives three parameters: `/c`, `dir`, and
-`/ogn`.
+native command on Windows. The `cmd.exe` command receives three arguments:
+`/c`, `dir`, and `/ogn`.
 
 ```powershell
 $array = '/c', 'dir', '/ogn'
