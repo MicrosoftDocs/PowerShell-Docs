@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 08/12/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions
@@ -26,8 +26,8 @@ PowerShell defines two kinds of functions:
 
 You can group the statements in a function into one of four different
 predefined statement blocks. These statement blocks are named using the
-keywords `begin`, `process`, `end`, and `clean`. If you don't use these
-keywords, PowerShell puts the statements in the appropriate code block.
+keywords `begin`, `process`, and `end`. If you don't use these keywords,
+PowerShell puts the statements in the appropriate code block.
 
 Functions can also act like cmdlets. You can create a function that works just
 like a cmdlet without using `C#` programming. For more information, see
@@ -471,8 +471,8 @@ For more information, see [about_Splatting][18].
 ## Piping objects to functions
 
 Any function can take input from the pipeline. You can control how a function
-processes input from the pipeline using `begin`, `process`, `end`, and `clean`
-keywords. The following sample syntax shows these keywords:
+processes input from the pipeline using `begin`, `process`, and `end` keywords.
+The following sample syntax shows these keywords:
 
 The `process` statement list runs one time for each object in the pipeline.
 While the `process` block is running, each pipeline object is assigned to the

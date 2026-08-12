@@ -207,7 +207,7 @@ $invokeCommandSplat = @{
 $j = Invoke-Command @invokeCommandSplat
 # To confirm that these job objects are from the remote machines, run Get-Job to show no
 # local jobs running.
-Get-Job`
+Get-Job
 # Display the three job objects in $j. Note that the Localhost location is not the local
 # computer, but instead localhost as it relates to the job on each Server.
 $j
