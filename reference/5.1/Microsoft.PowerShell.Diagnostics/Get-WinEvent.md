@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 01/18/2026
+ms.date: 08/12/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WinEvent
@@ -413,7 +413,7 @@ The **NoElement** parameter removes other properties from the output. In the out
 column contains the total number of each event. The **Name** column contains the grouped
 **LevelDisplayName**.
 
-### Example 11: Get error events that have a specified string in their name
+### Example 11: Get a count of events by severity from several logs
 
 This example uses a comma-separated string of log names. The output is grouped by the level such as
 error or warning and the log name.
