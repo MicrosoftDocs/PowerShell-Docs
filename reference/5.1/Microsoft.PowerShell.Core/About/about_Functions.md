@@ -24,7 +24,7 @@ PowerShell defines two kinds of functions:
 - A **filter** is a type of function designed to process data from the
   pipeline. Filters are defined using the `filter` keyword.
 
-You can group the statements in a function into one of four different
+You can group the statements in a function into one of three different
 predefined statement blocks. These statement blocks are named using the
 keywords `begin`, `process`, and `end`. If you don't use these keywords,
 PowerShell puts the statements in the appropriate code block.
