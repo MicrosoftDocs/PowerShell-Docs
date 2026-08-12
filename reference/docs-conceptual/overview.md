@@ -1,7 +1,8 @@
 ---
 description: This article is an introduction to the PowerShell scripting environment and its features.
-ms.date: 05/12/2026
+ms.date: 08/12/2026
 ms.topic: overview
+no-loc: [Azure, Windows, Exchange]
 title: What is PowerShell?
 ---
 
