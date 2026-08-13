@@ -1,12 +1,12 @@
 ---
 title: What's New in PowerShell 7.7
 description: New features and changes released in PowerShell 7.7
-ms.date: 07/20/2026
+ms.date: 08/13/2026
 ---
 
 # What's New in PowerShell 7.7
 
-PowerShell 7.7.0-preview.3 includes the following features, updates, and breaking changes.
+PowerShell 7.7.0-preview.4 includes the following features, updates, and breaking changes.
 PowerShell 7.7.0 is built on the .NET 11.0.100-preview.6 runtime.
 
 For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository.
@@ -98,6 +98,8 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Engine improvements
 
+- Add support for new WLDP setting `EnableFileOnlyEntry` ([#26752][26752])
+- Fix the dot-sourcing behavior of `pwsh -file` for advanced-function scripts ([#27727][27727])
 - Fix progress bar rendering with double-width Unicode characters ([#26185][26185]) (Thanks
   @yotsuda!)
 - Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows
@@ -162,6 +164,7 @@ PowerShell 7.7 includes the following experimental features.
 [26668]: https://github.com/PowerShell/PowerShell/pull/26668
 [26669]: https://github.com/PowerShell/PowerShell/pull/26669
 [26692]: https://github.com/PowerShell/PowerShell/pull/26692
+[26752]: https://github.com/PowerShell/PowerShell/pull/26752
 [26719]: https://github.com/PowerShell/PowerShell/pull/26719
 [26785]: https://github.com/PowerShell/PowerShell/pull/26785
 [26929]: https://github.com/PowerShell/PowerShell/pull/26929
@@ -169,10 +172,10 @@ PowerShell 7.7 includes the following experimental features.
 [27095]: https://github.com/PowerShell/PowerShell/pull/27095
 [27106]: https://github.com/PowerShell/PowerShell/pull/27106
 [27109]: https://github.com/PowerShell/PowerShell/pull/27109
-[27033]: https://github.com/PowerShell/PowerShell/pull/27033
 [27123]: https://github.com/PowerShell/PowerShell/pull/27123
 [27266]: https://github.com/PowerShell/PowerShell/pull/27266
 [27328]: https://github.com/PowerShell/PowerShell/pull/27328
 [27395]: https://github.com/PowerShell/PowerShell/pull/27395
 [27397]: https://github.com/PowerShell/PowerShell/pull/27397
 [27398]: https://github.com/PowerShell/PowerShell/pull/27398
+[27727]: https://github.com/PowerShell/PowerShell/pull/27727

@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.4
 description: New features and changes released in PowerShell 7.4
-ms.date: 07/20/2026
+ms.date: 08/13/2026
 ---
 
 # What's New in PowerShell 7.4
 
-PowerShell 7.4.18 includes the following features, updates, and breaking changes. PowerShell 7.4.18
-is built on the .NET 8.0.29 runtime.
+PowerShell 7.4.19 includes the following features, updates, and breaking changes. PowerShell 7.4.19
+is built on the .NET 8.0.30 runtime.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
 
@@ -185,6 +185,7 @@ Updates to `$PSStyle`
 
 Other Engine updates
 
+- Fix the dot-sourcing behavior of `pwsh -file` for advanced-function scripts ([#27760][27760])
 - Fix checks for local user config file paths ([#27454][27454])
 - Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows
   ([#27430][27430])
@@ -357,3 +358,4 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [27454]: https://github.com/PowerShell/PowerShell/pull/27454
 [27426]: https://github.com/PowerShell/PowerShell/pull/27426
 [27430]: https://github.com/PowerShell/PowerShell/pull/27430
+[27760]: https://github.com/PowerShell/PowerShell/pull/27760
