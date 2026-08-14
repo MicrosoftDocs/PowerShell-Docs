@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/11/2026
+ms.date: 08/14/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-guid?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Guid
@@ -39,8 +39,8 @@ contain a millisecond-precision timestamp and are sortable. If you need a unique
 you can create a GUID, as needed.
 
 > [!NOTE]
-> In PowerShell 7.5 and earlier, `New-Guid` created Version 4 (random) UUIDs. Starting in
-> PowerShell 7.6, the default changed to Version 7. If you need a Version 4 UUID, use
+> In PowerShell 7.6 and earlier, `New-Guid` created Version 4 (random) UUIDs. Starting in
+> PowerShell 7.7, the default changed to Version 7. If you need a Version 4 UUID, use
 > `[guid]::NewGuid()` directly.
 
 ## EXAMPLES
@@ -179,7 +179,7 @@ When used without string input or the **Empty** parameter, the cmdlet creates a 
 Universally Unique Identifier (UUID) as defined in
 [RFC 9562](https://www.rfc-editor.org/rfc/rfc9562).
 
-In PowerShell 7.5 and earlier, the cmdlet created a Version 4 (random) UUID. If you need a
+In PowerShell 7.6 and earlier, the cmdlet created a Version 4 (random) UUID. If you need a
 Version 4 UUID, use `[guid]::NewGuid()`. To explicitly create a Version 7 UUID, use
 `[guid]::CreateVersion7()`.
 
