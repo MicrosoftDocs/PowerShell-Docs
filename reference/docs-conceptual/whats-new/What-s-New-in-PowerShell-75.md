@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 07/20/2026
+ms.date: 08/13/2026
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5.9 includes the following features, updates, and breaking changes. PowerShell
-7.5.9 is built on the .NET 9.0.18 runtime.
+PowerShell 7.5.10 includes the following features, updates, and breaking changes. PowerShell
+7.5.10 is built on the .NET 9.0.19 runtime.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
 information about .NET 9, see [What's new in .NET 9][07].
@@ -30,7 +30,7 @@ The macOS PKG package is now notarized and signed by Microsoft. For more informa
 
 ## Updated modules
 
-PowerShell 7.5.9 includes the following updated modules:
+PowerShell 7.5.10 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.1.1
 - **PSReadLine** v2.3.6
@@ -131,6 +131,7 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## Engine improvements
 
+- Fix the dot-sourcing behavior of `pwsh -file` for advanced-function scripts ([#27761][27761])
 - Fix checks for local user config file paths ([#27479][27479])
 - Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows ([#27472][27472])
 - Fix the logic for finding the ssh executable in the PATH ([#26165][26165]) (Thanks @jborean93!)
@@ -367,3 +368,4 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [27220]: https://github.com/PowerShell/PowerShell/pull/27220
 [27472]: https://github.com/PowerShell/PowerShell/pull/27472
 [27479]: https://github.com/PowerShell/PowerShell/pull/27479
+[27761]: https://github.com/PowerShell/PowerShell/pull/27761
