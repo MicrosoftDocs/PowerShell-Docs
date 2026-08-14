@@ -1,12 +1,12 @@
 ---
 title: What's New in PowerShell 7.7
 description: New features and changes released in PowerShell 7.7
-ms.date: 07/20/2026
+ms.date: 08/13/2026
 ---
 
 # What's New in PowerShell 7.7
 
-PowerShell 7.7.0-preview.3 includes the following features, updates, and breaking changes.
+PowerShell 7.7.0-preview.6 includes the following features, updates, and breaking changes.
 PowerShell 7.7.0 is built on the .NET 11.0.100-preview.6 runtime.
 
 For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository.
@@ -169,7 +169,6 @@ PowerShell 7.7 includes the following experimental features.
 [27095]: https://github.com/PowerShell/PowerShell/pull/27095
 [27106]: https://github.com/PowerShell/PowerShell/pull/27106
 [27109]: https://github.com/PowerShell/PowerShell/pull/27109
-[27033]: https://github.com/PowerShell/PowerShell/pull/27033
 [27123]: https://github.com/PowerShell/PowerShell/pull/27123
 [27266]: https://github.com/PowerShell/PowerShell/pull/27266
 [27328]: https://github.com/PowerShell/PowerShell/pull/27328
