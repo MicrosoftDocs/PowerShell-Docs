@@ -55,8 +55,8 @@ level.
 
 ### Scope precedence
 
-Except for a few special cases, settings defined at the **CurrentUsers** level
-take precedence over settings defined for the **AllUser** level.
+Except for a few special cases, settings defined at the **CurrentUser** level
+take precedence over settings defined for the **AllUsers** level.
 
 On Windows systems:
 
