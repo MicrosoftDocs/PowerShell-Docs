@@ -64,8 +64,8 @@ cumulative, so the features described in the later versions include changes from
 
 ### Changes in PowerShell 7.7
 
-PowerShell 7.7-preview.4 added support the `FileOnlyEntry` **AppSetting** for PowerShell. This is an
-extra setting to run PowerShell in a more restricted mode. For more information, see
+PowerShell 7.7-preview.4 added support for the `FileOnlyEntry` **AppSetting** for PowerShell. This
+is an extra setting to run PowerShell in a more restricted mode. For more information, see
 [How to use AppControl to secure PowerShell][06].
 
 ### Changes in PowerShell 7.4

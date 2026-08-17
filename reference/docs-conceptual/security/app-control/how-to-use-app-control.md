@@ -97,7 +97,7 @@ For testing, you just need to create a default policy and a self signed code sig
    location, `C:\Windows\System32\CodeIntegrity`.
 
    > [!NOTE]
-   > Some policies definition must be copied to a subfolder such as
+   > You must copy some policy definitions to a subfolder such as
    > `C:\Windows\System32\CodeIntegrity\CiPolicies`. For more information, see
    > [App Control Admin Tips & Known Issues][03].
 
@@ -169,18 +169,18 @@ of the script in real time.
 
 ## Additional configuration settings for PowerShell
 
-AppControl supports additional configuration settings for PowerShell.
+App Control supports additional configuration settings for PowerShell.
 
 - `BlockScriptOnPolicyFailure`: This setting blocks the execution of scripts that fail to meet the
-  App Control policy requirements. When enabled, AppControl blocks any script that's not explicitly
+  App Control policy requirements. When enabled, App Control blocks any script that's not explicitly
   allowed by the policy rather than running it in **ConstrainedLanguage** mode.
 
   > [!NOTE]
-  > This setting is enforced by AppControl and applies to all versions of (`powershell.exe` and
-  > `pwsh.exe`).
+  > This setting is enforced by App Control and applies to all versions of PowerShell
+  > (`powershell.exe` and `pwsh.exe`).
 
 - `FileOnlyEntry`: This setting prevents PowerShell from running with arguments that don't result in
-  the execution of a specified file. When enabled, AppControl blocks the execution of PowerShell
+  the execution of a specified file. When enabled, App Control blocks the execution of PowerShell
   commands that are passed via the pipeline, to the `-Command` or `-EncodedCommand` parameters, or
   interactive sessions that allow direct command execution. When enabled, PowerShell only runs
   scripts that are specified with the `-File` parameter.
@@ -206,9 +206,9 @@ AppControl supports additional configuration settings for PowerShell.
   > This setting only applies to PowerShell 7.7-preview.4 and newer versions. If you configure this
   > setting for earlier versions, the **AppSetting** is silently ignored.
 
-To use these settings, you must add them to the App Control policy XML file (SystemCIPolicy.xml).
+To use these settings, you must add them to the App Control policy XML file (`SystemCIPolicy.xml`).
 Open the XML file in a text editor and add the `<AppSettings>` section of the policy. The following
-example shows the `<AppSettings>` xml with both settings enabled.
+example shows the `<AppSettings>` XML with both settings enabled.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -238,6 +238,6 @@ example shows the `<AppSettings>` xml with both settings enabled.
 - [Create an App Control policy for fully managed devices][01]
 
 <!-- link references -->
-[01]: /windows/security/application-security/application-control/app-control-for-business/design/create-appcontrol-policy-for-fully-managed-devices
+[01]: /windows/security/application-security/application-control/app-control-for-business/design/create-App Control-policy-for-fully-managed-devices
 [02]: /windows/security/application-security/application-control/app-control-for-business/design/script-enforcement
 [03]: /windows/security/application-security/application-control/app-control-for-business/operations/known-issues

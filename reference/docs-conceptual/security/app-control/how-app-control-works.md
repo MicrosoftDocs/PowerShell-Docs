@@ -11,16 +11,15 @@ and PowerShell you're using.
 
 ## How PowerShell detects a system lockdown policy
 
-PowerShell detects both **AppLocker** and **App Control for Business** system
-wide polices. Microsoft is no longer investing in AppLocker. AppLocker will
-only receive security fixes. App Control is the preferred application control
-system for Windows.
+PowerShell detects both **AppLocker** and **App Control for Business** system-wide polices.
+Microsoft is no longer investing in AppLocker. AppLocker will only receive security fixes. App
+Control is the preferred application control system for Windows.
 
 ### Legacy App Control policy enforcement detection
 
 PowerShell uses the legacy App Control `WldpGetLockdownPolicy` API to discover two things:
 
-- System wide policy enforcement: `None`, `Audit`, `Enforce`
+- System-wide policy enforcement: `None`, `Audit`, `Enforce`
 - Individual file policy: `None`, `Audit` (allowed by policy), `Enforce` (not allowed by policy)
 
 All versions of PowerShell (v5.1 - v7.x) support this App Control policy detection.
@@ -30,7 +29,7 @@ All versions of PowerShell (v5.1 - v7.x) support this App Control policy detecti
 App Control introduced new APIs in recent versions of Windows. Beginning with version 7.3,
 PowerShell uses the new `WldpCanExecuteFile` API to decide how a file should be handled. Windows
 PowerShell 5.1 doesn't support this new API. The new API takes precedence over the legacy API for
-individual files. However, PowerShell continues to use the legacy API to get the system wide policy
+individual files. However, PowerShell continues to use the legacy API to get the system-wide policy
 configuration. If the new API isn't available, PowerShell falls back to the old API behavior.
 
 The new API provides the following information for each file:
@@ -79,10 +78,10 @@ behavior is:
 
 ## PowerShell restrictions under lockdown policy
 
-When PowerShell detects the system is under an App Control lockdown policy, it applies restrictions even if
-the script is trusted and running in `FullLanguage` mode. These restrictions prevent known behaviors
-of PowerShell that could result in arbitrary code execution on a locked-down system. The lockdown
-policy enforces the following restrictions:
+When PowerShell detects the system is under an App Control lockdown policy, it applies restrictions
+even if the script is trusted and running in `FullLanguage` mode. These restrictions prevent known
+behaviors of PowerShell that could result in arbitrary code execution on a locked-down system. The
+lockdown policy enforces the following restrictions:
 
 - Module dot-sourcing with wildcard function export restriction
 
