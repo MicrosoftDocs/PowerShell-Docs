@@ -1,6 +1,6 @@
 ---
 description: This article explains how App Control for Business works to secure PowerShell and the restrictions it imposes.
-ms.date: 12/09/2025
+ms.date: 08/17/2026
 title: How App Control for Business works with PowerShell
 ---
 # How App Control works with PowerShell
@@ -12,7 +12,7 @@ and PowerShell you're using.
 ## How PowerShell detects a system lockdown policy
 
 PowerShell detects both **AppLocker** and **App Control for Business** system
-wide polices. Microsoft is no longer investing in AppLocker. AppLocker will 
+wide polices. Microsoft is no longer investing in AppLocker. AppLocker will
 only receive security fixes. App Control is the preferred application control
 system for Windows.
 
@@ -248,7 +248,8 @@ command, PowerShell either blocks the command from running (new behavior) or run
 ## Further reading
 
 - For more information about PowerShell language modes, see [about_Language_Modes][01].
-- For information about how to configure and use App Control, see [How to use App Control for PowerShell][03].
+- For information about how to configure and use App Control, see
+  [How to use App Control for PowerShell][03].
 
 <!-- link references -->
 [01]: /powershell/module/microsoft.powershell.core/about/about_language_modes

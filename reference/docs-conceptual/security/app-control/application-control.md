@@ -1,11 +1,11 @@
 ---
 description: This article explains the features of Application Control that can be used to secure your PowerShell environment.
-ms.date: 01/26/2026
+ms.date: 08/17/2026
 title: Use App Control to secure PowerShell
 ---
 # Use App Control to secure PowerShell
 
-Windows 10 includes two technologies, [App Control for Business][04] and [AppLocker][01],
+Windows 10 includes two technologies, [App Control for Business][01] and [AppLocker][03],
 that you can use to control applications. They allow you to create a lockdown experience to help
 secure your PowerShell environment.
 
@@ -31,11 +31,11 @@ the system into System Lockdown mode. System Lockdown mode is the feature that d
 and determines if a context needs to be initialized or changed to a specific language mode.
 
 App Control is designed as a security feature under the servicing criteria defined by the Microsoft
-Security Response Center (MSRC). For more information, see [Application Controls for Windows][04]
-and [App Control and AppLocker feature availability][02].
+Security Response Center (MSRC). For more information, see [Application Controls for Windows][01]
+and [App Control and AppLocker feature availability][04].
 
 > [!NOTE]
-> When [choosing between App Control or AppLocker][03], we recommend that you implement application
+> When [choosing between App Control or AppLocker][02], we recommend that you implement application
 > control using App Control for Business rather than AppLocker. Microsoft is no longer investing in
 > AppLocker. AppLocker will only receive security fixes.
 
@@ -61,6 +61,12 @@ Windows PowerShell 5.1 was the first version of PowerShell to support App Contro
 features of App Control and AppLocker improve with each new release of PowerShell. The following
 sections describe how this support changed in each version of PowerShell. The changes are
 cumulative, so the features described in the later versions include changes from earlier versions.
+
+### Changes in PowerShell 7.7
+
+PowerShell 7.7-preview.4 added support the `FileOnlyEntry` **AppSetting** for PowerShell. This is an
+extra setting to run PowerShell in a more restricted mode. For more information, see
+[How to use AppControl to secure PowerShell][06].
 
 ### Changes in PowerShell 7.4
 
@@ -97,13 +103,13 @@ throwing errors. The log messages describe what restrictions would apply if the 
 ## Further reading
 
 - For more information about how App Control works and what restrictions it enforces, see
-  [How App Control works with PowerShell][06].
-- For more information about securing PowerShell with App Control, see [How to use App Control][05].
+  [How App Control works with PowerShell][05].
+- For more information about securing PowerShell with App Control, see [How to use App Control][06].
 
 <!-- link references -->
-[01]: /windows/security/application-security/application-control/app-control-for-business/applocker/what-is-applocker
-[02]: /windows/security/application-security/application-control/app-control-for-business/feature-availability
-[03]: /windows/security/application-security/application-control/app-control-for-business/appcontrol-and-applocker-overview#choose-when-to-use-app-control-or-applocker
-[04]: /windows/security/application-security/application-control/app-control-for-business/appcontrol
-[05]: how-to-use-app-control.md
-[06]: how-app-control-works.md
+[01]: /windows/security/application-security/application-control/app-control-for-business/appcontrol
+[02]: /windows/security/application-security/application-control/app-control-for-business/appcontrol-and-applocker-overview#choose-when-to-use-app-control-or-applocker
+[03]: /windows/security/application-security/application-control/app-control-for-business/applocker/what-is-applocker
+[04]: /windows/security/application-security/application-control/app-control-for-business/feature-availability
+[05]: how-app-control-works.md
+[06]: how-to-use-app-control.md
