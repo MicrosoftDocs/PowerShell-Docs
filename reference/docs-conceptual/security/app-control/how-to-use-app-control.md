@@ -1,6 +1,6 @@
 ---
 description: This article explains how to configure and use App Control to secure PowerShell.
-ms.date: 12/09/2025
+ms.date: 08/17/2026
 title: How to use App Control to secure PowerShell
 ---
 # How to use App Control to secure PowerShell
@@ -13,15 +13,15 @@ PowerShell applies the policy's restrictions.
 This article assumes you're using a test machine so that you can test PowerShell behavior under a
 machine wide App Control policy before you deploy the policy in your environment.
 
-## Create an App Control policy
+## App Control policies
 
-An App Control policy is described in an XML file, which contains information about policy options,
+An App Control policy is described in an XML file that contains information about policy options,
 files allowed, and signing certificates recognized by the policy. When the policy is applied, only
 approved files are allowed to load and run. PowerShell either blocks unapproved script files from
 running or runs them in `ConstrainedLanguage` mode, depending on policy options.
 
 You create and manipulate App Control policy using the **ConfigCI** module, which is available on
-all supported Windows versions. This Windows PowerShell module can be used in Windows PowerShell 5.1
+all supported Windows versions. You can use this Windows PowerShell module in Windows PowerShell 5.1
 or in PowerShell 7 through the **Windows Compatibility** layer. It's easier to use this module in
 Windows PowerShell. The policy you create can be applied to any version of PowerShell.
 
@@ -97,9 +97,9 @@ For testing, you just need to create a default policy and a self signed code sig
    location, `C:\Windows\System32\CodeIntegrity`.
 
    > [!NOTE]
-   > Some policies definition must be copied to a subfolder such as
+   > You must copy some policy definitions to a subfolder such as
    > `C:\Windows\System32\CodeIntegrity\CiPolicies`. For more information, see
-   > [App Control Admin Tips & Known Issues][01].
+   > [App Control Admin Tips & Known Issues][03].
 
 1. Disable the App Control policy
 
@@ -167,5 +167,77 @@ PowerShell breaks into the command-line script debugger at the current location 
 the audit event occurred. The breakpoint allows you to debug your code and inspect the current state
 of the script in real time.
 
+## Additional configuration settings for PowerShell
+
+App Control supports additional configuration settings for PowerShell.
+
+- `BlockScriptOnPolicyFailure`: This setting blocks the execution of scripts that fail to meet the
+  App Control policy requirements. When enabled, App Control blocks any script that's not explicitly
+  allowed by the policy rather than running it in **ConstrainedLanguage** mode.
+
+  > [!NOTE]
+  > This setting is enforced by App Control and applies to all versions of PowerShell
+  > (`powershell.exe` and `pwsh.exe`).
+
+- `FileOnlyEntry`: This setting prevents PowerShell from running with arguments that don't result in
+  the execution of a specified file. When enabled, App Control blocks the execution of PowerShell
+  commands that are passed via the pipeline, to the `-Command` or `-EncodedCommand` parameters, or
+  interactive sessions that allow direct command execution. When enabled, PowerShell only runs
+  scripts that are specified with the `-File` parameter.
+
+  Examples of blocked executions:
+
+  ```powershell
+  pwsh
+  pwsh -NoExit -File ./file.ps1
+  pwsh -Command Get-ChildItem
+  "Get-ChildItem" | pwsh -File -
+  pwsh -EncodedCommand <base64-string>
+  ```
+
+  Examples of allowed executions:
+
+  ```powershell
+  pwsh -File ./file.ps1
+  pwsh -NoProfile -NonInteractive -File ./file.ps1 arg1 arg2
+  ```
+
+  > [!NOTE]
+  > This setting only applies to PowerShell 7.7-preview.4 and newer versions. If you configure this
+  > setting for earlier versions, the **AppSetting** is silently ignored.
+
+To use these settings, you must add them to the App Control policy XML file (`SystemCIPolicy.xml`).
+Open the XML file in a text editor and add the `<AppSettings>` section of the policy. The following
+example shows the `<AppSettings>` XML with both settings enabled.
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<SiPolicy xmlns="urn:schemas-microsoft-com:sipolicy">
+
+    <!-- Existing policy content -->
+
+    <AppSettings>
+        <AppSetting
+            AppManifest="Powershell"
+            Name="BlockScriptOnPolicyFailure"
+            Value="true" />
+
+        <AppSetting
+            AppManifest="Powershell"
+            Name="FileOnlyEntry"
+            Value="true" />
+    </AppSettings>
+
+</SiPolicy>
+```
+
+## Further reading
+
+- [App Control Admin Tips & Known Issues][03]
+- [Understand App Control script enforcement][02]
+- [Create an App Control policy for fully managed devices][01]
+
 <!-- link references -->
-[01]: /windows/security/application-security/application-control/app-control-for-business/operations/known-issues
+[01]: /windows/security/application-security/application-control/app-control-for-business/design/create-App Control-policy-for-fully-managed-devices
+[02]: /windows/security/application-security/application-control/app-control-for-business/design/script-enforcement
+[03]: /windows/security/application-security/application-control/app-control-for-business/operations/known-issues
