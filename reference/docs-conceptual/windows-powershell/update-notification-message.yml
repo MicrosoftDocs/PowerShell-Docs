@@ -2,7 +2,7 @@
 metadata:
   description: >-
     This article explains the intent of the update notification message in Windows PowerShell.
-  ms.date: 07/30/2026
+  ms.date: 08/18/2026
   ms.topic: faq
   title: Windows PowerShell update message FAQ
 
@@ -21,8 +21,10 @@ sections:
     questions:
       - question: Why am I seeing this message?
         answer: |
-          Windows PowerShell displays this message at startup to make you aware that there is a
-          newer version of PowerShell available.
+          Windows PowerShell 5.1 displays this message at startup to make you aware that there is a
+          newer version of PowerShell available. You will see this message every time you start
+          Windows PowerShell (`powershell.exe`). You won't see this message when you start
+          PowerShell 7 (`pwsh.exe`).
 
       - question: I opened the URL but it didn't install an update. How do I install PowerShell 7?
         answer: |
@@ -32,9 +34,10 @@ sections:
 
       - question: But I installed PowerShell 7, why am I still seeing this message?
         answer: |
-          Because you ran Windows PowerShell instead of PowerShell 7. PowerShell 7 and Windows
-          PowerShell 5.1 are separate products. PowerShell 7 doesn't replace Windows PowerShell 5.1.
-          PowerShell 7 installs side-by-side. You can run either version.
+          Because you ran Windows PowerShell 5.1 (`powershell.exe`) instead of PowerShell 7
+          (`pwsh.exe`). PowerShell 7 and Windows PowerShell 5.1 are separate products. PowerShell 7
+          doesn't replace Windows PowerShell 5.1. PowerShell 7 installs side-by-side. You can run
+          either version.
 
       - question: How do I run PowerShell 7?
         answer: |
