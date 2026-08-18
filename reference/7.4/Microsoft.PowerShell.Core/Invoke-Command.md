@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/24/2026
+ms.date: 08/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -1286,6 +1286,11 @@ this parameter can be used to provide the key that identifies the user.
 
 This parameter was introduced in PowerShell 6.0.
 
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
+
 ```yaml
 Type: System.String
 Parameter Sets: SSHHost, FilePathSSHHost
@@ -1331,6 +1336,11 @@ hashtable. For example, using the **Port** parameter overrides any `Port` key-va
 the **Options** hashtable.
 
 This parameter was added in PowerShell 7.3.
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -1572,6 +1582,11 @@ If the specified subsystem does not exist on the remote computer, the command fa
 
 If this parameter is not used, the default is the `powershell` subsystem.
 
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
+
 ```yaml
 Type: System.String
 Parameter Sets: SSHHost, FilePathSSHHost
@@ -1621,6 +1636,11 @@ This isn't a required parameter. If the **UserName** parameter isn't specified, 
 logged on username is used for the connection.
 
 This parameter was introduced in PowerShell 6.0.
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String
