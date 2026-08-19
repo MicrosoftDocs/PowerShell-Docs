@@ -1,6 +1,6 @@
 ---
 description: List of resources created for and by PowerShell users
-ms.date: 04/07/2026
+ms.date: 08/19/2026
 no-loc: [Discord, Slack, Spiceworks, "Stack Overflow" ]
 title: PowerShell community support resources
 ---
@@ -14,16 +14,22 @@ If you have questions, you may find help from other members of the community in 
 forums:
 
 - [User Groups][04]
-- [PowerShell Tech Community][09]
+- [PowerShell Tech Community][10]
 - [DSC Community][05]
 - [PowerShell.org][06]
-- [Stack Overflow][08]
-- [r/PowerShell subreddit][10]
+- [Stack Overflow][09]
+- [r/PowerShell subreddit][11]
 - PowerShell Virtual User Group - join via:
   - [Slack][03]
   - [Discord][02]
 
 For information about our support policy, see the [PowerShell Support Lifecycle][01].
+
+## Other community resources
+
+- [PowerShell Podcast][08]
+- [PowerShell Summit videos][12]
+- [PowerShell Conference EU videos][13]
 
 <!-- link references -->
 [01]: /powershell/scripting/powershell-support-lifecycle
@@ -33,6 +39,9 @@ For information about our support policy, see the [PowerShell Support Lifecycle]
 [05]: https://dsccommunity.org/
 [06]: https://forums.powershell.org/
 [07]: https://github.com/powershell/powershell/issues
-[08]: https://stackoverflow.com/questions/tagged/powershell
-[09]: https://techcommunity.microsoft.com/category/WindowsPowerShell
-[10]: https://www.reddit.com/r/PowerShell/
+[08]: https://powershellpodcast.podbean.com/
+[09]: https://stackoverflow.com/questions/tagged/powershell
+[10]: https://techcommunity.microsoft.com/category/WindowsPowerShell
+[11]: https://www.reddit.com/r/PowerShell/
+[12]: https://www.youtube.com/@PowershellOrg
+[13]: https://www.youtube.com/powershellconferenceeu
