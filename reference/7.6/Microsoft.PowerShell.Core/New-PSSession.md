@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/23/2026
+ms.date: 08/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -677,6 +677,11 @@ parameter can be used to provide the key that identifies the user.
 
 This parameter was introduced in PowerShell 6.0.
 
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
+
 ```yaml
 Type: System.String
 Parameter Sets: SSHHost
@@ -718,6 +723,11 @@ possible options are any values supported by the Unix-based version of the
 Any values explicitly passed by parameters take precedence over values passed in the **Options**
 hashtable. For example, using the **Port** parameter overrides any `Port` key-value pair passed in
 the **Options** hashtable.
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -889,6 +899,11 @@ exist on the remote computer, the command fails.
 
 If this parameter is not used, the default is the `powershell` subsystem.
 
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
+
 ```yaml
 Type: System.String
 Parameter Sets: SSHHost
@@ -931,6 +946,11 @@ authentication method depends on how Secure Shell (SSH) is configured on the rem
   user key file is located in an SSH-known location then the **KeyFilePath** parameter isn't needed.
 
 This parameter was introduced in PowerShell 6.0.
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String
