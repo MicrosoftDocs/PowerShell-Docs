@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 04/07/2026
+  ms.date: 08/19/2026
   no-loc: [Discord, Slack, Spiceworks, "Stack Overflow" ]
 
 # highlightedContent section (optional)
@@ -165,12 +165,24 @@ tools:
       url: https://aka.ms/psdiscord
     # Card 9
     - title: Spiceworks
-      imageSrc: ./media/index/Spiceworks_48px_color.png
+      imageSrc: ./media/index/spiceworks_48px_color.png
       url: https://community.spiceworks.com/programming/powershell
     # Card 10
     - title: Digital Art
       imageSrc: /media/hubs/powershell/i_digital-art.svg
       url: /powershell/scripting/community/digital-art
+    # Card 11
+    - title: PowerShell Podcast
+      imageSrc: ./media/index/powershell-podcast-logo.jpg
+      url: https://powershellpodcast.podbean.com/
+    # Card 12
+    - title: PowerShell Summit videos
+      imageSrc: ./media/index/powershellorg.jpg
+      url: https://www.youtube.com/@PowershellOrg
+    # Card 13
+    - title: PowerShell Conference EU videos
+      imageSrc: ./media/index/psconfeu.jpg
+      url: https://www.youtube.com/powershellconferenceeu
 
 additionalContent:
   # Supports up to 3 sections
