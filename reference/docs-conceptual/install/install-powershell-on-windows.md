@@ -1,6 +1,6 @@
 ---
 description: Learn how to install the latest version of PowerShell 7, which runs side-by-side with Windows PowerShell 5.1.
-ms.date: 08/13/2026
+ms.date: 08/20/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -131,7 +131,8 @@ The following example shows how to silently install PowerShell with all the inst
 
 ```powershell
 $msiParams = @(
-    '/package PowerShell-7.6.5-win-x64.msi'
+    '/package'
+    'PowerShell-7.6.5-win-x64.msi'
     '/quiet'
     'ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1'
     'ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1'
