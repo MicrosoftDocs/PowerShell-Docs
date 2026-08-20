@@ -43,6 +43,21 @@ landingContent:
           - text: Migrating from Windows PowerShell 5.1 to PowerShell 7
             url: ./migrating-from-windows-powershell-51-to-powershell-7.md
 
+  - title: Migration deep dives
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Script compatibility audit
+            url: ./migration/script-compatibility-audit.md
+          - text: Module compatibility strategy
+            url: ./migration/module-compatibility-strategy.md
+          - text: Encoding changes
+            url: ./migration/encoding-changes.md
+          - text: Profile migration
+            url: ./migration/profile-migration.md
+          - text: Enterprise deployment
+            url: ./migration/enterprise-deployment.md
+
   - title: History & Compatibility
     linkLists:
       - linkListType: whats-new
