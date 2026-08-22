@@ -89,7 +89,7 @@ $prop = @{
 New-CimInstance -ClassName Win32_Environment -Property $prop
 ```
 
-No client side validation is performed if the class does not exist, the properties are wrong, or if
+No client-side validation is performed if the class does not exist, the properties are wrong, or if
 the server rejects the call. If the instance is created successfully, the cmdlet outputs the newly
 created instance.
 
@@ -148,7 +148,7 @@ cmdlet calls the **GetOwner** method on the retrieved instance.
 
 This example gets an instance of a CIM class named **MSFT_Something** in the namespace
 **root/somewhere** and stores it in a variable named `$class`. The variable is passed to the
-`New-CimInstance` cmdlet to create a new CIM instance and perform client side validations on the new
+`New-CimInstance` cmdlet to create a new CIM instance and perform client-side validations on the new
 instance.
 
 ```powershell

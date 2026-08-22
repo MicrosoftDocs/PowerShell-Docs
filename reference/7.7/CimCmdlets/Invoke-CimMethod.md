@@ -192,7 +192,7 @@ parameter when invoking a static method of a class.
 
 You can use the `Get-CimClass` cmdlet to retrieve a class definition from the server.
 
-Using this parameter results in better client side schema validations.
+Using this parameter results in better client-side schema validations.
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimClass
