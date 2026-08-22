@@ -70,7 +70,7 @@ If the **InputObject** parameter is not specified, the cmdlet works in one of th
 ### Example 1: Remove the CIM instance
 
 This example use the **Query** parameter to remove CIM instances from the class named
-**Win32_Environment** that start with the character string **testvar** .
+**Win32_Environment** that start with the character string **testvar**.
 
 ```powershell
 Remove-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"'
@@ -242,11 +242,11 @@ is used to identify a specific type of resource, such as disks or processes, on 
 
 A URI consists of a prefix and a path to a resource. For example:
 
-- `http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
-- `http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
+- `https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+- `https://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
 By default, if you do not specify this parameter, the DMTF standard resource URI
-`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
+`https://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
 **ResourceUri** can only be used with CIM sessions created using the WSMan protocol, or when
 specifying the **ComputerName** parameter, which creates a CIM session using WSMan. If you specify
