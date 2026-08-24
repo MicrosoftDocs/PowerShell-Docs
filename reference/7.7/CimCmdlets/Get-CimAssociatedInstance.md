@@ -230,7 +230,7 @@ server.
 
 If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry
 timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec**
-parameter aren't recoverable, because the operation on the server times out before the client can
+parameter are not recoverable, because the operation on the server times out before the client can
 reconnect.
 
 ```yaml
