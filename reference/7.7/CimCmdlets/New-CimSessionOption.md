@@ -313,7 +313,7 @@ certificate-based authentication. They can only be mapped to local user accounts
 work with domain accounts.
 
 To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` cmdlets in the PowerShell
-Cert: drive.
+`Cert:` drive.
 
 ```yaml
 Type: System.String
