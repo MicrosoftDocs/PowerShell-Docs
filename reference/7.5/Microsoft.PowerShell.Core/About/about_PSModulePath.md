@@ -156,6 +156,9 @@ example:
   child process:
 
   ```python
+  import os
+  import subprocess
+
   env = {k: v for k, v in os.environ.items() if k.upper() != "PSMODULEPATH"}
   subprocess.run(["powershell.exe", "-File", "script.ps1"], env=env)
   ```
