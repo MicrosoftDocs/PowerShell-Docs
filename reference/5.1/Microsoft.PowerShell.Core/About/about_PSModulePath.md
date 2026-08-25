@@ -1,7 +1,7 @@
 ---
 description: The PSModulePath environment variable contains a list of folder locations that are searched to find modules and resources.
 Locale: en-US
-ms.date: 10/14/2024
+ms.date: 08/25/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
@@ -50,6 +50,18 @@ startup:
 The **CurrentUser** module path is prefixed only if the User scope
 `$Env:PSModulePath` doesn't exist. Otherwise, the User scope
 `$Env:PSModulePath` is used as defined.
+
+> [!NOTE]
+> When Windows PowerShell runs in a process tree that contains PowerShell 7,
+> it can inherit a `PSModulePath` value that includes PowerShell 7 module
+> paths. PowerShell 7 removes its own module paths when it starts Windows
+> PowerShell directly, but not when Windows PowerShell is started through an
+> intermediate process. Inherited PowerShell 7 module paths precede the
+> Windows PowerShell system module path, which can cause shared module names,
+> such as `Microsoft.PowerShell.Utility`, to resolve to PowerShell 7 module
+> versions that Windows PowerShell can't load. This breaks module
+> autoloading. For more information and workarounds, see the
+> [PowerShell 7 version of this article][04].
 
 ## Module search behavior
 
@@ -119,3 +131,4 @@ $key.SetValue('PSModulePath',$path,[Microsoft.Win32.RegistryValueKind]::ExpandSt
 [01]: about_Modules.md
 [02]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility
 [03]: xref:Microsoft.PowerShell.Core.Import-Module
+[04]: /powershell/module/microsoft.powershell.core/about/about_psmodulepath?view=powershell-7.6&preserve-view=true
