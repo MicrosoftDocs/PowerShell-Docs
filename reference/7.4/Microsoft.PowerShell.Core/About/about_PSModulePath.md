@@ -1,7 +1,7 @@
 ---
 description: The PSModulePath environment variable contains a list of folder locations that are searched to find modules and resources.
 Locale: en-US
-ms.date: 10/14/2024
+ms.date: 08/25/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
@@ -120,6 +120,48 @@ following modifications:
 The PS7 paths are removed so that PS7 modules don't get loaded in Windows
 PowerShell. The `WinPSModulePath` value is used when starting Windows
 PowerShell.
+
+This modification only applies to Windows PowerShell processes that
+PowerShell 7 starts directly. When Windows PowerShell is started through an
+intermediate process, such as a `cmd.exe` or Python process that PowerShell 7
+launched, the intermediate process inherits the unmodified
+`$Env:PSModulePath` of PowerShell 7 and passes it on to its own child
+processes. Windows PowerShell started this way keeps the inherited
+PowerShell 7 module paths. Because those paths precede the Windows PowerShell
+system module path, Windows PowerShell can resolve shared module names, such
+as `Microsoft.PowerShell.Utility`, to PowerShell 7 module versions that it
+can't load. This breaks module autoloading, and the cmdlets from those
+modules fail with a `CommandNotFoundException` error.
+
+To start Windows PowerShell from an intermediate process with the correct
+module paths, remove `PSModulePath` from the environment of the child
+process. Windows PowerShell then constructs its default value at startup. For
+example:
+
+- In PowerShell 7.4 and higher, use the **Environment** parameter of
+  `Start-Process` to remove the variable from the environment of the
+  intermediate process:
+
+  ```powershell
+  Start-Process python harness.py -Environment @{ PSModulePath = $null }
+  ```
+
+- In `cmd.exe`, clear the variable before starting Windows PowerShell:
+
+  ```cmd
+  cmd /c "set PSModulePath=&& powershell.exe -File script.ps1"
+  ```
+
+- In Python, remove the variable from the environment that you pass to the
+  child process:
+
+  ```python
+  import os
+  import subprocess
+
+  env = {k: v for k, v in os.environ.items() if k.upper() != "PSMODULEPATH"}
+  subprocess.run(["powershell.exe", "-File", "script.ps1"], env=env)
+  ```
 
 ### Starting PowerShell 7 from Windows PowerShell
 
