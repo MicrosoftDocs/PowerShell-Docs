@@ -14,7 +14,7 @@ The automatic variable that contains the current object in the pipeline object.
 
 ## Long description
 
-PowerShell includes two [automatic variables][03], `$_` and '$PSItem` that
+PowerShell includes two [automatic variables][03], `$_` and `$PSItem` that
 refer to the current object in the pipeline.
 
 `$PSItem` was added to PowerShell in an attempt to provide a clearer meaning to
@@ -27,7 +27,7 @@ with `$_` in every example. `$_` is the preferred usage.
 There are a few common use cases for `$PSItem`:
 
 - In the scriptblock for the **Process** parameter of the
-  `ForEach-Object`cmdlet
+  `ForEach-Object` cmdlet
 - In the scriptblock for the **FilterScript** parameter of the `Where-Object`
   cmdlet
 - In the intrinsic methods **ForEach** and **Where**
