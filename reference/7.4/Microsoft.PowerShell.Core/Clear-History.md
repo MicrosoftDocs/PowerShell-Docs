@@ -20,7 +20,8 @@ Deletes entries from the PowerShell session command history.
 ### IDParameter (Default)
 
 ```
-Clear-History [[-Id] <int[]>] [[-Count] <int>] [-Newest] [-WhatIf] [-Confirm] [<CommonParameters>]
+Clear-History [[-Id] <int[]>] [[-Count] <int>] [-Newest] [-WhatIf] [-Confirm]
+  [<CommonParameters>]
 ```
 
 ### CommandLineParameter
@@ -258,7 +259,8 @@ wildcards to match commands in the PowerShell session history displayed by `Get-
 enter more than one string, `Clear-History` deletes commands that match any of the strings. The
 **CommandLine** parameter can be used with **Count**.
 
-For strings with a space, use single quotations. For more information, see [about_Quoting_Rules](About/about_Quoting_Rules.md).
+For strings with a space, use single quotations. For more information, see
+[about_Quoting_Rules](About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -402,7 +404,8 @@ information, see [about_History](About/about_History.md).
 
 The session history is managed separately from the history maintained by the **PSReadLine** module.
 Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
-the session history. For more information see, [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+the session history. For more information see
+[about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 ## RELATED LINKS
 
