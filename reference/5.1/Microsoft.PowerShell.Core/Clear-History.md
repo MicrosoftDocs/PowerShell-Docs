@@ -403,7 +403,7 @@ information, see [about_History](About/about_History.md).
 
 The session history is managed separately from the history maintained by the **PSReadLine** module.
 Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
-the session history. For more information see
+the session history. For more information, see
 [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 ## RELATED LINKS
