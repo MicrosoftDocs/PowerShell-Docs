@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 04/15/2025
+ms.date: 08/31/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ExecutionPolicy
@@ -30,7 +30,7 @@ more information, see
 
 An execution policy is part of the PowerShell security strategy. Execution policies determine
 whether you can load configuration files, such as your PowerShell profile, or run scripts. And,
-whether scripts must be digitally signed before they are run.
+whether scripts must be digitally signed.
 
 The `Set-ExecutionPolicy` cmdlet's default scope is `LocalMachine`, which affects everyone who
 uses the computer. To change the execution policy for `LocalMachine`, start PowerShell with **Run
@@ -38,6 +38,12 @@ as Administrator**.
 
 To display the execution policies for each scope, use `Get-ExecutionPolicy -List`. To see the
 effective execution policy for your PowerShell session use `Get-ExecutionPolicy` with no parameters.
+
+> [!NOTE]
+> The Execution Policy can also be set by Group Policy. If a Group Policy is set, it overrides the
+> execution policy set locally. Windows PowerShell 5.1 and PowerShell 6.0 and higher store the
+> execution policy setting in different locations and are managed separately. The settings for
+> Windows PowerShell (`powershell.exe`) don't affect PowerShell (`pwsh.exe`).
 
 ## EXAMPLES
 
@@ -69,7 +75,7 @@ parameter.
 
 This command attempts to set the `LocalMachine` scope's execution policy to `Restricted`.
 `LocalMachine` is more restrictive, but isn't the effective policy because it conflicts with a
-Group Policy. The `Restricted` policy is written to the registry hive `HKEY_LOCAL_MACHINE`.
+Group Policy.
 
 ```powershell
 PS> Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope LocalMachine
@@ -78,22 +84,7 @@ Set-ExecutionPolicy : PowerShell updated your local preference successfully, but
 overridden by the Group Policy applied to your system. Due to the override, your shell will retain
 its current effective execution policy of "AllSigned". Contact your Group Policy administrator for
 more information. At line:1 char:20 + Set-ExecutionPolicy <<<< restricted
-
-PS> Get-ChildItem -Path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds
-
-    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds
-
-Name                    Property
-----                    --------
-Microsoft.PowerShell    Path            : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-                        ExecutionPolicy : Restricted
-ScriptedDiagnostics     ExecutionPolicy : Unrestricted
 ```
-
-The `Set-ExecutionPolicy` cmdlet uses the **ExecutionPolicy** parameter to specify the `Restricted`
-policy. The **Scope** parameter specifies the default scope value, `LocalMachine`. The
-`Get-ChildItem` cmdlet uses the **Path** parameter with the `HKLM:` drive to specify registry
-location.
 
 ### Example 3: Apply the execution policy from a remote computer to a local computer
 
@@ -300,24 +291,28 @@ Accept wildcard characters: False
 
 ### -Scope
 
-Specifies the scope that is affected by an execution policy. The default scope is `LocalMachine`.
-
-The effective execution policy is determined by the order of precedence as follows:
+Specifies the scope that's affected by an execution policy. The default scope is `LocalMachine`. The
+parameter accepts the following values:
 
 - `MachinePolicy` - Set by a Group Policy for all users of the computer
 - `UserPolicy` - Set by a Group Policy for the current user of the computer
 - `Process` - Affects only the current PowerShell session
-- `LocalMachine` - Default scope that affects all users of the computer
 - `CurrentUser` - Affects only the current user
+- `LocalMachine` - Default scope that affects all users of the computer
 
-The `Process` scope only affects the current PowerShell session. The execution policy is saved in
-the environment variable `$Env:PSExecutionPolicyPreference`, rather than the registry. When the
-PowerShell session is closed, the variable and value are deleted.
+> [!NOTE]
+> `MachinePolicy` and `UserPolicy` are set by Group Policies. If you try to set the scope to one of
+> these values, PowerShell displays an error message that the scope is set by a Group Policy and
+> can't be changed.
 
-Execution policies for the `CurrentUser` scope are written to the registry hive `HKEY_LOCAL_USER`.
+If the Execution Policy isn't defined by Group Policy, the effective execution policy is determined
+by the order of precedence as follows:
 
-Execution policies for the `LocalMachine` scope are written to the registry hive
-`HKEY_LOCAL_MACHINE`.
+- `Process` - Highest precedence
+- `CurrentUser` - Second highest precedence
+- `LocalMachine` - Lowest precedence
+
+See the [NOTES](#notes) section for more information about how PowerShell stores execution policies.
 
 ```yaml
 Type: Microsoft.PowerShell.ExecutionPolicyScope
@@ -350,7 +345,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -389,15 +384,21 @@ This cmdlet returns no output.
 
 ## NOTES
 
-`Set-ExecutionPolicy` doesn't change the `MachinePolicy` and `UserPolicy` scopes because they are
-set by Group Policies.
+`Set-ExecutionPolicy` can't change the `MachinePolicy` and `UserPolicy` scopes because they are set
+by Group Policies. `Set-ExecutionPolicy` doesn't override a Group Policy, even if the user
+preference is more restrictive than the policy.
 
-`Set-ExecutionPolicy` doesn't override a Group Policy, even if the user preference is more
-restrictive than the policy.
+If the Execution Policy isn't defined by Group Policy, the effective execution policy is determined
+by the order of precedence as follows:
 
-If the Group Policy **Turn on Script Execution** is enabled for the computer or user, the user
-preference is saved, but it's not effective. PowerShell displays a message that explains the
-conflict.
+- `Process` - Highest precedence. The `Process` scope only affects the current PowerShell session.
+  The execution policy is saved in the environment variable `$Env:PSExecutionPolicyPreference`,
+  rather than the registry. When the PowerShell session is closed, the variable and value are
+  deleted.
+- `CurrentUser` - Second highest precedence. The setting is stored in the `ExecutionPolicy` registry
+  value at: `HKCU:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell`
+- `LocalMachine` - Lowest precedence. The setting is stored in the `ExecutionPolicy` registry
+  value at: `HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell`
 
 ## RELATED LINKS
 
