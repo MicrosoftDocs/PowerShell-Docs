@@ -1,7 +1,7 @@
 ---
 description: Describes the PowerShell execution policies and explains how to manage them.
 Locale: en-US
-ms.date: 02/14/2025
+ms.date: 08/31/2026
 no-loc: [Bypass, Default, Restricted, Undefined, Unrestricted, Process, Scope, MachinePolicy, about_Group_Policy_Settings]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -29,11 +29,14 @@ registry. You don't need to set execution policies in your PowerShell profile.
 The execution policy for a particular session is stored only in memory and is
 lost when the session is closed.
 
-The execution policy isn't a security system that restricts user actions. For
+The execution policy isn't a security boundary, it's defense in depth. For
 example, users can easily bypass a policy by typing the script contents at
-the command line when they cannot run a script. Instead, the execution policy
+the command line when they can't run a script. Instead, the execution policy
 helps users to set basic rules and prevents them from violating them
 unintentionally.
+
+For more information about security boundaries, see the _Security service
+criteria_ section of [PowerShell security features][01].
 
 ## PowerShell execution policies
 
@@ -78,7 +81,7 @@ The PowerShell execution policies are as follows:
 - `Restricted`
 
   - The default execution policy for Windows client computers.
-  - Permits individual commands, but does not allow scripts.
+  - Permits individual commands, but doesn't allow scripts.
   - Prevents running of all script files, including formatting and configuration
     files (`.ps1xml`), module script files (`.psm1`), and PowerShell profiles
     (`.ps1`).
@@ -97,48 +100,39 @@ The PowerShell execution policies are as follows:
     not from the local intranet zone.
 
   > [!NOTE]
-  > On systems that do not distinguish Universal Naming Convention (UNC) paths
+  > On systems that don't distinguish Universal Naming Convention (UNC) paths
   > from internet paths, scripts that are identified by a UNC path might not be
   > permitted to run with the **RemoteSigned** execution policy.
 
-## Execution policy scope
+## Execution policy scope and precedence
 
-  You can set an execution policy that is effective only in a particular scope.
+You can set an execution policy that's effective only in a particular scope.
+The parameter accepts the following values:
 
-  The valid values for **Scope** are **MachinePolicy**, **UserPolicy**,
-  **Process**, **CurrentUser**, and **LocalMachine**. **LocalMachine** is the
-  default when setting an execution policy.
+- `MachinePolicy` - Set by a Group Policy for all users of the computer
+- `UserPolicy` - Set by a Group Policy for the current user of the computer
+- `Process` - Affects only the current PowerShell session
+- `CurrentUser` - Affects only the current user
+- `LocalMachine` - Default scope that affects all users of the computer
 
-  The **Scope** values are listed in precedence order. The policy that takes
-  precedence is effective in the current session, even if a more restrictive
-  policy was set at a lower level of precedence.
+> [!NOTE]
+> `MachinePolicy` and `UserPolicy` are set by Group Policies. If you try to set
+> the scope to one of these values, PowerShell displays an error message that
+> the scope is set by a Group Policy and can't be changed.
 
-  For more information, see [Set-ExecutionPolicy][07].
+If the Execution Policy isn't defined by Group Policy, the effective execution
+policy is determined by the order of precedence as follows:
 
-- MachinePolicy
-
-  Set by a Group Policy for all users of the computer.
-
-- UserPolicy
-
-  Set by a Group Policy for the current user of the computer.
-
-- Process
-
-  The **Process** scope only affects the current PowerShell session. The
-  execution policy is saved in the environment variable
+- `Process` - Highest precedence. The `Process` scope only affects the current
+  PowerShell session. The execution policy is saved in the environment variable
   `$Env:PSExecutionPolicyPreference`, rather than the registry. When the
   PowerShell session is closed, the variable and value are deleted.
-
-- CurrentUser
-
-  The execution policy affects only the current user. It's stored in the
-  **HKEY_CURRENT_USER** registry subkey.
-
-- LocalMachine
-
-  The execution policy affects all users on the current computer. It's stored
-  in the **HKEY_LOCAL_MACHINE** registry subkey.
+- `CurrentUser` - Second highest precedence. The setting is stored in the
+  `ExecutionPolicy` registry value at:
+  `HKCU:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell`
+- `LocalMachine` - Lowest precedence. The setting is stored in the
+  `ExecutionPolicy` registry value at:
+  `HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell`
 
 ## Managing the execution policy with PowerShell
 
@@ -274,10 +268,10 @@ powershell.exe -ExecutionPolicy AllSigned
 The execution policy that you set isn't stored in the registry. Instead, it's
 stored in the `$Env:PSExecutionPolicyPreference` environment variable. The
 variable is deleted when you close the session in which the policy is set. You
-cannot change the policy by editing the variable value.
+can't change the policy by editing the variable value.
 
-During the session, the execution policy that is set for the session takes
-precedence over an execution policy that is set in the registry for the local
+During the session, the execution policy that's set for the session takes
+precedence over an execution policy that's set in the registry for the local
 computer or current user. However, it doesn't take precedence over the
 execution policy set by using a Group Policy.
 
@@ -289,7 +283,7 @@ overrides the execution policies set in PowerShell in all scopes.
 
 The **Turn on Script Execution** policy settings are as follows:
 
-- If you disable **Turn on Script Execution**, scripts do not run. This is
+- If you disable **Turn on Script Execution**, scripts don't run. This is
   equivalent to the **Restricted** execution policy.
 - If you enable **Turn on Script Execution**, you can select an execution
   policy. The Group Policy settings are equivalent to the following execution
@@ -301,32 +295,19 @@ The **Turn on Script Execution** policy settings are as follows:
   | Allow local scripts and remote signed scripts | RemoteSigned     |
   | Allow only signed scripts                     | AllSigned        |
 
-- If **Turn on Script Execution** is not configured, it has no effect. The
+- If **Turn on Script Execution** isn't configured, it has no effect. The
   execution policy set in PowerShell is effective.
 
-The PowerShellExecutionPolicy.adm and PowerShellExecutionPolicy.admx files add
-the **Turn on Script Execution** policy to the Computer Configuration and User
-Configuration nodes in Group Policy Editor in the following path:
+The `PowerShellExecutionPolicy.adm` and `PowerShellExecutionPolicy.admx` files
+add the **Turn on Script Execution** policy to the Computer Configuration and
+User Configuration nodes in Group Policy Editor in the following path:
 
 `Administrative Templates\Windows Components\Windows PowerShell`
 
 Policies set in the Computer Configuration node take precedence over policies
 set in the User Configuration node.
 
-For more information, see [about_Group_Policy_Settings][02].
-
-### Execution policy precedence
-
-When determining the effective execution policy for a session, PowerShell
-evaluates the execution policies in the following precedence order:
-
-```
-Group Policy: MachinePolicy
-Group Policy: UserPolicy
-Execution Policy: Process (or powershell.exe -ExecutionPolicy)
-Execution Policy: LocalMachine
-Execution Policy: CurrentUser
-```
+For more information, see [about_Group_Policy_Settings][03].
 
 ## Manage signed and unsigned scripts
 
@@ -344,8 +325,8 @@ Beginning in PowerShell 3.0, you can use the **Stream** parameter of the
 from the internet. Use the `Unblock-File` cmdlet to unblock the scripts so that
 you can run them in PowerShell.
 
-For more information, see [about_Signing][04], [Get-Item][05], and
-[Unblock-File][08].
+For more information, see [about_Signing][05], [Get-Item][06], and
+[Unblock-File][09].
 
 > [!NOTE]
 > Other methods of downloading files may not mark the files as coming from the
@@ -370,7 +351,7 @@ At line:1 char:1
 ```
 
 PowerShell uses APIs in the Windows Desktop Shell (`explorer.exe`) to validate
-the Zone of a script file. The Windows Shell is not available on Windows Server
+the Zone of a script file. The Windows Shell isn't available on Windows Server
 Core and Windows Nano Server.
 
 You could also get this error on any Windows system if the Windows Desktop
@@ -378,26 +359,27 @@ Shell is unavailable or unresponsive. For example, during sign on, a PowerShell
 logon script could start execution before the Windows Desktop is ready,
 resulting in failure.
 
-Using an execution policy of **ByPass** or **AllSigned** does not require a
+Using an execution policy of **ByPass** or **AllSigned** doesn't require a
 Zone check which avoids the problem.
 
 ## See also
 
-- [about_Environment_Variables][01]
-- [about_Group_Policy_Settings][02]
-- [about_PowerShell_exe][03]
-- [about_Signing][04]
-- [Get-ExecutionPolicy][06]
-- [Set-ExecutionPolicy][07]
-- [Get-Item][05]
-- [Unblock-File][08]
+- [about_Environment_Variables][02]
+- [about_Group_Policy_Settings][03]
+- [about_PowerShell_exe][04]
+- [about_Signing][05]
+- [Get-ExecutionPolicy][07]
+- [Set-ExecutionPolicy][08]
+- [Get-Item][06]
+- [Unblock-File][09]
 
 <!-- link references -->
-[01]: about_Environment_Variables.md
-[02]: about_Group_Policy_Settings.md
-[03]: about_PowerShell_exe.md
-[04]: about_Signing.md
-[05]: xref:Microsoft.PowerShell.Management.Get-Item
-[06]: xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy
-[07]: xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy
-[08]: xref:Microsoft.PowerShell.Utility.Unblock-File
+[01]: /powershell/scripting/security/security-features#security-servicing-criteria
+[02]: about_Environment_Variables.md
+[03]: about_Group_Policy_Settings.md
+[04]: about_PowerShell_exe.md
+[05]: about_Signing.md
+[06]: xref:Microsoft.PowerShell.Management.Get-Item
+[07]: xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy
+[08]: xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy
+[09]: xref:Microsoft.PowerShell.Utility.Unblock-File
