@@ -47,7 +47,7 @@ effective execution policy for your PowerShell session use `Get-ExecutionPolicy`
 > The Execution Policy can also be set by Group Policy. If a Group Policy is set, it overrides the
 > execution policy set locally. Windows PowerShell 5.1 and PowerShell 6.0 and higher store the
 > execution policy setting in different locations and are managed separately. The settings for
-> Windows PowerShell don't affect PowerShell.
+> Windows PowerShell (`powershell.exe`) don't affect PowerShell (`pwsh.exe`).
 
 ## EXAMPLES
 

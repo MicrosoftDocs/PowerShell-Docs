@@ -376,7 +376,7 @@ Zone check which avoids the problem.
 
 - [about_Environment_Variables][03]
 - [about_Group_Policy_Settings][04]
-- [about_PowerShell_exe][05]
+- [about_Pwsh][05]
 - [about_Signing][06]
 - [Get-ExecutionPolicy][08]
 - [Set-ExecutionPolicy][09]
@@ -388,7 +388,7 @@ Zone check which avoids the problem.
 [02]: /powershell/scripting/security/security-features#security-servicing-criteria
 [03]: about_Environment_Variables.md
 [04]: about_Group_Policy_Settings.md
-[05]: about_PowerShell_exe.md
+[05]: about_Pwsh.md
 [06]: about_Signing.md
 [07]: xref:Microsoft.PowerShell.Management.Get-Item
 [08]: xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy
