@@ -4,7 +4,7 @@ Help Version: 7.7.0.0
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/18/2026
+ms.date: 09/01/2026
 schema: 2.0.0
 title: Microsoft.PowerShell.Utility
 ---
@@ -301,6 +301,10 @@ Creates a GUID.
 ### [New-Object](New-Object.md)
 
 Creates an instance of a Microsoft .NET Framework or COM object.
+
+### [New-TemporaryDirectory](New-TemporaryDirectory.md)
+
+Creates a new temporary directory.
 
 ### [New-TemporaryFile](New-TemporaryFile.md)
 

@@ -196,7 +196,7 @@ releases page and double-click the file to install it.
 - Next LTS - [PowerShell-7.6.5.msixbundle][19]
 - Latest stable - [PowerShell-7.5.10.msixbundle][14]
 - Current LTS - [PowerShell-7.4.19.msixbundle][13]
-- Current preview - [PowerShellPreview-7.7.0-preview.4.msixbundle  ][20]
+- Current preview - [PowerShellPreview-7.7.0-preview.4.msixbundle][20]
 
 Alternatively, you can use the following command to install the MSIX package from the command line:
 
