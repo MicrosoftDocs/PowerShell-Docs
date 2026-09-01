@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/01/2026
+ms.date: 09/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/move-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -158,7 +158,7 @@ Required: False
 Position: Named
 Default value: Current user
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Destination
@@ -224,8 +224,12 @@ Accept wildcard characters: True
 
 ### -Force
 
-Forces the command to run without asking for user confirmation. Implementation varies from provider
-to provider. For more information, see
+Forces the command to run without asking for user confirmation. For the **FileSystem** provider, if
+a file exists at the target location, you can't overwrite it without using this parameter. Using
+this parameter doesn't allow you to overwrite read-only files or files that you don't have rights to
+modify.
+
+The behavior varies from provider to provider. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
