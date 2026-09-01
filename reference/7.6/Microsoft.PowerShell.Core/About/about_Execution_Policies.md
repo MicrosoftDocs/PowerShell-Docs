@@ -36,7 +36,7 @@ helps users to set basic rules and prevents them from violating them
 unintentionally.
 
 For more information about security boundaries, see the _Security service
-criteria_ section of [PowerShell security features][02].
+criteria_ section of [PowerShell security features][01].
 
 On non-Windows computers, the default execution policy is **Unrestricted** and
 can't be changed. The `Set-ExecutionPolicy` cmdlet is available, but
@@ -141,7 +141,7 @@ policy is determined by the order of precedence as follows:
   `$PSHOME/powershell.config.json` file.
 
 For more information about the `powershell.config.json` file, see
-[about_PowerShell_Config][01].
+[about_PowerShell_Config][04].
 
 
 ## Managing the execution policy with PowerShell
@@ -317,7 +317,7 @@ Policy Editor in the following path:
 Policies set in the Computer Configuration node take precedence over policies
 set in the User Configuration node.
 
-For more information, see [about_Group_Policy_Settings][04].
+For more information, see [about_Group_Policy_Settings][03].
 
 ## Manage signed and unsigned scripts
 
@@ -374,8 +374,8 @@ Zone check which avoids the problem.
 
 ## See also
 
-- [about_Environment_Variables][03]
-- [about_Group_Policy_Settings][04]
+- [about_Environment_Variables][02]
+- [about_Group_Policy_Settings][03]
 - [about_Pwsh][05]
 - [about_Signing][06]
 - [Get-ExecutionPolicy][08]
@@ -384,10 +384,10 @@ Zone check which avoids the problem.
 - [Unblock-File][10]
 
 <!-- link references -->
-[01]: ../Microsoft.PowerShell.Core/About/about_PowerShell_Config.md
-[02]: /powershell/scripting/security/security-features#security-servicing-criteria
-[03]: about_Environment_Variables.md
-[04]: about_Group_Policy_Settings.md
+[01]: /powershell/scripting/security/security-features#security-servicing-criteria
+[02]: about_Environment_Variables.md
+[03]: about_Group_Policy_Settings.md
+[04]: about_PowerShell_Config.md
 [05]: about_Pwsh.md
 [06]: about_Signing.md
 [07]: xref:Microsoft.PowerShell.Management.Get-Item
