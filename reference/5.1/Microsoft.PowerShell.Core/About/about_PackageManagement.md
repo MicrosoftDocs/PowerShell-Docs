@@ -1,7 +1,7 @@
 ---
 description: PackageManagement is an aggregator for software package managers.
 Locale: en-US
-ms.date: 03/30/2020
+ms.date: 09/03/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_packagemanagement?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PackageManagement
@@ -96,12 +96,6 @@ you run Get-Help for a specific PackageManagement cmdlet, a list of parameter
 sets are returned, grouping dynamic parameters for available package providers
 in separate parameter sets.
 
-More Information About the PackageManagement Project
-
-For more information about the PackageManagement open development project,
-including how to create a PackageManagement package provider, see the
-PackageManagement project on GitHub at [https://oneget.org][02].
-
 ## See also
 
 - [Find-Package](xref:PackageManagement.Find-Package)
@@ -117,4 +111,3 @@ PackageManagement project on GitHub at [https://oneget.org][02].
 
 <!-- link references -->
 [01]: /powershell/module/packagemanagement
-[02]: https://oneget.org
