@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2026.
-ms.date: 08/06/2026
+ms.date: 09/03/2026
 title: What's New in PowerShell-Docs for 2026
 ---
 # What's new in PowerShell Docs for 2026
@@ -14,6 +14,35 @@ get started.
 <!-- Link references -->
 [01]: contributing/overview.md
 <!-- --------------- -->
+
+## 2026-August
+
+Updated content
+
+- Added note about mismatched types in ValidateRange
+- Improved the description of settings precedence in PowerShell configuration settings
+- Updated release notes for the Aug-2026 releases
+- Lots of small updates based on anonymous user feedback
+
+GitHub stats
+
+- 38 PRs merged (7 from Community)
+- 25 issues opened (10 from Community, 15 Spam)
+- 25 issues closed (10 from Community, 15 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+Special thanks to @ArieHein for another large PR to clean up 160 articles.
+
+|       GitHub Id       | PRs merged | Issues opened |
+| --------------------- | :--------: | :-----------: |
+| Meterel               |     3      |               |
+| ArieHein              |     2      |               |
+| michael-hollingsworth |     1      |               |
+| Sylvain13bdr          |     1      |               |
 
 ## 2026-July
 
