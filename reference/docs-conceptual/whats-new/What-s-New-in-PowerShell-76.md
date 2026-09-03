@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.6
 description: New features and changes released in PowerShell 7.6
-ms.date: 08/13/2026
+ms.date: 09/03/2026
 ---
 
 # What's New in PowerShell 7.6
 
 PowerShell 7.6.5 includes the following features, updates, and breaking changes. PowerShell
-7.6.5 is built on the .NET 10.0.11 runtime.
+7.6.5 is built on the .NET 10.0.12 runtime.
 
 For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
 
@@ -150,6 +150,7 @@ PowerShell 7.6.5 includes the following updated modules:
 
 ## Engine improvements
 
+- Add support for new WLDP setting `EnableFileOnlyEntry` ([#27922][27922])
 - Fix the dot-sourcing behavior of `pwsh -file` for advanced-function scripts ([#27762][27762])
 - Fix checks for local user config file paths ([#27432][27432])
 - Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows ([#27438][27438])
@@ -320,3 +321,4 @@ This release includes the following experimental features:
 [27432]: https://github.com/PowerShell/PowerShell/pull/27432
 [27438]: https://github.com/PowerShell/PowerShell/pull/27438
 [27762]: https://github.com/PowerShell/PowerShell/pull/27762
+[27922]: https://github.com/PowerShell/PowerShell/pull/27922
