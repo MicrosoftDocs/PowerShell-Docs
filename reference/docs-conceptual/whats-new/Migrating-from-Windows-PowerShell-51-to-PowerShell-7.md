@@ -1,350 +1,365 @@
 ---
-description: Update from PowerShell 5.1 to PowerShell 7 for your Windows platforms.
-ms.date: 04/02/2024
+description: >-
+  A phased migration guide for moving from Windows PowerShell 5.1 to PowerShell 7
+  on Windows, covering assessment, installation, script migration, and validation.
+ms.date: 04/15/2026
 title: Migrating from Windows PowerShell 5.1 to PowerShell 7
 ---
 
 # Migrating from Windows PowerShell 5.1 to PowerShell 7
 
-Designed for cloud, on-premises, and hybrid environments, PowerShell 7 is packed with enhancements
-and [new features][09].
+PowerShell 7 is the successor to Windows PowerShell 5.1 and runs side-by-side
+with it on Windows. It's built on .NET (rather than .NET Framework), bringing
+improved performance, new language features like ternary operators and
+`ForEach-Object -Parallel`, SSH-based remoting, and cross-platform support.
 
-- Installs and runs side-by-side with Windows PowerShell
-- Improved compatibility with existing Windows PowerShell modules
-- New language features, like ternary operators and `ForEach-Object -Parallel`
-- Improved performance
-- SSH-based remoting
-- Cross-platform interoperability
-- Support for Docker containers
+This guide walks you through a phased migration from Windows PowerShell 5.1
+to PowerShell 7 on Windows 10, Windows 11, and Windows Server 2016 and later.
+PowerShell 7 also runs on macOS and Linux. For information about the support
+lifecycle, see [PowerShell Support Lifecycle][lifecycle].
 
-PowerShell 7 works side-by-side with Windows PowerShell letting you easily test and compare between
-editions before deployment. Migration is simple, quick, and safe.
+For a complete reference of breaking changes and behavioral differences, see
+[Differences between Windows PowerShell 5.1 and PowerShell 7.x][differences].
 
-PowerShell 7 is supported on the following Windows operating systems:
+## Phase 1: Assess your environment
 
-- Windows 10, and 11
-- Windows Server 2016, 2019, and 2022
+Before installing PowerShell 7, audit your existing scripts, modules, and
+automation to understand what needs to change.
 
-PowerShell 7 also runs on macOS and several Linux distributions. For a list of supported operating
-systems and information about the support lifecycle, see the [PowerShell Support Lifecycle][06].
+### Audit your scripts
 
-## Installing PowerShell 7
+Scan your `.ps1` and `.psm1` files for patterns that are removed or changed in
+PowerShell 7. Common breaking patterns include:
 
-For flexibility and to support the needs of IT, DevOps engineers, and developers, there are several
-options available to install PowerShell 7. In most cases, the installation options can be reduced to
-the following methods:
+- WMI v1 cmdlets (`Get-WmiObject`, `Invoke-WmiMethod`) replaced by CIM cmdlets
+- `*-EventLog` cmdlets replaced by `Get-WinEvent` and `New-WinEvent`
+- PowerShell Workflow (`workflow` keyword) removed entirely
+- `New-WebServiceProxy` removed (no SOAP client in .NET Core)
+- Encoding defaults changed from locale-dependent to UTF-8 without BOM
 
-- Deploy PowerShell using the [MSI package][03]
-- Deploy PowerShell using the [ZIP package][05]
+For a complete list of removed cmdlets and automated scanning instructions, see
+[Audit scripts for PowerShell 7 compatibility][script-audit].
+
+### Identify module dependencies
+
+Most Windows PowerShell 5.1 modules work in PowerShell 7. Some require the
+Windows PowerShell compatibility layer or have known issues. Test your module
+inventory before migrating production scripts.
+
+For module testing strategies and known compatibility issues, see
+[Module compatibility strategy for PowerShell 7][module-strategy].
+
+### Catalog encoding-sensitive scripts
+
+If your scripts generate files consumed by other tools, or parse files that
+assume a specific encoding or byte order mark (BOM), review the encoding changes
+in PowerShell 7. The default output encoding changed from locale-dependent
+(often Windows-1252 or UTF-16) to UTF-8 without BOM.
+
+For a complete encoding comparison and migration strategies, see
+[Encoding changes in PowerShell 7][encoding-changes].
+
+### Inventory your automation
+
+Catalog all scheduled tasks, CI/CD pipelines, Group Policy scripts, and
+remoting endpoints that invoke `powershell.exe`. Each of these needs to be
+updated to call `pwsh.exe` with the correct argument syntax.
+
+## Phase 2: Install and configure
+
+PowerShell 7 installs to a separate directory and runs a separate executable.
+It doesn't replace Windows PowerShell 5.1.
+
+### Installation methods
+
+| Method | Best for | Requires admin |
+| ------ | -------- | -------------- |
+| [MSI package][install-msi] | Servers, enterprise deployment via SCCM/Intune | Yes |
+| [winget][install-winget] | Developer workstations on Windows 10/11 | No |
+| [ZIP package][install-zip] | Side-loading, testing, Nano Server, IoT | No |
+| [Microsoft Store][install-store] | Casual exploration (has limitations) | No |
 
 > [!NOTE]
 > The MSI package can be deployed and updated with management products such as
-> [Microsoft Configuration Manager][12]. Download the packages from
-> [GitHub Release page][24].
+> [Microsoft Configuration Manager][sccm]. Download the packages from the
+> [GitHub Releases page][gh-releases].
 
-Deploying the MSI package requires Administrator permission. The ZIP package can be deployed by any
-user. The ZIP package is the easiest way to install PowerShell 7 for testing, before committing to a
-full installation.
+For enterprise-scale deployment guidance including SCCM, Intune, air-gapped
+networks, and Group Policy, see
+[Deploy PowerShell 7 in enterprise environments][enterprise].
 
-You may also install PowerShell 7 via the Windows Store or `winget`. For more information about both
-of these methods, see the detailed instructions in [Installing PowerShell on Windows][04].
+### Side-by-side installation paths
 
-## Using PowerShell 7 side-by-side with Windows PowerShell 5.1
+PowerShell 7 and Windows PowerShell 5.1 coexist on the same machine:
 
-PowerShell 7 is designed to coexist with Windows PowerShell 5.1. The following features ensure that
-your investment in PowerShell is protected and your migration to PowerShell 7 is simple.
+| Version | Executable | Install path |
+| ------- | ---------- | ------------ |
+| Windows PowerShell 5.1 | `powershell.exe` | `$Env:windir\System32\WindowsPowerShell\v1.0` |
+| PowerShell 7 | `pwsh.exe` | `$Env:ProgramFiles\PowerShell\7` |
 
-- Separate installation path and executable name
-- Separate PSModulePath
-- Separate profiles for each version
-- Improved module compatibility
-- New remoting endpoints
-- Group policy support
-- Separate Event logs
-
-### Differences in .NET versions
-
-PowerShell 7.4 is built on .NET 8.0. Windows PowerShell 5.1 is built on .NET Framework 4.x. The
-differences between the .NET versions might affect the behavior of your scripts, especially if you
-are calling .NET method directly. For more information,
-[Differences between Windows PowerShell 5.1 and PowerShell 7.x][10].
-
-### Separate installation path and executable name
-
-PowerShell 7 installs to a new directory, enabling side-by-side execution with Windows PowerShell
-5.1.
-
-Install locations by version:
-
-- Windows PowerShell 5.1: `$Env:windir\System32\WindowsPowerShell\v1.0`
-- PowerShell 6.x: `$Env:ProgramFiles\PowerShell\6`
-- PowerShell 7: `$Env:ProgramFiles\PowerShell\7`
-
-The new location is added to your PATH allowing you to run both Windows PowerShell 5.1 and
-PowerShell 7. If you're migrating from PowerShell 6.x to PowerShell 7, PowerShell 6 is removed and
-the PATH replaced.
-
-In Windows PowerShell, the PowerShell executable is named `powershell.exe`. In version 6 and above,
-the executable is named `pwsh.exe`. The new name makes it easy to support side-by-side execution of
-both versions.
+The PowerShell 7 directory is added to your `PATH`. Both executables are
+available from any terminal. If you're migrating from PowerShell 6.x,
+PowerShell 6 is removed and its `PATH` entry is replaced.
 
 ### Separate PSModulePath
 
-By default, Windows PowerShell and PowerShell 7 store modules in different locations. PowerShell 7
-combines those locations in the `$Env:PSModulePath` environment variable. When importing a module by
-name, PowerShell checks the location specified by `$Env:PSModulePath`. This allows PowerShell 7 to
-load both Core and Desktop modules.
+Windows PowerShell and PowerShell 7 store modules in different locations.
+PowerShell 7 combines both sets of paths in `$Env:PSModulePath`, so it can
+load modules from either location:
 
-|            Install Scope            |                Windows PowerShell 5.1                 |              PowerShell 7.0              |
-| ----------------------------------- | ----------------------------------------------------- | ---------------------------------------- |
-| PowerShell modules                  | `$Env:windir\system32\WindowsPowerShell\v1.0\Modules` | `$Env:ProgramFiles\PowerShell\7\Modules` |
-| User installed<br>AllUsers scope    | `$Env:ProgramFiles\WindowsPowerShell\Modules`         | `$Env:ProgramFiles\PowerShell\Modules`   |
-| User installed<br>CurrentUser scope | `$HOME\Documents\WindowsPowerShell\Modules`           | `$HOME\Documents\PowerShell\Modules`     |
+| Install scope | Windows PowerShell 5.1 | PowerShell 7 |
+| ------------- | ---------------------- | ------------ |
+| Built-in modules | `$Env:windir\system32\WindowsPowerShell\v1.0\Modules` | `$Env:ProgramFiles\PowerShell\7\Modules` |
+| AllUsers | `$Env:ProgramFiles\WindowsPowerShell\Modules` | `$Env:ProgramFiles\PowerShell\Modules` |
+| CurrentUser | `$HOME\Documents\WindowsPowerShell\Modules` | `$HOME\Documents\PowerShell\Modules` |
 
-The following examples show the default values of `$Env:PSModulePath` for each version.
-
-- For Windows PowerShell 5.1:
-
-  ```powershell
-  $Env:PSModulePath -split (';')
-  ```
-
-  ```Output
-  C:\Users\<user>\Documents\WindowsPowerShell\Modules
-  C:\Program Files\WindowsPowerShell\Modules
-  C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules
-  ```
-
-- For PowerShell 7:
-
-  ```powershell
-  $Env:PSModulePath -split (';')
-  ```
-
-  ```Output
-  C:\Users\<user>\Documents\PowerShell\Modules
-  C:\Program Files\PowerShell\Modules
-  C:\Program Files\PowerShell\7\Modules
-  C:\Program Files\WindowsPowerShell\Modules
-  C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules
-  ```
-
-Notice that PowerShell 7 includes the Windows PowerShell paths and the PowerShell 7 paths to provide
-autoloading of modules.
-
-> [!NOTE]
-> Additional paths may exist if you have changed the PSModulePath environment variable or installed
-> custom modules or applications.
-
-For more information, see [about_PSModulePath][17].
-
-For more information about Modules, see [about_Modules][15].
-
-### Separate profiles
-
-A PowerShell profile is a script that executes when PowerShell starts. This script customizes your
-environment by adding commands, aliases, functions, variables, modules, and PowerShell drives. The
-profile script makes these customizations available in every session without having to manually
-recreate them.
-
-The path to the location of the profile has changed in PowerShell 7.
-
-- In Windows PowerShell 5.1, the location of the profile is `$HOME\Documents\WindowsPowerShell`.
-- In PowerShell 7, the location of the profile is `$HOME\Documents\PowerShell`.
-
-The profile filenames have also changed:
-
-   ```powershell
-   $PROFILE | Select-Object *Host* | Format-List
-  ```
-
-  ```Output
-   AllUsersAllHosts       : C:\Program Files\PowerShell\7\profile.ps1
-   AllUsersCurrentHost    : C:\Program Files\PowerShell\7\Microsoft.PowerShell_profile.ps1
-   CurrentUserAllHosts    : C:\Users\<user>\Documents\PowerShell\profile.ps1
-   CurrentUserCurrentHost : C:\Users\<user>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
-   ```
-
-For more information
-[about_Profiles][16].
-
-### PowerShell 7 compatibility with Windows PowerShell 5.1 modules
-
-Most of the modules you use in Windows PowerShell 5.1 already work with PowerShell 7, including
-Azure PowerShell and Active Directory. We're continuing to work with other teams to add native
-PowerShell 7 support for more modules including Microsoft Graph, Office 365, and others. For the
-current list of supported modules, see [PowerShell 7 module compatibility][11].
-
-> [!NOTE]
-> On Windows, we've also added a **UseWindowsPowerShell** switch to `Import-Module` to ease the
-> transition to PowerShell 7 for those using incompatible modules. For more information on this
-> functionality, see [about_Windows_PowerShell_Compatibility][20].
-
-## PowerShell Remoting
-
-PowerShell remoting lets you run any PowerShell command on one or more remote computers. You can
-establish persistent connections, start interactive sessions, and run scripts on remote computers.
-
-### WS-Management remoting
-
-Windows PowerShell 5.1 and below use the WS-Management (WSMAN) protocol for connection negotiation
-and data transport. Windows Remote Management (WinRM) uses the WSMAN protocol. If WinRM has been
-enabled, PowerShell 7 uses the existing Windows PowerShell 5.1 endpoint named `Microsoft.PowerShell`
-for remoting connections. To update PowerShell 7 to include its own endpoint, run the
-`Enable-PSRemoting` cmdlet. For information about connecting to specific endpoints, see
-[WS-Management Remoting in PowerShell][08]
-
-To use Windows PowerShell remoting, the remote computer must be configured for remote management.
-For more information, including instructions, see [About Remote Requirements][19].
-
-For more information about working with remoting, see [About Remote][18]
-
-### SSH-based remoting
-
-SSH-based remoting was added in PowerShell 6.x to support other operating systems that can't use
-Windows native components like **WinRM**. SSH remoting creates a PowerShell host process on the
-target computer as an SSH subsystem. For details and examples on setting up SSH-based remoting on
-Windows or Linux, see: [PowerShell remoting over SSH][07].
-
-> [!NOTE]
-> The PowerShell Gallery (PSGallery) contains a module and cmdlet that automatically configures
-> SSH-based remoting. Install the `Microsoft.PowerShell.RemotingTools` module from the
-> [PSGallery][25] and run the `Enable-SSH` cmdlet.
-
-The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets have new parameter sets to
-support SSH connections.
+PowerShell 7's `$Env:PSModulePath` includes _both_ the PowerShell 7 paths and
+the Windows PowerShell paths:
 
 ```powershell
-[-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
-```
-
-To create a remote session, specify the target computer with the **HostName** parameter and provide
-the user name with **UserName**. When running the cmdlets interactively, you're prompted for a
-password.
-
-```powershell
-Enter-PSSession -HostName <Computer> -UserName <Username>
-```
-
-Alternatively, when using the **HostName** parameter, provide the username information followed by
-the at sign (`@`), followed by the computer name.
-
-```powershell
-Enter-PSSession -HostName <Username>@<Computer>
-```
-
-You may set up SSH key authentication using a private key file with the **KeyFilePath** parameter.
-For more information, see [OpenSSH Key Management][21].
-
-## Group Policy supported
-
-PowerShell includes Group Policy settings to help you define consistent option values for servers in
-an enterprise environment. These settings include:
-
-- Console session configuration: Sets a configuration endpoint in which PowerShell is run.
-- Turn on Module Logging: Sets the LogPipelineExecutionDetails property of modules.
-- Turn on PowerShell Script Block Logging: Enables detailed logging of all PowerShell scripts.
-- Turn on Script Execution: Sets the PowerShell execution policy.
-- Turn on PowerShell Transcription: enables capturing of input and output of PowerShell commands
-  into text-based transcripts.
-- Set the default source path for Update-Help: Sets the source for Updatable Help to a directory,
-  not the Internet.
-
-For more information, see [about_Group_Policy_Settings][13].
-
-PowerShell 7 includes Group Policy templates and an installation script in `$PSHOME`.
-
-Group Policy tools use administrative template files (`.admx`, `.adml`) to populate policy settings
-in the user interface. This allows administrators to manage registry-based policy settings. The
-`InstallPSCorePolicyDefinitions.ps1` script installs PowerShell Administrative Templates on the
-local machine.
-
-```powershell
-Get-ChildItem -Path $PSHOME -Filter *Core*Policy*
+$Env:PSModulePath -split (';')
 ```
 
 ```Output
-    Directory: C:\Program Files\PowerShell\7
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--a---           2/27/2020 12:38 AM          15861 InstallPSCorePolicyDefinitions.ps1
--a---           2/27/2020 12:28 AM           9675 PowerShellCoreExecutionPolicy.adml
--a---           2/27/2020 12:28 AM           6201 PowerShellCoreExecutionPolicy.admx
+C:\Users\<user>\Documents\PowerShell\Modules
+C:\Program Files\PowerShell\Modules
+C:\Program Files\PowerShell\7\Modules
+C:\Program Files\WindowsPowerShell\Modules
+C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules
 ```
 
-## Separate Event Logs
+> [!NOTE]
+> Additional paths may exist if you changed the **PSModulePath** environment
+> variable or installed custom modules or applications. For more information,
+> see [about_PSModulePath][about-psmodulepath].
 
-Windows PowerShell and PowerShell 7 log events to separate event logs. Use the following command to
-get a list of the PowerShell logs.
+## Phase 3: Migrate profiles and scripts
+
+### Migrate your profiles
+
+PowerShell profiles execute when a session starts and customize your
+environment with aliases, functions, variables, and module imports. The profile
+location changed in PowerShell 7:
+
+| Scope | Windows PowerShell 5.1 | PowerShell 7 |
+| ----- | ---------------------- | ------------ |
+| CurrentUser, CurrentHost | `$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` | `$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` |
+| CurrentUser, AllHosts | `$HOME\Documents\WindowsPowerShell\profile.ps1` | `$HOME\Documents\PowerShell\profile.ps1` |
+| AllUsers, CurrentHost | `$PSHOME\Microsoft.PowerShell_profile.ps1` | `$Env:ProgramFiles\PowerShell\7\Microsoft.PowerShell_profile.ps1` |
+| AllUsers, AllHosts | `$PSHOME\profile.ps1` | `$Env:ProgramFiles\PowerShell\7\profile.ps1` |
+
+You can verify the profile paths in any session:
+
+```powershell
+$PROFILE | Select-Object *Host* | Format-List
+```
+
+For strategies on sharing profiles between editions, handling OneDrive document
+redirection, and avoiding common pitfalls, see
+[Migrate PowerShell profiles][profile-migration].
+
+### Fix incompatible scripts
+
+Update scripts to replace removed cmdlets and handle behavioral differences.
+The most common changes are:
+
+| Windows PowerShell 5.1 pattern | PowerShell 7 replacement |
+| ------------------------------ | ------------------------ |
+| `Get-WmiObject Win32_Process` | `Get-CimInstance Win32_Process` |
+| `Get-EventLog -LogName Application` | `Get-WinEvent -LogName Application` |
+| `Invoke-WmiMethod` | `Invoke-CimMethod` |
+| `New-WebServiceProxy` | Use `Invoke-RestMethod` or a .NET HTTP client |
+| `powershell.exe -Command "..."` | `pwsh.exe -Command "..."` |
+
+For the complete cmdlet replacement map, `.NET` method changes, and automated
+scanning instructions, see
+[Audit scripts for PowerShell 7 compatibility][script-audit].
+
+### Use the Windows PowerShell compatibility layer
+
+For modules that don't work natively in PowerShell 7, use the
+**UseWindowsPowerShell** switch on `Import-Module`. This creates a hidden
+remoting session to Windows PowerShell 5.1 and proxies module commands into
+your PowerShell 7 session.
+
+```powershell
+Import-Module ActiveDirectory -UseWindowsPowerShell
+```
+
+For more information, see
+[about_Windows_PowerShell_Compatibility][about-compat].
+
+> [!IMPORTANT]
+> The compatibility layer has known limitations including performance overhead
+> and temp file accumulation in long-running sessions. For details, see
+> [Module compatibility strategy for PowerShell 7][module-strategy].
+
+### Handle encoding changes
+
+PowerShell 7 defaults to UTF-8 without BOM for all file output. If your
+scripts generate files consumed by tools that expect a different encoding,
+you need to specify the encoding explicitly or update the consuming tools.
+
+For a full comparison of encoding defaults and migration strategies, see
+[Encoding changes in PowerShell 7][encoding-changes].
+
+## Phase 4: Migrate infrastructure
+
+### Update remoting endpoints
+
+Windows PowerShell 5.1 and PowerShell 7 use separate WinRM endpoints. By
+default, PowerShell 7 connects to the existing Windows PowerShell 5.1 endpoint
+named `Microsoft.PowerShell`. To create a PowerShell 7 endpoint, run:
+
+```powershell
+Enable-PSRemoting
+```
+
+To connect to the PowerShell 7 endpoint from a remote machine:
+
+```powershell
+Enter-PSSession -ComputerName Server01 -ConfigurationName PowerShell.7
+```
+
+For more information about WS-Management remoting, see
+[WS-Management Remoting in PowerShell][wsman-remoting]. For information about
+remote requirements, see [About Remote Requirements][about-remote-req].
+
+#### SSH-based remoting
+
+SSH remoting was added in PowerShell 6.x and is the recommended approach for
+cross-platform scenarios. It creates a PowerShell host process on the target
+as an SSH subsystem.
+
+```powershell
+Enter-PSSession -HostName Server01 -UserName admin
+```
+
+> [!NOTE]
+> The [Microsoft.PowerShell.RemotingTools][remoting-tools] module from the
+> PowerShell Gallery includes the `Enable-SSH` cmdlet to help configure
+> SSH-based remoting.
+
+For details and examples, see
+[PowerShell remoting over SSH][ssh-remoting].
+
+### Update scheduled tasks and automation
+
+Every scheduled task, CI/CD pipeline, or script that calls `powershell.exe`
+must be updated to call `pwsh.exe`. The first positional parameter also
+changed from `-Command` to `-File` in PowerShell 7. If your scheduled tasks
+use positional arguments, add `-Command` explicitly.
+
+For step-by-step task migration instructions and audit scripts, see
+[Migrate scheduled tasks and automation to PowerShell 7][scheduled-tasks].
+
+### Configure Group Policy
+
+PowerShell 7 includes its own Group Policy templates, separate from Windows
+PowerShell 5.1. Supported settings include:
+
+- Console session configuration
+- Module Logging
+- Script Block Logging
+- Script Execution (execution policy)
+- Transcription
+- Default source path for `Update-Help`
+
+PowerShell 7 ships `.admx` and `.adml` templates in `$PSHOME`. Install them
+with the included script:
+
+```powershell
+& "$PSHOME\InstallPSCorePolicyDefinitions.ps1"
+```
+
+For more information, see [about_Group_Policy_Settings][about-gpo].
+
+### Separate event logs
+
+Windows PowerShell and PowerShell 7 log events to separate event logs. Update
+any monitoring or SIEM rules that reference PowerShell event logs:
 
 ```powershell
 Get-WinEvent -ListLog *PowerShell*
 ```
 
-For more information, see [about_Logging_Windows][14].
+For more information, see [about_Logging_Windows][about-logging].
 
-## Improved editing experience with Visual Studio Code
+## Phase 5: Validate and roll back
 
-[Visual Studio Code (VS Code)][22] with the [PowerShell Extension][23] is the supported scripting
-environment for PowerShell 7. The Windows PowerShell Integrated Scripting Environment (ISE) only
-supports Windows PowerShell.
+### Test your migration
 
-The updated PowerShell extension includes:
+Run your scripts and modules in PowerShell 7 and compare behavior against
+Windows PowerShell 5.1. Key areas to validate:
 
-- New ISE compatibility mode
-- PSReadLine in the Integrated Console, including syntax highlighting, multi-line editing, and back
-  search
-- Stability and performance improvements
-- New CodeLens integration
+- Module loading and cmdlet behavior
+- File output encoding
+- Remoting endpoint connectivity
+- Scheduled task execution
+- Error handling and `$ErrorActionPreference` behavior
+
+For a validation checklist, cross-edition test matrix, and rollback procedures,
+see [Test and validate your PowerShell 7 migration][testing-rollback].
+
+### Plan for rollback
+
+PowerShell 7 doesn't replace Windows PowerShell 5.1. If you encounter
+issues, you can revert automation pointers from `pwsh.exe` back to
+`powershell.exe` without uninstalling PowerShell 7. Plan for a
+parallel-run period where both editions handle production workloads.
+
+### Editing experience
+
+[Visual Studio Code][vscode] with the [PowerShell Extension][ps-ext] is the
+recommended editor for PowerShell 7. The Windows PowerShell ISE only supports
+Windows PowerShell and is no longer being updated with new features.
+
+The PowerShell extension includes:
+
+- ISE compatibility mode
+- PSReadLine in the Integrated Console with syntax highlighting and multi-line
+  editing
+- CodeLens integration
 - Improved path autocompletion
 
-To make the transition to Visual Studio Code easier, use the **Enable ISE Mode** function available
-in the **Command Palette**. This function switches VS Code into an ISE-style layout. The ISE-style
-layout gives you all the new features and capabilities of PowerShell in a familiar user experience.
+To switch to an ISE-style layout, press
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>, type `PowerShell`, and select
+**PowerShell: Enable ISE Mode**.
 
-To switch to the new ISE layout, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> to open the
-**Command Palette**, type `PowerShell` and select **PowerShell: Enable ISE Mode**.
+## Next steps
 
-To set the layout to the original layout, open the **Command Palette**, select
-**PowerShell: Disable ISE Mode (restore to defaults)**.
-
-For details about customizing the VS Code layout to ISE, see
-[How to Replicate the ISE Experience in Visual Studio Code][01]
-
-> [!NOTE]
-> There are no plans to update the ISE with new features. In the latest versions of Windows 10 or
-> Windows Server 2019 and higher, the ISE is now a user-uninstallable feature. There are no plans to
-> permanently remove the ISE. The PowerShell Team and its partners are focused on improving the
-> scripting experience in the PowerShell extension for Visual Studio Code.
-
-## Next Steps
-
-Armed with the knowledge to effectively migrate, [install PowerShell 7][02] now!
+- [Audit scripts for PowerShell 7 compatibility][script-audit]
+- [Module compatibility strategy for PowerShell 7][module-strategy]
+- [Encoding changes in PowerShell 7][encoding-changes]
+- [Migrate PowerShell profiles][profile-migration]
+- [Deploy PowerShell 7 in enterprise environments][enterprise]
+- [Migrate scheduled tasks and automation][scheduled-tasks]
+- [Test and validate your migration][testing-rollback]
+- [Differences between Windows PowerShell 5.1 and PowerShell 7.x][differences]
 
 <!-- link references -->
-[01]: ../dev-cross-plat/vscode/how-to-replicate-the-ise-experience-in-vscode.md
-[02]: ../install/installing-powershell-on-windows.md
-[03]: ../install/installing-powershell-on-windows.md#msi
-[04]: ../install/installing-powershell-on-windows.md#winget
-[05]: ../install/installing-powershell-on-windows.md#zip
-[06]: ../install/powershell-support-lifecycle.md
-[07]: ../security/remoting/ssh-remoting-in-powershell.md
-[08]: ../security/remoting/wsman-remoting-in-powershell.md
-[09]: ../whats-new/What-s-New-in-PowerShell-70.md
-[10]: ./differences-from-windows-powershell.md
-[11]: ./module-compatibility.md
-[12]: /configmgr/apps/
-[13]: /powershell/module/microsoft.powershell.core/about/about_group_policy_settings
-[14]: /powershell/module/microsoft.powershell.core/about/about_logging_windows
-[15]: /powershell/module/Microsoft.PowerShell.Core/About/about_Modules
-[16]: /powershell/module/microsoft.powershell.core/about/about_profiles
-[17]: /powershell/module/microsoft.powershell.core/about/about_psmodulepath
-[18]: /powershell/module/microsoft.powershell.core/about/about_remote
-[19]: /powershell/module/microsoft.powershell.core/about/about_remote_requirements
-[20]: /powershell/module/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility
-[21]: /windows-server/administration/openssh/openssh_keymanagement
-[22]: https://code.visualstudio.com/
-[23]: https://code.visualstudio.com/docs/languages/powershell
-[24]: https://github.com/PowerShell/PowerShell/releases
-[25]: https://www.powershellgallery.com/packages/Microsoft.PowerShell.RemotingTools
+[about-compat]: /powershell/module/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility
+[about-gpo]: /powershell/module/microsoft.powershell.core/about/about_group_policy_settings
+[about-logging]: /powershell/module/microsoft.powershell.core/about/about_logging_windows
+[about-psmodulepath]: /powershell/module/microsoft.powershell.core/about/about_psmodulepath
+[about-remote-req]: /powershell/module/microsoft.powershell.core/about/about_remote_requirements
+[differences]: ./differences-from-windows-powershell.md
+[encoding-changes]: ./migration/encoding-changes.md
+[enterprise]: ./migration/enterprise-deployment.md
+[gh-releases]: https://github.com/PowerShell/PowerShell/releases
+[install-msi]: ../install/installing-powershell-on-windows.md#msi
+[install-store]: ../install/installing-powershell-on-windows.md#msix
+[install-winget]: ../install/installing-powershell-on-windows.md#winget
+[install-zip]: ../install/installing-powershell-on-windows.md#zip
+[lifecycle]: ../install/powershell-support-lifecycle.md
+[module-strategy]: ./migration/module-compatibility-strategy.md
+[profile-migration]: ./migration/profile-migration.md
+[ps-ext]: https://code.visualstudio.com/docs/languages/powershell
+[remoting-tools]: https://www.powershellgallery.com/packages/Microsoft.PowerShell.RemotingTools
+[sccm]: /configmgr/apps/
+[scheduled-tasks]: ./migration/scheduled-tasks-automation.md
+[script-audit]: ./migration/script-compatibility-audit.md
+[ssh-remoting]: ../security/remoting/ssh-remoting-in-powershell.md
+[testing-rollback]: ./migration/testing-and-rollback.md
+[vscode]: https://code.visualstudio.com/
+[wsman-remoting]: ../security/remoting/wsman-remoting-in-powershell.md
