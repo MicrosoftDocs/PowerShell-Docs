@@ -1308,6 +1308,7 @@ command line. The following procedure can be used to test the sample Select-Str 
 [01]: /previous-versions/powershell/scripting/developer/prog-guide/designing-your-windows-powershell-provider
 [02]: ../windows-powershell-reference.md
 [03]: ./adding-parameter-sets-to-a-cmdlet.md
+[04]: ./adding-parameters-that-process-command-line-input.md
 [05]: ./approved-verbs-for-windows-powershell-commands.md
 [06]: ./creating-a-cmdlet-that-modifies-the-system.md
 [07]: ./creating-a-cmdlet-without-parameters.md
