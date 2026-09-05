@@ -1,6 +1,6 @@
 ---
 description: Examples of Comment-based Help
-ms.date: 10/05/2023
+ms.date: 09/05/2026
 title: Examples of Comment-based Help
 ---
 
@@ -350,3 +350,63 @@ SYNOPSIS
     Displays information about Windows PowerShell cmdlets and concepts.
 ...
 ```
+
+## Example 6: Titled and untitled examples
+
+Beginning in PowerShell 7.7, you can add a title on the same line as `.EXAMPLE`. This function
+contains one titled example and one untitled example:
+
+```powershell
+function Get-Greeting {
+    <#
+    .SYNOPSIS
+    Returns a greeting.
+
+    .EXAMPLE Greet a user
+    Get-Greeting -Name 'Ada'
+
+    Returns a greeting for Ada.
+
+    .EXAMPLE
+    Get-Greeting
+
+    Returns the default greeting.
+    #>
+    param(
+        [string]$Name = 'World'
+    )
+
+    "Hello, $Name!"
+}
+```
+
+Display the examples:
+
+```powershell
+Get-Help -Name Get-Greeting -Examples
+```
+
+The example sections of the output are:
+
+```Output
+    -------------------------- EXAMPLE 1: Greet a user --------------------------
+
+    PS > Get-Greeting -Name 'Ada'
+
+    Returns a greeting for Ada.
+
+    -------------------------- EXAMPLE 2 --------------------------
+
+    PS > Get-Greeting
+
+    Returns the default greeting.
+```
+
+`Get-Help` numbers both examples automatically. The title is appended to the first example's
+heading, while the untitled example retains its numbered heading. The **Detailed** and **Full**
+parameters also display these titles.
+
+> [!IMPORTANT]
+> PowerShell 7.6 and earlier ignore the entire comment-based help block when `.EXAMPLE` has a title
+> on the same line. The function still runs, but `Get-Help` doesn't display its authored help.
+> Remove `Greet a user` from the `.EXAMPLE` line if the help must work in those versions.
