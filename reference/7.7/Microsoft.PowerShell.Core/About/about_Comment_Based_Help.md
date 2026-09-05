@@ -1,7 +1,7 @@
 ---
 description: Describes how to write comment-based help content for functions and scripts.
 Locale: en-US
-ms.date: 05/21/2025
+ms.date: 09/05/2026
 no-loc: [.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE, .INPUTS, .OUTPUTS, .NOTES, .LINK, .COMPONENT, .ROLE, .FUNCTIONALITY, .FORWARDHELPTARGETNAME, .FORWARDHELPCATEGORY, .REMOTEHELPRUNSPACE, .EXTERNALHELP]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -81,10 +81,11 @@ Get-Function displays the name and syntax of all functions in the session.
 #>
 ```
 
-The comment block must contain at least one keyword. Some of the keywords, such
-as `.EXAMPLE`, can appear many times in the same comment block. The help
-content for each keyword begins on the line after the keyword and can span
-multiple lines.
+The comment block must contain at least one keyword. Some keywords, such as
+`.EXAMPLE`, can appear more than once in the same comment block. The body of
+each section begins on the line after the keyword and can span multiple
+lines. Some keywords also accept text on the keyword line, such as a parameter
+name or an optional example title.
 
 ## Syntax for comment-based help in functions
 
@@ -232,6 +233,37 @@ function Verb-Noun {
 
 A sample command that uses the function or script, optionally followed by
 sample output and a description. Repeat this keyword for each example.
+
+Beginning in PowerShell 7.7, you can add an optional title on the same line as
+`.EXAMPLE`. The example command, output, and description belong on the
+following lines. Titles are supported in both block comments and single-line
+comments (`# .EXAMPLE <Title>`).
+
+```powershell
+<#
+.EXAMPLE Greet a user
+Get-Greeting -Name 'Ada'
+
+Returns a greeting for Ada.
+
+.EXAMPLE
+Get-Greeting
+
+Returns the default greeting.
+#>
+```
+
+`Get-Help` numbers examples automatically and appends the optional title to
+the heading. In this example, the headings are `EXAMPLE 1: Greet a user` and
+`EXAMPLE 2`. The **Examples**, **Detailed**, and **Full** parameters display
+these headings. You can mix titled and untitled examples in the same help
+topic. Examples without titles retain their existing format.
+
+> [!IMPORTANT]
+> PowerShell 7.6 and earlier ignore the entire comment-based help block when
+> `.EXAMPLE` has a title on the same line. The function or script still runs,
+> but `Get-Help` doesn't display its authored help. Leave `.EXAMPLE` on its own
+> line when your help must work in those versions.
 
 ### `.INPUTS`
 

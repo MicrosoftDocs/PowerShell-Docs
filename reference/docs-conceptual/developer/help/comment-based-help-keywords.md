@@ -1,6 +1,6 @@
 ---
 description: Comment-Based Help Keywords
-ms.date: 09/22/2025
+ms.date: 09/05/2026
 no-loc: [FAQ, Function, General, Glossary, Provider, Component, Functionality, Role]
 title: Comment-Based Help Keywords
 ---
@@ -45,6 +45,28 @@ immediately before the parameter variable name. If you use both a `param` statem
 
 A sample command that uses the function or script, optionally followed by sample output and a
 description. Repeat this keyword for each example.
+
+Beginning in PowerShell 7.7, you can add an optional title on the same line as `.EXAMPLE`. The
+example command, output, and description belong on the following lines. This syntax works with
+both block comments and single-line comments.
+
+```powershell
+<#
+.EXAMPLE Greet a user
+Get-Greeting -Name 'Ada'
+
+Returns a greeting for Ada.
+#>
+```
+
+`Get-Help` displays the title after the example number, such as `EXAMPLE 1: Greet a user`, when you
+use the **Examples**, **Detailed**, or **Full** parameter. You can mix titled and untitled examples
+in the same help topic. Without a title, the heading remains `EXAMPLE 1`, `EXAMPLE 2`, and so on.
+
+> [!IMPORTANT]
+> PowerShell 7.6 and earlier ignore the entire comment-based help block when `.EXAMPLE` has a title
+> on the same line. The function or script still runs, but `Get-Help` doesn't display its authored
+> help. Leave `.EXAMPLE` on its own line when your help must work in those versions.
 
 ## `.INPUTS`
 
