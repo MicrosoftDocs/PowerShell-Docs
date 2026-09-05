@@ -68,6 +68,8 @@ in the same help topic. Without a title, the heading remains `EXAMPLE 1`, `EXAMP
 > on the same line. The function or script still runs, but `Get-Help` doesn't display its authored
 > help. Leave `.EXAMPLE` on its own line when your help must work in those versions.
 
+For a complete function and its help output, see [Titled and untitled examples][03].
+
 ## `.INPUTS`
 
 The .NET types of objects that can be piped to the function or script. You can also include a
@@ -172,3 +174,4 @@ For more information about the cmdlet help XML-based help file format, see
 <!-- link references -->
 [01]: ./writing-help-for-windows-powershell-cmdlets.md
 [02]: /powershell/module/Microsoft.PowerShell.Core/Get-Help
+[03]: ./examples-of-comment-based-help.md#example-6-titled-and-untitled-examples

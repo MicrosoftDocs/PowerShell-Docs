@@ -265,6 +265,9 @@ topic. Examples without titles retain their existing format.
 > but `Get-Help` doesn't display its authored help. Leave `.EXAMPLE` on its own
 > line when your help must work in those versions.
 
+For a complete function and its help output, see
+[Titled and untitled examples][10].
+
 ### `.INPUTS`
 
 The .NET types of objects that can be piped to the function or script. You can
@@ -887,3 +890,4 @@ Displays information about PowerShell cmdlets and concepts.
 [07]: xref:Microsoft.PowerShell.Core.Save-Help
 [08]: xref:Microsoft.PowerShell.Core.Update-Help
 [09]: xref:Microsoft.PowerShell.Utility.Export-PSSession
+[10]: /powershell/scripting/developer/help/examples-of-comment-based-help#example-6-titled-and-untitled-examples
