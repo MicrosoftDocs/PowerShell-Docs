@@ -1,6 +1,6 @@
 ---
 description: Learn how to install the latest version of PowerShell 7, which runs side-by-side with Windows PowerShell 5.1.
-ms.date: 08/20/2026
+ms.date: 09/08/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -193,9 +193,9 @@ Benefits of the Microsoft Store package:
 To manually install the MSIX package, download one of the following packages from the GitHub
 releases page and double-click the file to install it.
 
-- Next LTS - [PowerShell-7.6.6.msixbundle][19]
+- Current LTS - [PowerShell-7.6.6.msixbundle][19]
 - Latest stable - [PowerShell-7.5.11.msixbundle][14]
-- Current LTS - [PowerShell-7.4.20.msixbundle][13]
+- Previous LTS - [PowerShell-7.4.20.msixbundle][13]
 - Current preview - [PowerShellPreview-7.7.0-preview.4.msixbundle][20]
 
 Alternatively, you can use the following command to install the MSIX package from the command line:
