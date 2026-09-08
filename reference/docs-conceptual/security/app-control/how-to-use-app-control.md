@@ -1,6 +1,6 @@
 ---
 description: This article explains how to configure and use App Control to secure PowerShell.
-ms.date: 08/17/2026
+ms.date: 09/03/2026
 title: How to use App Control to secure PowerShell
 ---
 # How to use App Control to secure PowerShell
@@ -203,8 +203,8 @@ App Control supports additional configuration settings for PowerShell.
   ```
 
   > [!NOTE]
-  > This setting only applies to PowerShell 7.7-preview.4 and newer versions. If you configure this
-  > setting for earlier versions, the **AppSetting** is silently ignored.
+  > This setting only applies to PowerShell 7.6.6 and newer versions. If you configure this setting
+  > for earlier versions, the **AppSetting** is silently ignored.
 
 To use these settings, you must add them to the App Control policy XML file (`SystemCIPolicy.xml`).
 Open the XML file in a text editor and add the `<AppSettings>` section of the policy. The following
