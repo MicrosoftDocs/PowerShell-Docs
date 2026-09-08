@@ -1,7 +1,7 @@
 ---
 description: Alongside the executable packages published with each PowerShell release, the PowerShell team also maintains several packages available on NuGet. These packages allow targeting PowerShell as an API platform in .NET.
 ms.custom: rjmholt
-ms.date: 12/08/2025
+ms.date: 09/08/2026
 title: Choosing the right PowerShell NuGet package for your .NET project
 ---
 # Choosing the right PowerShell NuGet package for your .NET project
@@ -124,10 +124,10 @@ contains no implementation itself, so it provides no functionality for standalon
 
 ### Using PowerShell Standard with different .NET runtimes
 
-PowerShell Standard targets the [.NET Standard 2.0][03] target runtime, which is a façade runtime
-designed to provide a common surface area shared by .NET Framework and .NET Core. It allows you to
-target a single runtime to produce a single assembly that works with multiple PowerShell versions,
-but has the following consequences:
+PowerShell Standard targets the [.NET Standard 2.0][03] target runtime, which is an abstraction
+layer designed to provide a common surface area shared by .NET Framework and .NET Core. It allows
+you to target a single runtime to produce a single assembly that works with multiple PowerShell
+versions, but has the following consequences:
 
 - The PowerShell instance loading the module or library must be running a minimum of .NET 4.6.1; .NET 4.6 and
   .NET 4.5.2 don't support .NET Standard.
