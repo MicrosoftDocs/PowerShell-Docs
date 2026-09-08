@@ -124,9 +124,9 @@ contains no implementation itself, so it provides no functionality for standalon
 
 ### Using PowerShell Standard with different .NET runtimes
 
-PowerShell Standard targets the [.NET Standard 2.0][03] target runtime, which is an abstraction
+PowerShell Standard targets the [.NET Standard 2.0][03] target framework, which is an abstraction
 layer designed to provide a common surface area shared by .NET Framework and .NET Core. It allows
-you to target a single runtime to produce a single assembly that works with multiple PowerShell
+you to target a single framework to produce a single assembly that works with multiple PowerShell
 versions, but has the following consequences:
 
 - The PowerShell instance loading the module or library must be running a minimum of .NET 4.6.1; .NET 4.6 and
