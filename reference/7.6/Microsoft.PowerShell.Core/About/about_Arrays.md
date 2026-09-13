@@ -500,7 +500,7 @@ $intA
 
 ### ForEach()
 
-Allows to iterate over all elements in the array and perform a given operation
+Allows you to iterate over all elements in the array and perform a given operation
 for each element of the array.
 
 The `ForEach()` method has several overloads that perform different operations.
@@ -674,7 +674,7 @@ to accept them.
 
 ### Where()
 
-Allows to filter or select the elements of the array. The script must evaluate
+Allows you to filter or select the elements of the array. The script must evaluate
 to anything different than: zero (0), empty string, `$false` or `$null` for the
 element to show after the `Where()`. For more information about boolean
 evaluation, see [about_Booleans][04].
