@@ -1,6 +1,6 @@
 ---
 description: When writing a binary PowerShell module in C#, it's natural to take dependencies on other packages or libraries to provide functionality.
-ms.date: 08/08/2022
+ms.date: 09/14/2026
 title: Resolving PowerShell module assembly dependency conflicts
 ---
 # Resolving PowerShell module assembly dependency conflicts
@@ -879,7 +879,6 @@ jumping off points:
 - [PowerShell: `Assembly.LoadFile()` doesn't load into default AssemblyLoadContext][12052]
 - [Rick Strahl: When does a .NET assembly dependency get loaded?][30]
 - [Jon Skeet: Summary of versioning in .NET][18]
-- [Nate McMaster: Deep dive into .NET Core primitives][27]
 
 <!-- link references -->
 [01]: ./media/resolving-dependency-conflicts/alc-diagram.jpg
@@ -905,7 +904,6 @@ jumping off points:
 [24]: https://github.com/PowerShell/PowerShellEditorServices/blob/master/src/PowerShellEditorServices.Hosting/Internal/PsesLoadContext.cs
 [25]: https://github.com/PSBicep/PSBicep
 [26]: https://github.com/rjmholt/ModuleDependencyIsolationExample
-[27]: https://natemcmaster.com/blog/2017/12/21/netcore-primitives/
 [28]: https://pipe.how/get-assemblyloadcontext/
 [29]: https://stackoverflow.com/questions/43365736/assembly-binding-redirect-how-and-why
 [30]: https://weblog.west-wind.com/posts/2012/Nov/03/Back-to-Basics-When-does-a-NET-Assembly-Dependency-get-loaded
