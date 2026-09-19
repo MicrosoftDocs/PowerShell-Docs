@@ -62,8 +62,7 @@ Set-ExecutionPolicy RemoteSigned
 For more information, see the help topic for the `Set-ExecutionPolicy` cmdlet.
 
 To run a signed script, the script must have a digital signature from a trusted
-publisher. The code signing certificate must be issued by a certification
-must be issued by a certification authority that is trusted on the computer.
+publisher. The code signing certificate must be issued by a certification authority that is trusted on the computer.
 Self-signed certificates must be installed in the **Trusted Root Certificates**
 store on the computer.
 
