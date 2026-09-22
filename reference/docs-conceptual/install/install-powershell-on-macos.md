@@ -20,7 +20,7 @@ with a previous version, reinstall the previous version using the binary archive
 There are several ways to install PowerShell on macOS. Choose one:
 
 - [Download and install the package file][03] - this is the preferred method for most users
-- [Install as a .NET Global tool][04] - this method is useful developers that already have the .NET
+- [Install as a .NET Global tool][04] - this method is useful for developers that already have the .NET
   Core SDK installed
 - [Install from a binary archive][05] - this method is useful for advanced users who need more
   control over the installation
