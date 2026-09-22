@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.7
 description: New features and changes released in PowerShell 7.7
-ms.date: 08/13/2026
+ms.date: 09/21/2026
 ---
 
 # What's New in PowerShell 7.7
 
-PowerShell 7.7.0-preview.4 includes the following features, updates, and breaking changes.
-PowerShell 7.7.0-preview.4 is built on the .NET 11.0.100-preview.6 runtime.
+PowerShell 7.7.0-preview.5 includes the following features, updates, and breaking changes.
+PowerShell 7.7.0-preview.5 is built on the .NET 11.0.0-rc.1 runtime.
 
 For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository.
 
@@ -15,7 +15,7 @@ For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository
 
 PowerShell 7.7 includes the following updated modules:
 
-- **Microsoft.PowerShell.PSResourceGet** v1.3.0-preview1
+- **Microsoft.PowerShell.PSResourceGet** v1.3.0-preview2
 - **PSReadLine** v2.4.5
 
 ## Breaking Changes
@@ -40,6 +40,12 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Cmdlet improvements
 
+- Allow user to force the default implicit formatting to use `AutoSize` ([#28018][28018])
+- Prevent localization of WPF key gesture strings ([#28020][28020])
+- Improve pointer lifecycle handling in PdhHelper ([#28008][28008])
+- Improve validation for `Copy-Item -FromSession` ([#28006][28006])
+- Add `GetImportModuleCommand` method back and check for session restriction in `ShowCommand`
+  ([#25557][25557])
 - Improve output file path determination for `Invoke-WebRequest` ([#27872][27872])
 - Improve `Authorization` header default and redirect behavior ([#27873][27873])
 - Add `New-TemporaryDirectory` cmdlet ([#27549][27549]) (Thanks @KirtiRamchandani!)
@@ -102,6 +108,10 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Engine improvements
 
+- Tolerate IO/JSON errors reading the per-user `powershell.config.json` ([#27373][27373])
+- Improve remote prompt handling for `PSCredential` and `SecureString` arrays ([#28007][28007])
+- Improve CAB extraction path handling ([#28009][28009])
+- Handle MSIX installation specially when prepending to PATH ([#27782][27782])
 - Call `CodeGeneration.EscapeSingleQuotedStringContent` API in SyncCurrentLocationHandler
   ([#27874][27874])
 - Improve PowerShell Remoting Argument Validation ([#27870][27870])
@@ -142,6 +152,7 @@ PowerShell 7.7 includes the following experimental features.
 
 [21219]: https://github.com/PowerShell/PowerShell/pull/21219
 [24624]: https://github.com/PowerShell/PowerShell/pull/24624
+[25557]: https://github.com/PowerShell/PowerShell/pull/25557
 [25788]: https://github.com/PowerShell/PowerShell/pull/25788
 [25806]: https://github.com/PowerShell/PowerShell/pull/25806
 [25896]: https://github.com/PowerShell/PowerShell/pull/25896
@@ -186,11 +197,13 @@ PowerShell 7.7 includes the following experimental features.
 [27123]: https://github.com/PowerShell/PowerShell/pull/27123
 [27266]: https://github.com/PowerShell/PowerShell/pull/27266
 [27328]: https://github.com/PowerShell/PowerShell/pull/27328
+[27373]: https://github.com/PowerShell/PowerShell/pull/27373
 [27395]: https://github.com/PowerShell/PowerShell/pull/27395
 [27397]: https://github.com/PowerShell/PowerShell/pull/27397
 [27398]: https://github.com/PowerShell/PowerShell/pull/27398
 [27549]: https://github.com/PowerShell/PowerShell/pull/27549
 [27727]: https://github.com/PowerShell/PowerShell/pull/27727
+[27782]: https://github.com/PowerShell/PowerShell/pull/27782
 [27809]: https://github.com/PowerShell/PowerShell/pull/27809
 [27857]: https://github.com/PowerShell/PowerShell/pull/27857
 [27869]: https://github.com/PowerShell/PowerShell/pull/27869
@@ -200,3 +213,9 @@ PowerShell 7.7 includes the following experimental features.
 [27873]: https://github.com/PowerShell/PowerShell/pull/27873
 [27874]: https://github.com/PowerShell/PowerShell/pull/27874
 [27880]: https://github.com/PowerShell/PowerShell/pull/27880
+[28006]: https://github.com/PowerShell/PowerShell/pull/28006
+[28007]: https://github.com/PowerShell/PowerShell/pull/28007
+[28008]: https://github.com/PowerShell/PowerShell/pull/28008
+[28009]: https://github.com/PowerShell/PowerShell/pull/28009
+[28018]: https://github.com/PowerShell/PowerShell/pull/28018
+[28020]: https://github.com/PowerShell/PowerShell/pull/28020
