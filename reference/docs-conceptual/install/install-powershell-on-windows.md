@@ -1,6 +1,6 @@
 ---
 description: Learn how to install the latest version of PowerShell 7, which runs side-by-side with Windows PowerShell 5.1.
-ms.date: 09/08/2026
+ms.date: 09/21/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -196,7 +196,7 @@ releases page and double-click the file to install it.
 - Current LTS - [PowerShell-7.6.6.msixbundle][19]
 - Latest stable - [PowerShell-7.5.11.msixbundle][14]
 - Previous LTS - [PowerShell-7.4.20.msixbundle][13]
-- Current preview - [PowerShellPreview-7.7.0-preview.4.msixbundle][20]
+- Current preview - [PowerShellPreview-7.7.0-preview.5.msixbundle][20]
 
 Alternatively, you can use the following command to install the MSIX package from the command line:
 
@@ -363,7 +363,7 @@ can't support those methods.
 [17]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/PowerShell-7.6.6-win-x64.msi
 [18]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/PowerShell-7.6.6-win-x64.zip
 [19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/PowerShell-7.6.6.msixbundle
-[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.7.0-preview.4/PowerShellPreview-7.7.0-preview.4.msixbundle
+[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.7.0-preview.5/PowerShellPreview-7.7.0-preview.5.msixbundle
 [21]: https://github.com/PowerShell/PowerShell/releases/latest
 [22]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [23]: media/install-powershell-on-windows/powershell-start-menu.png

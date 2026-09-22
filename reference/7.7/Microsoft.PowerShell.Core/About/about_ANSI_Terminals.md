@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 07/02/2026
+ms.date: 09/21/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ansi_terminals?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_ANSI_Terminals
@@ -57,6 +57,8 @@ The variable has the following properties:
 - **Strikethrough** - Turns strike through on
 - **StrikethroughOff** - Turns strike through off
 - **OutputRendering** - Control when output rendering is used
+- **AutoSizeDefaultFormatting** - Controls whether wide and table formatting automatically adjusts
+  column widths based on content (added in PowerShell 7.7-preview.5)
 - **Formatting** - Nested object that controls default formatting for output
   streams
 - **Progress** - Nested object that controls the rendering of progress bars
@@ -95,6 +97,16 @@ The following members control how or when ANSI formatting is used:
   - `Host`: This is the default behavior. The ANSI escape sequences are removed
     from redirected or piped output. For more information, see
     [Redirecting output][02].
+
+- `$PSStyle.AutoSizeDefaultFormatting` is a boolean. When set to `$true`, the
+  default implicit formatting applied by PowerShell (via `Out-Default`)
+  enforces **AutoSize** when the chosen formatting view is `table` or `wide`,
+  similar to running `Format-Table -AutoSize` and `Format-Wide -AutoSize`
+  explicitly. This allows PowerShell to generate less verbose output when used
+  by an AI agent. It also makes PowerShell work better with small-window sized
+  terminals.
+
+  This feature was added in PowerShell 7.7-preview.5.
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.
