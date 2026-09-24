@@ -1,6 +1,6 @@
 ---
 description: This article explains how to configure and use App Control to secure PowerShell.
-ms.date: 09/03/2026
+ms.date: 09/24/2026
 title: How to use App Control to secure PowerShell
 ---
 # How to use App Control to secure PowerShell
@@ -233,11 +233,6 @@ example shows the `<AppSettings>` XML with both settings enabled.
 
 ## Further reading
 
-- [App Control Admin Tips & Known Issues][03]
-- [Understand App Control script enforcement][02]
-- [Create an App Control policy for fully managed devices][01]
-
-<!-- link references -->
-[01]: /windows/security/application-security/application-control/app-control-for-business/design/create-App Control-policy-for-fully-managed-devices
-[02]: /windows/security/application-security/application-control/app-control-for-business/design/script-enforcement
-[03]: /windows/security/application-security/application-control/app-control-for-business/operations/known-issues
+- [Create an App Control policy for fully managed devices](/windows/security/application-security/application-control/app-control-for-business/design/create-App Control-policy-for-fully-managed-devices)
+- [Understand App Control script enforcement](/windows/security/application-security/application-control/app-control-for-business/design/script-enforcement)
+- [App Control Admin Tips & Known Issues](/windows/security/application-security/application-control/app-control-for-business/operations/known-issues)
