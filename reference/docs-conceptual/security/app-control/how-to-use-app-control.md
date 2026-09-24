@@ -1,6 +1,6 @@
 ---
 description: This article explains how to configure and use App Control to secure PowerShell.
-ms.date: 09/03/2026
+ms.date: 09/24/2026
 title: How to use App Control to secure PowerShell
 ---
 # How to use App Control to secure PowerShell
@@ -99,7 +99,7 @@ For testing, you just need to create a default policy and a self signed code sig
    > [!NOTE]
    > You must copy some policy definitions to a subfolder such as
    > `C:\Windows\System32\CodeIntegrity\CiPolicies`. For more information, see
-   > [App Control Admin Tips & Known Issues][03].
+   > [App Control Admin Tips & Known Issues][01].
 
 1. Disable the App Control policy
 
@@ -233,11 +233,11 @@ example shows the `<AppSettings>` XML with both settings enabled.
 
 ## Further reading
 
-- [App Control Admin Tips & Known Issues][03]
-- [Understand App Control script enforcement][02]
-- [Create an App Control policy for fully managed devices][01]
+- [Create an App Control policy for fully managed devices][02]
+- [Understand App Control script enforcement][03]
+- [App Control Admin Tips & Known Issues][04]
 
-<!-- link references -->
-[01]: /windows/security/application-security/application-control/app-control-for-business/design/create-App Control-policy-for-fully-managed-devices
-[02]: /windows/security/application-security/application-control/app-control-for-business/design/script-enforcement
-[03]: /windows/security/application-security/application-control/app-control-for-business/operations/known-issues
+<!-- updated link references -->
+[02]: /windows/security/application-security/application-control/app-control-for-business/design/create-appcontrol-policy-for-fully-managed-devices
+[03]: /windows/security/application-security/application-control/app-control-for-business/design/script-enforcement
+[04]: /windows/security/application-security/application-control/app-control-for-business/operations/known-issues
