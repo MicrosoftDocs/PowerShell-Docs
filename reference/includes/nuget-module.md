@@ -1,6 +1,6 @@
 ---
 author: sdwheeler
-ms.author: akashdubey-ms
+ms.author: akashdubey
 ms.date: 09/24/2026
 ms.topic: include
 ---
