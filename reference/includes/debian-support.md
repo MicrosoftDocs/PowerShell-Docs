@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
-ms.author: sewhee
-ms.date: 07/15/2026
+ms.author: akashdubey-ms
+ms.date: 09/24/2026
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -10,7 +10,8 @@ Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycl
 
 Support for these versions of Debian ends on the following dates:
 
-- Debian 13 - 2028-08-09
+- Debian 13 - 2030-06-30
+- Debian 12 - 2028-06-30
 
 Install package files (`.deb`) are also available from [https://packages.microsoft.com/][pcm].
 

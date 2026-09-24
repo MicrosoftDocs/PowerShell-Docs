@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
-ms.author: sewhee
-ms.date: 03/06/2026
+ms.author: akashdubey-ms
+ms.date: 09/24/2026
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->

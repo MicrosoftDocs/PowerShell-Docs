@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
-ms.author: sewhee
-ms.date: 07/15/2026
+ms.author: akashdubey-ms
+ms.date: 09/24/2026
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -10,9 +10,9 @@ Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycl
 
 Support for these versions of Ubuntu ends on the following dates:
 
-- Ubuntu 26.04 (Resolute Raccoon) - 2031-04-30
+- Ubuntu 26.04 (Resolute Raccoon) - 2031-05-29
 - Ubuntu 24.04 (Noble Numbat) - 2029-05-31
-- Ubuntu 22.04 (Jammy Jellyfish) - 2024-09-30
+- Ubuntu 22.04 (Jammy Jellyfish) - 2027-06-01
 
 Install package files (`.deb`) are also available from [https://packages.microsoft.com/][pcm].
 

@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
-ms.author: sewhee
-ms.date: 09/16/2025
+ms.author:
+ms.date: 09/24/2026
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -10,9 +10,9 @@ macOS reaches end-of-support.
 
 The following versions of macOS are supported:
 
+- macOS 27 (Golden Gate) Arm64
 - macOS 26 (Tahoe) x64 and Arm64
 - macOS 15 (Sequoia) x64 and Arm64
-- macOS 14 (Sonoma) x64 and Arm64
 
 Apple determines the support lifecycle of macOS. For more information, see the following:
 
