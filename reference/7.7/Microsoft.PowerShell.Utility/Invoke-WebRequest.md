@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/20/2026
+ms.date: 09/26/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -416,6 +416,20 @@ Unix socket.
 
 ```powershell
 Invoke-WebRequest -Uri http://localhost/v1.40/images/json -UnixSocket '/var/run/docker.sock'
+```
+
+### Example 12: Send a search request using the HTTP QUERY method
+
+This example sends a search request using the HTTP QUERY method. The QUERY method is safe and
+idempotent like GET, but it carries the query parameters in the request body instead of the URI.
+Because the `Query` method isn't given a default content-type, the example explicitly sets the
+**ContentType** parameter.
+
+```powershell
+$uri = 'https://api.contoso.com/search'
+$body = @{ term = 'powershell'; limit = 10 }
+$contentType = 'application/x-www-form-urlencoded'
+Invoke-WebRequest -Uri $uri -Method Query -Body $body -ContentType $contentType
 ```
 
 ## PARAMETERS
@@ -887,8 +901,12 @@ Specifies the method used for the web request. The acceptable values for this pa
 - `Options`
 - `Patch`
 - `Post`
+- `Query`
 - `Put`
 - `Trace`
+
+> [!NOTE]
+> The `Query` value was added in PowerShell 7.7.
 
 The **CustomMethod** parameter can be used for Request Methods not listed above.
 
@@ -896,7 +914,7 @@ The **CustomMethod** parameter can be used for Request Methods not listed above.
 Type: Microsoft.PowerShell.Commands.WebRequestMethod
 Parameter Sets: StandardMethod, StandardMethodNoProxy
 Aliases:
-Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
+Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch, Query
 
 Required: False
 Position: Named
