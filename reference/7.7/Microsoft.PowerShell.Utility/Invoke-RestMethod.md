@@ -345,9 +345,13 @@ Because the `Query` method isn't given a default content-type, the example expli
 **ContentType** parameter.
 
 ```powershell
-$uri = 'https://api.contoso.com/search'
-Invoke-RestMethod -Uri $uri -Method Query -Body @{ term = 'powershell'; limit = 10 } `
-    -ContentType 'application/x-www-form-urlencoded'
+$parameters = @{
+    Uri         = 'https://api.contoso.com/search'
+    Method      = 'Query'
+    Body        = @{ term = 'powershell'; limit = 10 }
+    ContentType = 'application/x-www-form-urlencoded'
+}
+Invoke-RestMethod @parameters
 ```
 
 ## PARAMETERS
@@ -872,10 +876,16 @@ Specifies the method used for the web request. The acceptable values for this pa
 - `Trace`
 
 The `Query` value specifies the HTTP QUERY method. The QUERY method is safe and idempotent like
-`Get`, but it sends the query parameters in the request body instead of the URI. This is useful for
-search or filter requests that exceed URI length limits or that pass structured data. When `-Body`
-is a hashtable, it's sent as the request content rather than being converted into URI query
-parameters.
+`Get`, but it sends the query parameters in the request body instead of the URI. This is useful
+for search or filter requests that exceed URI length limits or that pass structured data. When
+the value of the **Body** parameter is a hashtable, it's sent as the request content rather than
+being converted into URI query parameters.
+
+Unlike `Post`, requests that use the `Query` method aren't given a default
+`application/x-www-form-urlencoded` content-type. Use the **ContentType** parameter to specify
+the content-type explicitly.
+
+This value was introduced in PowerShell 7.7.
 
 The **CustomMethod** parameter can be used for Request Methods not listed above.
 
@@ -1562,12 +1572,6 @@ are:
 - `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
 PowerShell 7.4 added support for the Brotli compression algorithm.
-
-PowerShell 7.7 added the `Query` value for the **Method** parameter, which specifies the HTTP QUERY
-method. Unlike `Post`, requests that use the `Query` method aren't given a default
-`application/x-www-form-urlencoded` content-type. Use the **ContentType** parameter to specify the
-content-type explicitly. If a `Query` request receives a `303 (See Other)` redirect response, the
-request is resent using the `Get` method.
 
 ## RELATED LINKS
 
