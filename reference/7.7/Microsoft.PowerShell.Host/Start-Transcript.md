@@ -140,14 +140,12 @@ Write-Host 'Processing started'
 Start-Sleep -Seconds 5
 Write-Host 'Processing complete'
 Stop-Transcript
-Get-Content .\transcript.txt | Select-Object -Last 4
+Get-Content .\transcript.txt | Where-Object { $_ -match '^\d.*Processing' }
 ```
 
 ```Output
 2026-10-21 19:12:09 Processing started
 2026-10-21 19:12:14 Processing complete
-**********************
-PowerShell transcript end
 ```
 
 ### Example 7: Record timestamps in a custom format
@@ -160,13 +158,11 @@ the invariant culture.
 Start-Transcript -Path .\transcript.txt -TimeStampFormat 'HH:mm:ss.fff'
 Write-Host 'Processing started'
 Stop-Transcript
-Get-Content .\transcript.txt | Select-Object -Last 3
+Get-Content .\transcript.txt | Where-Object { $_ -match '^\d.*Processing' }
 ```
 
 ```Output
 19:12:09.482 Processing started
-**********************
-PowerShell transcript end
 ```
 
 For more information about format strings, see
