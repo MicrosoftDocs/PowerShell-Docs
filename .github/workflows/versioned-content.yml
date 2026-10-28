@@ -3,7 +3,7 @@
 # maintainer or admin rights may modify the actions or the workflow definitions.
 name: Reporting
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
     paths:
