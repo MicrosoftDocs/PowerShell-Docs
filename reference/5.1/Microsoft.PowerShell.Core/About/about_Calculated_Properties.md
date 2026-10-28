@@ -1,7 +1,7 @@
 ---
 description: PowerShell provides the ability to dynamically add new properties and alter the formatting of objects output to the pipeline.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 10/29/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_calculated_properties?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Calculated_Properties
@@ -65,6 +65,7 @@ the key-value pairs that each cmdlet supports.
   - `Alignment` - optional
 
 - `Format-Wide`
+  - `Name`/`Label` - optional
   - `Expression`
   - `FormatString` - optional
 
