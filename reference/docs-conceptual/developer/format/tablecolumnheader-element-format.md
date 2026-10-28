@@ -78,7 +78,7 @@ label is centered in the column.
     <TableColumnHeader>
     <Label>Column 2</Label>
     <Width>10</Width>
-    <Alignment>Centered</Alignment>
+    <Alignment>Center</Alignment>
   </TableColumnHeader>
 </TableHeaders>
 ```
