@@ -1,6 +1,6 @@
 ---
 description: How to Write a Simple Cmdlet
-ms.date: 01/15/2019
+ms.date: 11/02/2026
 title: How to Write a Simple Cmdlet
 ---
 
@@ -9,6 +9,32 @@ title: How to Write a Simple Cmdlet
 This article shows how to write a cmdlet. The `Send-Greeting` cmdlet takes a single user name as
 input and then writes a greeting to that user. Although the cmdlet does not do much work, this
 example demonstrates the major sections of a cmdlet.
+
+
+## Prerequisites
+
+To compile this C# cmdlet, create a class library project that references
+the `System.Management.Automation` assembly.
+
+For Windows PowerShell 5.1, add the
+[`Microsoft.PowerShell.5.1.ReferenceAssemblies`](https://www.nuget.org/packages/Microsoft.PowerShell.5.1.ReferenceAssemblies)
+NuGet package to your project:
+
+```xml
+<PackageReference Include="Microsoft.PowerShell.5.1.ReferenceAssemblies" Version="1.0.0" PrivateAssets="all" />
+```
+
+This package targets .NET Framework 4.6.1 or later. For Windows
+PowerShell 5.0, use
+[`Microsoft.PowerShell.5.ReferenceAssemblies`](https://www.nuget.org/packages/Microsoft.PowerShell.5.ReferenceAssemblies).
+
+Reference assemblies are used for compilation and shouldn't be
+redistributed with a binary module loaded into an existing PowerShell
+installation.
+
+For other target versions, see
+[Choosing the right PowerShell NuGet package](https://learn.microsoft.com/powershell/scripting/dev-cross-plat/choosing-the-right-nuget-package).
+
 
 ## Steps to write a cmdlet
 
