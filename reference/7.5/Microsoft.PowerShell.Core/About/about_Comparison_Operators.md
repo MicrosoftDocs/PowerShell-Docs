@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 07/01/2026
+ms.date: 10/28/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -736,7 +736,7 @@ $a = 'abc', 'def'
 
 # The following statements are equivalent
 $a, 'ghi' -contains $a           # Output: True
-'$a', 'ghi' -contains $a         # Output: True
+"$a", 'ghi' -contains $a         # Output: True
 'abc def', 'ghi' -contains $a    # Output: True
 ```
 
@@ -787,7 +787,7 @@ $a -in 'abc', 'def', 'ghi' # Output: False
 
 # The following statements are equivalent
 $a -in $a, 'ghi'           # Output: True
-$a -in '$a', 'ghi'         # Output: True
+$a -in "$a", 'ghi'         # Output: True
 $a -in 'abc def', 'ghi'    # Output: True
 ```
 
