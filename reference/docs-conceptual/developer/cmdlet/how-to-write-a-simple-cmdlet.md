@@ -32,7 +32,7 @@ redistributed with a binary module loaded into an existing PowerShell
 installation.
 
 For other target versions, see
-[Choosing the right PowerShell NuGet package](https://learn.microsoft.com/powershell/scripting/dev-cross-plat/choosing-the-right-nuget-package).
+[Choosing the right PowerShell NuGet package](../../dev-cross-plat/choosing-the-right-nuget-package.md).
 
 ## Steps to write a cmdlet
 
