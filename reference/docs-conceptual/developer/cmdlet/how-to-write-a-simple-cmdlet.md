@@ -10,7 +10,6 @@ This article shows how to write a cmdlet. The `Send-Greeting` cmdlet takes a sin
 input and then writes a greeting to that user. Although the cmdlet does not do much work, this
 example demonstrates the major sections of a cmdlet.
 
-
 ## Prerequisites
 
 To compile this C# cmdlet, create a class library project that references
@@ -34,7 +33,6 @@ installation.
 
 For other target versions, see
 [Choosing the right PowerShell NuGet package](https://learn.microsoft.com/powershell/scripting/dev-cross-plat/choosing-the-right-nuget-package).
-
 
 ## Steps to write a cmdlet
 
