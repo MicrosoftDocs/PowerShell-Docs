@@ -1,7 +1,7 @@
 ---
 description: Lists the PowerShell operators in precedence order.
 Locale: en-US
-ms.date: 12/30/2025
+ms.date: 11/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
@@ -20,9 +20,8 @@ which PowerShell evaluates the operators when multiple operators appear in the
 same expression.
 
 When operators have equal precedence, PowerShell evaluates them from left to
-right as they appear within the expression. The exceptions are the assignment
-operators, the cast operators, and the negation operators (`!`, `-not`,
-`-bnot`), which are evaluated from right to left.
+right as they appear within the expression. Assignment and prefix unary
+operators are evaluated from right to left.
 
 You can use enclosures, such as parentheses, to override the standard
 precedence order and force PowerShell to evaluate the enclosed part of an
@@ -36,23 +35,46 @@ The Operator column lists the operators. The Reference column lists the
 PowerShell Help topic in which the operator is described. To display the topic
 interactively, use `Get-Help -Name <topic-name>`.
 
-|          OPERATOR           |              REFERENCE               |
+| OPERATOR                    | REFERENCE                            |
 | --------------------------- | ------------------------------------ |
 | `$() @() () @{}`            | [about_Operators][ops]               |
 | `. ?.` (member access)      | [about_Operators][ops]               |
 | `::` (static)               | [about_Operators][ops]               |
 | `[0] ?[0]` (index operator) | [about_Operators][ops]               |
+| `++ --` (postfix)           | [about_Assignment_Operators][assign] |
+
+The following prefix unary operators have equal precedence. They are
+evaluated from right to left.
+
+| OPERATOR                    | REFERENCE                            |
+| --------------------------- | ------------------------------------ |
 | `[int]` (cast operators)    | [about_Operators][ops]               |
 | `-split` (unary)            | [about_Split][split]                 |
 | `-join` (unary)             | [about_Join][join]                   |
-| `,` (comma operator)        | [about_Operators][ops]               |
-| `++ --`                     | [about_Assignment_Operators][assign] |
+| `,` (unary)                 | [about_Operators][ops]               |
+| `++ --` (prefix)            | [about_Assignment_Operators][assign] |
 | `! -not`                    | [about_Logical_Operators][logic]     |
+| `-bnot`                     | [about_Arithmetic_Operators][math]   |
+| `+ -` (unary)               | [about_Arithmetic_Operators][math]   |
+
+The list resumes here with the following operators in precedence order:
+
+| OPERATOR                    | REFERENCE                            |
+| --------------------------- | ------------------------------------ |
+| `,` (binary)                | [about_Operators][ops]               |
 | `..` (range operator)       | [about_Operators][ops]               |
 | `-f` (format operator)      | [about_Operators][ops]               |
-| `-` (unary/negative)        | [about_Arithmetic_Operators][math]   |
 | `* / %`                     | [about_Arithmetic_Operators][math]   |
 | `+ -`                       | [about_Arithmetic_Operators][math]   |
+| `??` (null-coalescing)      | [about_Operators][ops]               |
+
+Unary operators are evaluated before binary comma, which creates an array.
+For example, `-not 1, 2` produces `$false, 2`, while `-bnot 1, 2` produces
+`-2, 2`. Unary negation also precedes subtraction: `-bnot 1 - 1` is evaluated
+as `(-bnot 1) - 1`.
+
+The null-coalescing operator has higher precedence than comparisons. For
+example, `2 -le $null ?? 10` is evaluated as `2 -le ($null ?? 10)`.
 
 The following group of operators have equal precedence. Their case-sensitive
 and explicitly case-insensitive variants have the same precedence.
@@ -74,19 +96,17 @@ order:
 
 |              OPERATOR              |             REFERENCE              |
 | ---------------------------------- | ---------------------------------- |
-| `-band -bnot -bor -bxor -shr -shl` | [about_Arithmetic_Operators][math] |
+| `-band -bor -bxor -shr -shl`       | [about_Arithmetic_Operators][math] |
 | `-and -or -xor`                    | [about_Logical_Operators][logic]   |
 
-The following items are not true operators. They are part of PowerShell's
-command syntax, not expression syntax. Assignment is always the last action
-that happens.
+The following table lists other PowerShell syntax elements. Assignment is
+always the last action that happens.
 
 |                         SYNTAX                          |              REFERENCE               |
 | ------------------------------------------------------- | ------------------------------------ |
 | `.` (dot-source)                                        | [about_Operators][ops]               |
 | `&` (call)                                              | [about_Operators][ops]               |
 | `? <if-true> : <if-false>` (ternary operator)           | [about_Operators][ops]               |
-| `??` (null-coalescing operator)                         | [about_Operators][ops]               |
 | <code>&#124;</code> (pipeline operator)                 | [about_Operators][ops]               |
 | `> >> 2> 2>> 2>&1`                                      | [about_Redirection][redir]           |
 | <code>&& &#124;&#124;</code> (pipeline chain operators) | [about_Operators][ops]               |
