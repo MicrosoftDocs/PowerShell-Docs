@@ -1,6 +1,6 @@
 ---
 description: Learn how to install the latest version of PowerShell 7, which runs side-by-side with Windows PowerShell 5.1.
-ms.date: 09/21/2026
+ms.date: 10/28/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -204,6 +204,22 @@ Alternatively, you can use the following command to install the MSIX package fro
 Add-AppxPackage -Path ".\PowerShell-7.6.6.msixbundle"
 ```
 
+#### Updates while PowerShell is running
+
+On Windows 11 version 24H2 (build 26100) and later, PowerShell MSIX packages that declare
+`uap17:UpdateWhileInUse` as `defer` don't force-close running `pwsh.exe` sessions to install package
+updates. Windows defers the update until the application is restarted or the system reboots. Required
+operating system updates and reboots can still close PowerShell sessions.
+
+> [!IMPORTANT]
+> Deferred updates also affect deployments outside the Microsoft Store. When the MSIX package sets
+> `UpdateWhileInUse` to `defer`, Windows ignores force-shutdown deployment options such as
+> `ForceTargetAppShutdown` and `ForceApplicationShutdown`. To apply a package update immediately,
+> close running PowerShell sessions before retrying the deployment. Older Windows versions don't
+> support this setting.
+
+For more information, see [uap17:UpdateWhileInUse][26].
+
 #### Limitations of a MSIX-based installation
 
 Store-based installations are installed for a single user. There is no option to install it for all
@@ -369,3 +385,4 @@ can't support those methods.
 [23]: media/install-powershell-on-windows/powershell-start-menu.png
 [24]: microsoft-update-faq.yml
 [25]: PowerShell-Support-Lifecycle.md
+[26]: /uwp/schemas/appxpackage/uapmanifestschema/element-uap17-updatewhileinuse
