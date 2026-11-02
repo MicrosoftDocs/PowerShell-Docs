@@ -1,7 +1,7 @@
 ---
 description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
-ms.date: 01/26/2026
+ms.date to 11/02/2026
 no-loc: [FullLanguage, ConstrainedLanguage, RestrictedLanguage, NoLanguage]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -17,6 +17,14 @@ Explains language modes and their effect on PowerShell sessions.
 
 The language mode of a PowerShell session determines which elements of the
 PowerShell language can be used in the session.
+
+> [!NOTE]
+> In `ConstrainedLanguage` mode, you can create script blocks using
+> `{ ... }` or `[ScriptBlock]{ ... }` and invoke them using `&` or
+> `Invoke-Command`. However, `[ScriptBlock]` isn't an approved type
+> for general .NET method calls or string conversions. For example,
+> calling `$sb.Invoke()` or converting a string to `[ScriptBlock]`
+> is blocked.
 
 PowerShell supports the following language modes:
 
