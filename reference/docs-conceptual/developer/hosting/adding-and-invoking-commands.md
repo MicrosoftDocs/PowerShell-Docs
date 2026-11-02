@@ -1,6 +1,6 @@
 ---
 description: Adding and invoking commands
-ms.date: 09/13/2016
+ms.date: 11/02/2026
 title: Adding and invoking commands
 ---
 # Adding and invoking commands
@@ -125,6 +125,100 @@ scope.
 PowerShell ps = PowerShell.Create();
 ps.AddScript(File.ReadAllText(@"D:\PSScripts\MyScript.ps1"), true).Invoke();
 ```
+
+### Run a script file
+
+To invoke a `.ps1` file directly, pass its path to `AddCommand`, then use `AddParameter` to supply
+the script's parameters. Pass the path and parameter values separately, without adding quotation
+marks or building a command string. Paths and parameter values can contain spaces.
+
+Unlike `AddScript(File.ReadAllText(...))`, invoking the file with `AddCommand` preserves its file
+context, including `$PSScriptRoot` and `$PSCommandPath`.
+
+The following example uses the .NET 10 SDK and PowerShell 7.6. Create a console project and add the
+`Microsoft.PowerShell.SDK` package. For more information about hosting dependencies, see
+[Choosing the right NuGet package](../../dev-cross-plat/choosing-the-right-nuget-package.md).
+
+```powershell
+dotnet new console --name ExternalScriptHost --framework net10.0
+Set-Location -Path ExternalScriptHost
+dotnet add package Microsoft.PowerShell.SDK --version 7.6.8
+```
+
+Save the following script as `Greeting.ps1` in the project directory:
+
+```powershell
+param(
+    [string]$Name
+)
+
+"Hello, $Name!"
+```
+
+Replace the contents of `Program.cs` with the following code:
+
+```csharp
+using System;
+using System.IO;
+using System.Management.Automation;
+
+if (args.Length != 2)
+{
+    Console.Error.WriteLine("Usage: dotnet run -- <script-path> <name>");
+    Environment.ExitCode = 1;
+    return;
+}
+
+string scriptPath = Path.GetFullPath(args[0]);
+using PowerShell ps = PowerShell.Create();
+ps.AddCommand(scriptPath).AddParameter("Name", args[1]);
+
+try
+{
+    foreach (PSObject result in ps.Invoke())
+    {
+        Console.WriteLine(result);
+    }
+}
+catch (RuntimeException exception)
+{
+    Console.Error.WriteLine(exception.Message);
+    Environment.ExitCode = 1;
+    return;
+}
+
+foreach (ErrorRecord error in ps.Streams.Error)
+{
+    Console.Error.WriteLine(error);
+}
+
+if (ps.HadErrors)
+{
+    Environment.ExitCode = 1;
+}
+```
+
+Run the application from the project directory:
+
+```powershell
+dotnet run -- ./Greeting.ps1 World
+```
+
+```Output
+Hello, World!
+```
+
+`Path.GetFullPath` resolves a relative script path against the C# application's current working
+directory. `PowerShell.Create` creates a PowerShell instance that uses a default runspace. The
+`using` declaration disposes of the instance when the application exits.
+
+`Invoke` returns objects from the success output stream. Non-terminating errors are available in
+`ps.Streams.Error`; terminating errors can throw `RuntimeException`. The example writes errors to
+standard error and sets a nonzero exit code. Other PowerShell streams, such as warning and verbose,
+are available through the corresponding properties of `ps.Streams`.
+
+On Windows, the script must be allowed by the effective execution policy. This example doesn't
+change the execution policy.
 
 ### Invoking a pipeline synchronously
 
