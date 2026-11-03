@@ -90,7 +90,9 @@ query the GitHub Repository for up to date Releases using
 - the [metadata.json file in the repository][06]
 - the [gh cli tool & its release list command][07]
 
-Each of these methods can be done in just a few lines of code.
+Each of these methods can be wrapped in just a few lines of code, providing a
+more flexible and suitable way for you to get notifications of new versions
+in future.
 
 <!-- link references -->
 [01]: ../about/about_Environment_Variables.md
