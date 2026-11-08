@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/25/2024
+ms.date: 11/09/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -20,14 +20,14 @@ Resolves the wildcard characters in a path, and displays the path contents.
 ### Path (Default)
 
 ```
-Resolve-Path [-Path] <string[]> [-Relative] [-RelativeBasePath <string>]
+Resolve-Path [-Path] <string[]> [-Relative] [-BasePath <string>]
  [-Credential <pscredential>] [-Force] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Resolve-Path -LiteralPath <string[]> [-Relative] [-RelativeBasePath <string>]
+Resolve-Path -LiteralPath <string[]> [-Relative] [-BasePath <string>]
  [-Credential <pscredential>] [-Force] [<CommonParameters>]
 ```
 
@@ -112,13 +112,13 @@ Resolve-Path -LiteralPath 'test[xml]'
 
 ### Example 7: Resolve a path relative to another folder
 
-This example uses the **RelativeBasePath** parameter to resolve the path of the `pwsh` executable
+This example uses the **BasePath** parameter to resolve the path of the `pwsh` executable
 relative to `$Env:TEMP`. When the command includes the **Relative** switch parameter, it returns a
 **String** representing the relative path from `$Env:TEMP` to the `pwsh` executable.
 
 ```powershell
 $ExecutablePath = Get-Command -Name pwsh | Select-Object -ExpandProperty Source
-Resolve-Path -Path $ExecutablePath -RelativeBasePath $Env:TEMP -Relative
+Resolve-Path -Path $ExecutablePath -BasePath $Env:TEMP -Relative
 ```
 
 ```Output
@@ -261,20 +261,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RelativeBasePath
+### -BasePath
 
-Specifies a path to resolve the relative path from. When you use this parameter, the cmdlet returns
-the **System.Management.Automation.PathInfo** object for the resolved path.
+Specifies a path to resolve the path from. When you use this parameter, the cmdlet resolves the
+value of the **Path** or **LiteralPath** parameter relative to the base path and returns the
+**System.Management.Automation.PathInfo** object for the resolved path.
 
 When you use this parameter with the **Relative** switch parameter, the cmdlet returns a string
-representing the relative path from **RelativeBasePath** to **Path**.
+representing the relative path from **BasePath** to **Path**.
 
-This parameter was added in PowerShell 7.4.
+This parameter was added in PowerShell 7.4 as **RelativeBasePath** and renamed to **BasePath** in
+PowerShell 7.7. The original parameter name remains available as an alias for backwards
+compatibility.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: RelativeBasePath
 Accepted values:
 
 Required: False
