@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/04/2026
+ms.date: 11/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -40,12 +40,16 @@ Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <S
 
 ## DESCRIPTION
 
-> **This cmdlet is only available on the Windows platform.**
-
 The `Stop-Service` cmdlet sends a stop message to the Windows Service Controller for each of the
 specified services. You can specify the services by their service names or display names, or you can
 use the **InputObject** parameter to pass a service object that represents the service that you want
 to stop.
+
+Beginning in PowerShell 7.7, this cmdlet is also available on Linux and macOS. On Unix platforms
+the cmdlet stops services through the system service manager, which it discovers in this order:
+`systemctl` (systemd), `launchctl` (macOS), `service` (sysvinit), and `rc-service` (OpenRC).
+Stopping a service requires root privileges; when not running as root, the cmdlet wraps the service
+manager command with `sudo -n`. For more information, see the [Notes](#notes) section.
 
 ## EXAMPLES
 
@@ -87,6 +91,9 @@ The second command stops the IISAdmin service. The **Force** parameter is requir
 that has dependent services. The command uses the **Confirm** parameter to request confirmation from
 the user before it stops each service.
 
+On Unix platforms, the **Force** parameter is accepted for script compatibility but has no effect;
+the system service manager handles service ordering and dependencies itself.
+
 ## PARAMETERS
 
 ### -DisplayName
@@ -125,7 +132,11 @@ Accept wildcard characters: True
 
 ### -Force
 
-Forces the cmdlet to stop a service even if that service has dependent services.
+On Windows platforms, forces the cmdlet to stop a service even if that service has dependent
+services.
+
+On Unix platforms, the parameter is accepted for script compatibility but has no effect; the system
+service manager handles service ordering and dependencies itself.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -158,8 +169,8 @@ Accept wildcard characters: True
 
 ### -InputObject
 
-Specifies **ServiceController** objects that represent the services to stop. Enter a variable that
-contains the objects, or type a command or expression that gets the objects.
+Specifies **ServiceController** objects that represent the services to stop. Enter a variable
+that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -177,6 +188,9 @@ Accept wildcard characters: False
 
 Specifies the service names of the services to stop. Wildcard characters are permitted.
 
+On Unix platforms, service names can be specified with or without the systemd unit suffix
+`.service`.
+
 ```yaml
 Type: System.String[]
 Parameter Sets: Default
@@ -192,6 +206,9 @@ Accept wildcard characters: True
 ### -NoWait
 
 Indicates that this cmdlet uses the no wait option.
+
+On Unix platforms with systemd, this option maps to `systemctl --no-block`, which returns before
+the stop operation has completed.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -278,17 +295,20 @@ By default, this cmdlet returns no output.
 
 ### System.ServiceProcess.ServiceController
 
-When you use the **PassThru** parameter, this cmdlet returns a **ServiceController** object
-representing the service.
+On Windows platforms, when you use the **PassThru** parameter, this cmdlet returns a
+**ServiceController** object representing the service.
+
+### Microsoft.PowerShell.Commands.UnixServiceController
+
+On Unix platforms, when you use the **PassThru** parameter, this cmdlet returns a
+**UnixServiceController** object representing the service.
 
 ## NOTES
 
 PowerShell includes the following aliases for `Stop-Service`:
 
-- Windows:
+- All platforms:
   - `spsv`
-
-This cmdlet is only available on Windows platforms.
 
 `Stop-Service` can control services only when the current user has permission to do this. If a
 command does not work correctly, you might not have the required permissions.
@@ -296,6 +316,12 @@ command does not work correctly, you might not have the required permissions.
 To find the service names and display names of the services on your system, type `Get-Service`. The
 service names appear in the **Name** column and the display names appear in the **DisplayName**
 column.
+
+On Unix platforms, stopping a service requires root privileges. When not running as root, the
+service management cmdlets (`Start-Service`, `Stop-Service`, and `Restart-Service`) wrap the
+service manager command with `sudo -n`. If sudo would require a password, the cmdlet writes a
+non-terminating error explaining how to proceed: run PowerShell as root (`sudo pwsh`) or configure
+passwordless sudo for the service manager command.
 
 Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To use
 this command on a remote computer, use the `Invoke-Command` to target a remote system.
