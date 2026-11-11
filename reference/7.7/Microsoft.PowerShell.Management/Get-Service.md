@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/04/2026
+ms.date: 11/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -40,14 +40,19 @@ Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>]
 
 ## DESCRIPTION
 
-> **This cmdlet is only available on the Windows platform.**
-
 The `Get-Service` cmdlet gets objects that represent the services on a computer, including running
 and stopped services. By default, when `Get-Service` is run without parameters, all the local
 computer's services are returned.
 
 You can direct this cmdlet to get only particular services by specifying the service name or the
 display name of the services, or you can pipe service objects to this cmdlet.
+
+Beginning in PowerShell 7.7, this cmdlet is also available on Linux and macOS. On Unix platforms,
+the cmdlet queries the system service manager, checking for `systemctl` (systemd), `launchctl`
+(macOS), `service` (sysvinit), and `rc-service` (OpenRC), in that order. When no supported service
+manager is found, the cmdlet throws a terminating error. On Unix platforms the cmdlet returns
+**UnixServiceController** objects instead of **ServiceController** objects. For more information,
+see the [Notes](#notes) section.
 
 ## EXAMPLES
 
@@ -134,6 +139,9 @@ The results are sent down the pipeline to the `Format-List` cmdlet. The **Proper
 displays the name of the service, the name of the dependent services, and a calculated property that
 displays the number of dependent services for each service.
 
+On Unix platforms, the **DependentServices** and **RequiredServices** properties are only populated
+when the system service manager is systemd.
+
 ### Example 7: Sort services by property value
 
 This example shows that when you sort services in ascending order by the value of their **Status**
@@ -175,6 +183,9 @@ This example gets the services that the WinRM service requires. The value of the
 Get-Service "WinRM" -RequiredServices
 ```
 
+On Unix platforms, the **RequiredServices** property is only populated when the system service
+manager is systemd.
+
 ### Example 9: Get a service through the pipeline operator
 
 This example gets the WinRM service on the local computer. The service name string, enclosed in
@@ -189,6 +200,9 @@ quotation marks, is sent down the pipeline to `Get-Service`.
 ### -DependentServices
 
 Indicates that this cmdlet gets only the services that depend upon the specified service.
+
+On Unix platforms, this parameter is only supported by systemd; other service managers return no
+results.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -277,6 +291,9 @@ Accept wildcard characters: False
 
 Specifies the service names of services to be retrieved. Wildcards are permitted.
 
+On Unix platforms, service names can be specified with or without the systemd unit suffix
+`.service`.
+
 ```yaml
 Type: System.String[]
 Parameter Sets: Default
@@ -294,6 +311,9 @@ Accept wildcard characters: True
 Indicates that this cmdlet gets only the services that this service requires. This parameter gets
 the value of the **ServicesDependedOn** property of the service.
 
+On Unix platforms, this parameter is only supported by systemd; other service managers return no
+results.
+
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
@@ -303,7 +323,7 @@ Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### CommonParameters
@@ -327,18 +347,23 @@ You can pipe a service name to this cmdlet.
 
 ### System.ServiceProcess.ServiceController
 
-This cmdlet returns objects that represent the services on the computer.
+On Windows platforms, this cmdlet returns objects that represent the services on the computer.
+
+### Microsoft.PowerShell.Commands.UnixServiceController
+
+On Unix platforms, this cmdlet returns **UnixServiceController** objects that represent the
+services reported by the system service manager. In addition to **Name**, **DisplayName**,
+**Status**, and **StartType**, the objects include the **Description**, **SubState**, and
+**UnitFileState** properties when the service manager provides that information.
 
 ## NOTES
 
 PowerShell includes the following aliases for `Get-Service`:
 
-- Windows:
+- All platforms:
   - `gsv`
 
-This cmdlet is only available on Windows platforms.
-
-PowerShell 6.0 introduced the following changes:
+PowerShell 6.0 introduced the following changes on Windows:
 
 - The **ServiceController** objects now include the following properties:
   - **UserName**
@@ -349,28 +374,45 @@ PowerShell 6.0 introduced the following changes:
 - The command no longer includes the **ComputerName** parameter. To use this command on a remote
   computer, use the `Invoke-Command` to target a remote system.
 
-This cmdlet can display services only when the current user has permission to see them. If this
-cmdlet does not display services, you might not have permission to see them.
+On Windows platforms, this cmdlet can display services only when the current user has permission to
+see them. If this cmdlet does not display services, you might not have permission to see them.
 
 To find the service name and display name of each service on your system, type `Get-Service`. The
 service names appear in the **Name** column, and the display names appear in the **DisplayName**
 column.
 
 > [!NOTE]
-> Typically, `Get-Service` returns information about services and not driver. However, if you
-> specify the name of a driver, `Get-Service` returns information about the driver.
+> On Windows, typically, `Get-Service` returns information about services and not drivers. However,
+> if you specify the name of a driver, `Get-Service` returns information about the driver.
 >
 > - Enumeration doesn't include device driver services
 > - When a wildcard is specified, the cmdlet only returns Windows services
 > - If you specify the **Name** or **DisplayName** that is an exact match to a device service name,
 >   then the device instance is returned
 
-When you sort in ascending order by status value, `Stopped` services appear before `Running`
-services. The **Status** property of a service is an enumerated value in which the names of the
-statuses represent integer values. The sort is based on the integer value, not the name. `Running`
-appears before `Stopped` because `Stopped` has a value of `1`, and `Running` has a value of `4`. For
-more information, see
+On Windows, when you sort in ascending order by status value, `Stopped` services appear before
+`Running` services. The **Status** property of a service is an enumerated value in which the names
+of the statuses represent integer values. The sort is based on the integer value, not the name.
+`Running` appears before `Stopped` because `Stopped` has a value of `1`, and `Running` has a value
+of `4`. For more information, see
 [ServiceControllerStatus](xref:System.ServiceProcess.ServiceControllerStatus).
+
+Unix platform support, beginning in PowerShell 7.7:
+
+- The cmdlet queries the system service manager in this order: `systemctl` (systemd), `launchctl`
+  (macOS), `service` (sysvinit), and `rc-service` (OpenRC). When no supported service manager is
+  found, the cmdlet throws a terminating error.
+- The **Status** property maps the service manager state onto the
+  [ServiceControllerStatus](xref:System.ServiceProcess.ServiceControllerStatus) enumeration also
+  used on Windows. The **StartType** property maps the systemd unit file state onto the
+  [ServiceStartMode](xref:System.ServiceProcess.ServiceStartMode) enumeration.
+- Service names don't include the systemd unit suffix. Names can be specified with or without the
+  `.service` suffix. On macOS, the service name is the launchd label.
+- The **DependentServices** and **RequiredServices** parameters are only populated by systemd;
+  other service managers return no results.
+- Getting service information doesn't require elevated permissions. The service management cmdlets
+  (`Start-Service`, `Stop-Service`, and `Restart-Service`) require root privileges on Unix. When
+  they aren't running as root, those cmdlets wrap the service manager command with `sudo -n`.
 
 ## RELATED LINKS
 
