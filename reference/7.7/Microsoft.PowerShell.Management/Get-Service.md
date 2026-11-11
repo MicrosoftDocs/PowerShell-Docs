@@ -183,7 +183,8 @@ This example gets the services that the WinRM service requires. The value of the
 Get-Service "WinRM" -RequiredServices
 ```
 
-On Unix platforms, this operation is only supported when the system service manager is systemd.
+On Unix platforms, the **RequiredServices** property is only populated when the system service
+manager is systemd.
 
 ### Example 9: Get a service through the pipeline operator
 
@@ -200,8 +201,8 @@ quotation marks, is sent down the pipeline to `Get-Service`.
 
 Indicates that this cmdlet gets only the services that depend upon the specified service.
 
-On Unix platforms, this parameter is only supported by systemd; other service managers write a
-non-terminating error.
+On Unix platforms, this parameter is only supported by systemd; other service managers return no
+results.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -310,8 +311,8 @@ Accept wildcard characters: True
 Indicates that this cmdlet gets only the services that this service requires. This parameter gets
 the value of the **ServicesDependedOn** property of the service.
 
-On Unix platforms, this parameter is only supported by systemd; other service managers write a
-non-terminating error.
+On Unix platforms, this parameter is only supported by systemd; other service managers return no
+results.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -407,8 +408,8 @@ Unix platform support, beginning in PowerShell 7.7:
   [ServiceStartMode](xref:System.ServiceProcess.ServiceStartMode) enumeration.
 - Service names don't include the systemd unit suffix. Names can be specified with or without the
   `.service` suffix. On macOS, the service name is the launchd label.
-- The **DependentServices** and **RequiredServices** parameters are only supported by systemd.
-  Other service managers write a non-terminating error.
+- The **DependentServices** and **RequiredServices** parameters are only populated by systemd;
+  other service managers return no results.
 - Getting service information doesn't require elevated permissions. The service management cmdlets
   (`Start-Service`, `Stop-Service`, and `Restart-Service`) require root privileges on Unix. When
   they aren't running as root, those cmdlets wrap the service manager command with `sudo -n`.

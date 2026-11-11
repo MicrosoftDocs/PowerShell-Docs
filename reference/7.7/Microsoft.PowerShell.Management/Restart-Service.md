@@ -292,8 +292,12 @@ this command on a remote computer, use the `Invoke-Command` to target a remote s
 
 Unix platform support, beginning in PowerShell 7.7:
 
-- On systemd, `Restart-Service` runs `systemctl restart <unit>`.
-- On macOS, the cmdlet uses `launchctl kickstart -k <domain>/<label>`.
+- On systemd, `Restart-Service` stops and then starts the unit (`systemctl stop <unit>` followed by
+  `systemctl start <unit>`).
+- On macOS, the cmdlet stops the job (`launchctl kill SIGTERM <domain>/<label>`) and then starts it
+  again (`launchctl kickstart <domain>/<label>`).
+- On sysvinit and OpenRC, the cmdlet runs the service script or `rc-service` with the `stop` action
+  and then the `start` action.
 - Restarting a service requires root privileges on Unix. When not running as root, the service
   management cmdlets (`Start-Service`, `Stop-Service`, and `Restart-Service`) wrap the service
   manager command with `sudo -n`. If sudo would require a password, the cmdlet writes a

@@ -207,8 +207,8 @@ Accept wildcard characters: True
 
 Indicates that this cmdlet uses the no wait option.
 
-On Unix platforms with systemd, this option maps to `systemctl --no-block`, which returns before
-the stop operation has completed.
+On Unix platforms, this parameter is accepted; the cmdlet returns after the service manager accepts
+the stop request without waiting for the service to reach the **Stopped** state.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

@@ -108,7 +108,7 @@ ExitCode  : 0
 Name      : TlntSvr
 ProcessId : 0
 StartMode : Disabled
-State    : Stopped
+State     : Stopped
 Status    : OK
 
 PS> Set-Service tlntsvr -StartupType manual
