@@ -186,7 +186,7 @@ do not set a password.
 You can use `Read-Host -AsSecureString`, `Get-Credential`, or `ConvertTo-SecureString` to create a
 **SecureString** object for the password.
 
-If you omit the **Password** and **NoPassword** parameters, `Set-LocalUser` prompts you for the
+If you omit the **Password**, `Set-LocalUser` prompts you for the
 user's password.
 
 ```yaml
