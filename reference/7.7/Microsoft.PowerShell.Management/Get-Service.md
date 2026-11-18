@@ -408,11 +408,18 @@ Unix platform support, beginning in PowerShell 7.7:
   [ServiceStartMode](xref:System.ServiceProcess.ServiceStartMode) enumeration.
 - Service names don't include the systemd unit suffix. Names can be specified with or without the
   `.service` suffix. On macOS, the service name is the launchd label.
+- On macOS, the cmdlet enumerates the launchd domain that matches the session's elevation: a root
+  session lists system-wide daemons (the `system` domain, installed under `/Library/LaunchDaemons`),
+  while a non-root session lists the current user's launch agents (the `gui/<uid>` domain).
 - The **DependentServices** and **RequiredServices** parameters are only populated by systemd;
   other service managers return no results.
 - Getting service information doesn't require elevated permissions. The service management cmdlets
   (`Start-Service`, `Stop-Service`, and `Restart-Service`) require root privileges on Unix. When
-  they aren't running as root, those cmdlets wrap the service manager command with `sudo -n`.
+  they aren't running as root, those cmdlets wrap the service manager command with `sudo -n`,
+  which never prompts for a password. See the Notes of those cmdlets for the exact requirements.
+
+The other service cmdlets (`Set-Service`, `New-Service`, `Remove-Service`, `Suspend-Service`, and
+`Resume-Service`) are only available on Windows platforms.
 
 ## RELATED LINKS
 

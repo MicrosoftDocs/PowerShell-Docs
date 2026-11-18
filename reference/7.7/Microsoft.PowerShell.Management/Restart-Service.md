@@ -295,16 +295,26 @@ Unix platform support, beginning in PowerShell 7.7:
 - On systemd, `Restart-Service` stops and then starts the unit (`systemctl stop <unit>` followed by
   `systemctl start <unit>`).
 - On macOS, the cmdlet stops the job (`launchctl kill SIGTERM <domain>/<label>`) and then starts it
-  again (`launchctl kickstart <domain>/<label>`).
+  again (`launchctl kickstart <domain>/<label>`). The domain depends on elevation: a root session
+  manages system-wide daemons installed in `/Library/LaunchDaemons` (the `system` domain), while a
+  non-root session manages the current user's launch agents (the `gui/<uid>` domain).
 - On sysvinit and OpenRC, the cmdlet runs the service script or `rc-service` with the `stop` action
   and then the `start` action.
 - Restarting a service requires root privileges on Unix. When not running as root, the service
   management cmdlets (`Start-Service`, `Stop-Service`, and `Restart-Service`) wrap the service
-  manager command with `sudo -n`. If sudo would require a password, the cmdlet writes a
-  non-terminating error explaining how to proceed: run PowerShell as root (`sudo pwsh`) or
-  configure passwordless sudo for the service manager command.
+  manager command with `sudo -n`.
+- `sudo -n` is non-interactive: it never prompts for a password. The wrapped command succeeds only
+  when the sudo credential timestamp is still cached (for example, shortly after running `sudo -v`
+  in the same session) or when `sudoers` grants `NOPASSWD` for the service manager command.
+  Otherwise the cmdlet fails immediately with a non-terminating error instead of blocking on a
+  prompt. Non-interactive scripts and CI pipelines should therefore either run `pwsh` as root (for
+  example, `sudo pwsh`) or configure passwordless `sudo` for the service manager command.
 - The **Force** parameter is accepted for script compatibility but has no effect on Unix; the
   system service manager handles service ordering and dependencies itself.
+
+> [!NOTE]
+> The other service cmdlets (`Set-Service`, `New-Service`, `Remove-Service`, `Suspend-Service`,
+> and `Resume-Service`) are only available on Windows platforms.
 
 ## RELATED LINKS
 

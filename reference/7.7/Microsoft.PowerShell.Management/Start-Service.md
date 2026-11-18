@@ -318,12 +318,23 @@ Unix platform support, beginning in PowerShell 7.7:
 
 - On systemd, `Start-Service` runs `systemctl start <unit>`; starting an already running service is
   ignored without error.
-- On macOS, the cmdlet uses `launchctl kickstart <domain>/<label>`.
+- On macOS, the cmdlet uses `launchctl kickstart <domain>/<label>`. The domain depends on
+  elevation: a root session manages system-wide daemons installed in `/Library/LaunchDaemons`
+  (the `system` domain), while a non-root session manages the current user's launch agents (the
+  `gui/<uid>` domain). A non-root session can't manage system daemons or other users' agents.
+- On sysvinit and OpenRC, the cmdlet runs the service script or `rc-service` with the `start`
+  action.
 - Starting, stopping, and restarting services requires root privileges on Unix. When not running as
-  root, the service management cmdlets wrap the service manager command with `sudo -n`. If sudo
-  would require a password, the cmdlet writes a non-terminating error explaining how to proceed:
-  run PowerShell as root (`sudo pwsh`) or configure passwordless sudo for the service manager
-  command.
+  root, the service management cmdlets wrap the service manager command with `sudo -n`.
+- `sudo -n` is non-interactive: it never prompts for a password. The wrapped command succeeds only
+  when the sudo credential timestamp is still cached (for example, shortly after running `sudo -v`
+  in the same session) or when `sudoers` grants `NOPASSWD` for the service manager command.
+  Otherwise the cmdlet fails immediately with a non-terminating error instead of blocking on a
+  prompt. Non-interactive scripts and CI pipelines should therefore either run `pwsh` as root (for
+  example, `sudo pwsh`) or configure passwordless `sudo` for the service manager command.
+
+The other service cmdlets (`Set-Service`, `New-Service`, `Remove-Service`, `Suspend-Service`, and
+`Resume-Service`) are only available on Windows platforms.
 
 Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To run
 `Start-Service` on a remote computer, use `Invoke-Command`.

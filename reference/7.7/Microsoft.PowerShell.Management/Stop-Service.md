@@ -319,9 +319,26 @@ column.
 
 On Unix platforms, stopping a service requires root privileges. When not running as root, the
 service management cmdlets (`Start-Service`, `Stop-Service`, and `Restart-Service`) wrap the
-service manager command with `sudo -n`. If sudo would require a password, the cmdlet writes a
-non-terminating error explaining how to proceed: run PowerShell as root (`sudo pwsh`) or configure
-passwordless sudo for the service manager command.
+service manager command with `sudo -n`.
+
+`sudo -n` is non-interactive: it never prompts for a password. The wrapped command succeeds only
+when the sudo credential timestamp is still cached (for example, shortly after running `sudo -v` in
+the same session) or when `sudoers` grants `NOPASSWD` for the service manager command. Otherwise
+the cmdlet fails immediately with a non-terminating error instead of blocking on a prompt.
+Non-interactive scripts and CI pipelines should therefore either run `pwsh` as root (for example,
+`sudo pwsh`) or configure passwordless `sudo` for the service manager command.
+
+On systemd, `Stop-Service` runs `systemctl stop <unit>`; on sysvinit and OpenRC it runs the service
+script or `rc-service` with the `stop` action.
+
+On macOS, `Stop-Service` runs `launchctl kill SIGTERM <domain>/<label>`. The domain depends on
+elevation: a root session manages system-wide daemons installed in `/Library/LaunchDaemons` (the
+`system` domain), while a non-root session manages the current user's launch agents (the
+`gui/<uid>` domain). A non-root session can't manage system daemons or other users' agents.
+
+> [!NOTE]
+> The other service cmdlets (`Set-Service`, `New-Service`, `Remove-Service`, `Suspend-Service`,
+> and `Resume-Service`) are only available on Windows platforms.
 
 Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To use
 this command on a remote computer, use the `Invoke-Command` to target a remote system.
