@@ -245,12 +245,6 @@ Delete to the end of the line.
 
 - Vi command mode: `<D>`, `<d,$>`
 
-### DeleteWord
-
-Delete the next word.
-
-- Vi command mode: `<d,w>`
-
 ### DowncaseWord
 
 > Added in PSReadLine 2.3.0
@@ -1531,6 +1525,20 @@ Mark the current location of the cursor for use in a subsequent editing
 command.
 
 - Emacs mode: `Ctrl+@`
+
+## Text object functions
+
+### DeleteWord
+
+Delete the next word.
+
+- Vi command mode: `<d,w>`
+
+### ViDeleteInnerWord
+
+Delete the word currently under the cursor.
+
+- Vi command mode: `<d,i,w>`
 
 ## Custom key binding support APIs
 
