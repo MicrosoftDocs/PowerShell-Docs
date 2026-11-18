@@ -12,14 +12,13 @@ There are multiple versions of PowerShell 7 that can be installed.
   releases can contain critical fixes, innovations, and new features. Microsoft supports a Stable
   release for about six months after the next LTS release.
 
-  The current Stable release is PowerShell 7.5.11.
+  The current Stable release is PowerShell 7.7.0.
 
 - **Long Term Servicing (LTS) release** - An LTS release of PowerShell is an LTS release of .NET.
   Updates to an LTS release only contain critical security updates and servicing fixes that are
   designed to minimize impact on existing workloads.
 
-  The current LTS release is PowerShell 7.6.6. The previous LTS release, PowerShell 7.4.20, is
-  still supported until 10-Nov-2026.
+  The current LTS release is PowerShell 7.6.10.
 
 - **Preview release** - A preview release is a version of PowerShell that's currently in
   development. Preview releases can contain breaking changes, bug fixes, new features, and
@@ -28,7 +27,7 @@ There are multiple versions of PowerShell 7 that can be installed.
   allow you to test out new features and provide feedback. Your feedback is important and can
   influence the features that get released.
 
-  PowerShell 7.7-preview.3 is the current preview release.
+  PowerShell 7.7-rc.1 is the current preview release.
 
 PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. The end-of-support dates follow the
 [.NET Support Policy][06] for the version of .NET that the release of PowerShell was built upon.
@@ -126,15 +125,15 @@ lists the end-of-support dates for the current versions of PowerShell:
 
 |         Version          | Release Date | End-of-support |  .NET Version   |
 | ------------------------ | :----------: | :------------: | --------------- |
-| PowerShell 7.7 (preview) |              |                | [.NET 11.0][08] |
+| PowerShell 7.7           | 10-Nov-2026  |  14-Nov-2028   | [.NET 11.0][08] |
 | PowerShell 7.6 (LTS)     | 18-Mar-2026  |  14-Nov-2028   | [.NET 10.0][07] |
-| PowerShell 7.5           | 23-Jan-2025  |  10-Nov-2026   | [.NET 9.0][16]  |
-| PowerShell 7.4 (LTS)     | 16-Nov-2023  |  10-Nov-2026   | [.NET 8.0][15]  |
 
 The following table lists the end-of-support dates for retired versions of PowerShell:
 
 |       Version        | Release Date | End-of-support |    .NET Version     |
 | -------------------- | :----------: | :------------: | ------------------- |
+| PowerShell 7.5       | 23-Jan-2025  |  10-Nov-2026   | [.NET 9.0][16]      |
+| PowerShell 7.4 (LTS) | 16-Nov-2023  |  10-Nov-2026   | [.NET 8.0][15]      |
 | PowerShell 7.3       | 09-Nov-2022  |  08-May-2024   | [.NET 7.0][14]      |
 | PowerShell 7.2 (LTS) | 08-Nov-2021  |  08-Nov-2024   | [.NET 6.0][13]      |
 | PowerShell 7.1       | 11-Nov-2020  |  08-May-2022   | [.NET 5.0][12]      |
