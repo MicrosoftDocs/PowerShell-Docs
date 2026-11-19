@@ -98,14 +98,14 @@ exponent-part's digits in a `[double]` or `[decimal]` real literal is greater
 than the maximum supported, that literal is malformed.
 
 > [!NOTE]
-> The syntax permits a double real literal to have a long-type suffix.
+> The syntax permits a double real literal to have an integer-type suffix.
 > PowerShell treats this case as an integer literal whose value is represented
-> by type `[long]`. This feature has been retained for backwards compatibility
-> with earlier versions of PowerShell. However, programmers are discouraged
-> from using integer literals of this form as they can easily obscure the
-> literal's actual value. For example, `1.2L` has value 1, `1.2345e1L` has
-> value 12, and `1.2345e-5L` has value 0, none of which are immediately
-> obvious.
+> by the type specified by the suffix. This feature has been retained for
+> backwards compatibility with earlier versions of PowerShell. However,
+> programmers are discouraged from using integer literals of this form as they
+> can easily obscure the literal's actual value. For example, `1.2L` has value
+> 1, `1.5y` has value 2, `1.2345e1L` has value 12, and `1.2345e-5L` has value
+> 0, none of which are immediately obvious.
 
 ## Numeric multipliers
 
