@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 06/29/2026
+ms.date: 11/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Parsing
@@ -228,6 +228,7 @@ PowerShell provides several ways break lines at natural points in the syntax.
 
 - After pipe characters (`|`)
 - After binary operators (`+`, `-`, `-eq`, etc.)
+- After member-access operators (`.`, `?.`, and `::`)
 - After commas (`,`) in an array
 - After opening characters such as `[`, `{`, `(`
 
