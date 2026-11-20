@@ -1,6 +1,6 @@
 ---
 description: PowerShell has a extensible formatting system that allows you to present output in lists, tables, or custom layouts.
-ms.date: 12/08/2022
+ms.date: 11/20/2026
 title: Using Format commands to change output view
 ---
 # Using Format commands to change output view
@@ -165,7 +165,8 @@ Running  WinRM              Windows Remote Management (WS-Manag...
 ```
 
 > [!NOTE]
-> `Get-Service` is only available on Windows platforms.
+> Beginning in PowerShell 7.7, `Get-Service` is also available on Linux and macOS. The example
+> output shown here is from Windows.
 
 ### Improving Format-Table output
 

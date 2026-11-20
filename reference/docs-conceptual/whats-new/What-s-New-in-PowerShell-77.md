@@ -1,15 +1,26 @@
 ---
 title: What's New in PowerShell 7.7
 description: New features and changes released in PowerShell 7.7
-ms.date: 09/21/2026
+ms.date: 11/20/2026
 ---
 
 # What's New in PowerShell 7.7
 
-PowerShell 7.7.0-preview.5 includes the following features, updates, and breaking changes.
-PowerShell 7.7.0-preview.5 is built on the .NET 11.0.0-rc.1 runtime.
+PowerShell 7.7 includes the following features, updates, and breaking changes. PowerShell 7.7 is
+built on the .NET 11 runtime.
 
 For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository.
+
+## Service management on Linux and macOS
+
+Beginning in PowerShell 7.7, the `Get-Service`, `Start-Service`, `Stop-Service`, and
+`Restart-Service` cmdlets are also available on Linux and macOS. The cmdlets work through the
+system service manager, which is discovered in this order: `systemctl` (systemd), `launchctl`
+(macOS), `service` (sysvinit), and `rc-service` (OpenRC). On Unix platforms, the cmdlets return
+**UnixServiceController** objects that represent the services reported by the service manager.
+For more information, see
+[Get-Service](/powershell/module/microsoft.powershell.management/get-service).
+([PowerShell/PowerShell#28385][28385])
 
 ## Updated modules
 
@@ -219,3 +230,4 @@ PowerShell 7.7 includes the following experimental features.
 [28009]: https://github.com/PowerShell/PowerShell/pull/28009
 [28018]: https://github.com/PowerShell/PowerShell/pull/28018
 [28020]: https://github.com/PowerShell/PowerShell/pull/28020
+[28385]: https://github.com/PowerShell/PowerShell/pull/28385
