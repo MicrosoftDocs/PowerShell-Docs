@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/10/2026
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -40,16 +40,12 @@ Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>]
 
 ## DESCRIPTION
 
+> **This cmdlet is only available on the Windows platform.**
+
 The `Start-Service` cmdlet sends a start message to the Windows Service Controller for each of the
 specified services. If a service is already running, the message is ignored without error. You can
 specify the services by their service names or display names, or you can use the **InputObject**
 parameter to supply a service object that represents the services that you want to start.
-
-Beginning in PowerShell 7.7, this cmdlet is also available on Linux and macOS. On Unix platforms
-the cmdlet starts services through the system service manager, which it discovers in this order:
-`systemctl` (systemd), `launchctl` (macOS), `service` (sysvinit), and `rc-service` (OpenRC).
-Starting a service requires root privileges; when not running as root, the cmdlet wraps the service
-manager command with `sudo -n`. For more information, see the [Notes](#notes) section.
 
 ## EXAMPLES
 
@@ -193,9 +189,6 @@ Accept wildcard characters: False
 
 Specifies the service names for the service to be started.
 
-On Unix platforms, service names can be specified with or without the systemd unit suffix
-`.service`.
-
 The parameter name is optional. You can use **Name** or its alias, **ServiceName**, or you can omit
 the parameter name.
 
@@ -285,26 +278,24 @@ By default, this cmdlet returns no output.
 
 ### System.ServiceProcess.ServiceController
 
-On Windows platforms, when you use the **PassThru** parameter, this cmdlet returns a
-**ServiceController** object representing the service.
-
-### Microsoft.PowerShell.Commands.UnixServiceController
-
-On Unix platforms, when you use the **PassThru** parameter, this cmdlet returns a
-**UnixServiceController** object representing the service.
+When you use the **PassThru** parameter, this cmdlet returns a **ServiceController** object
+representing the service.
 
 ## NOTES
 
 PowerShell includes the following aliases for `Start-Service`:
 
-- All platforms:
+- Windows:
   - `sasv`
 
-On Windows platforms:
+This cmdlet is only available on Windows platforms.
 
 - By default, only members of the Administrators group can start, stop, pause, resume, or restart a
   service. If you are a member of the Administrators group, you need to run `Start-Service` from an
   elevated PowerShell session. Use the **Run as Administrator** option to start PowerShell.
+- To find the service names and display names of the services on your system, type `Get-Service`.
+  The service names appear in the **Name** column, and the display names appear in the
+  **DisplayName** column.
 - You can start only the services that have a start type of Manual, Automatic, or Automatic (Delayed
   Start). You cannot start the services that have a start type of Disabled. If a `Start-Service`
   command fails with the message `Cannot start service \<service-name\> on computer`, use
@@ -313,28 +304,6 @@ On Windows platforms:
 - Some services, such as Performance Logs and Alerts (SysmonLog) stop automatically if they have no
   work to do. When PowerShell starts a service that stops itself almost immediately, it displays the
   following message: `Service \<display-name\> start failed.`
-
-Unix platform support, beginning in PowerShell 7.7:
-
-- On systemd, `Start-Service` runs `systemctl start <unit>`; starting an already running service is
-  ignored without error.
-- On macOS, the cmdlet uses `launchctl kickstart <domain>/<label>`. The domain depends on
-  elevation: a root session manages system-wide daemons installed in `/Library/LaunchDaemons`
-  (the `system` domain), while a non-root session manages the current user's launch agents (the
-  `gui/<uid>` domain). A non-root session can't manage system daemons or other users' agents.
-- On sysvinit and OpenRC, the cmdlet runs the service script or `rc-service` with the `start`
-  action.
-- Starting, stopping, and restarting services requires root privileges on Unix. When not running as
-  root, the service management cmdlets wrap the service manager command with `sudo -n`.
-- `sudo -n` is non-interactive: it never prompts for a password. The wrapped command succeeds only
-  when the sudo credential timestamp is still cached (for example, shortly after running `sudo -v`
-  in the same session) or when `sudoers` grants `NOPASSWD` for the service manager command.
-  Otherwise the cmdlet fails immediately with a non-terminating error instead of blocking on a
-  prompt. Non-interactive scripts and CI pipelines should therefore either run `pwsh` as root (for
-  example, `sudo pwsh`) or configure passwordless `sudo` for the service manager command.
-
-The other service cmdlets (`Set-Service`, `New-Service`, `Remove-Service`, `Suspend-Service`, and
-`Resume-Service`) are only available on Windows platforms.
 
 Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To run
 `Start-Service` on a remote computer, use `Invoke-Command`.

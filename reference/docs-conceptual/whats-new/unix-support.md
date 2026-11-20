@@ -136,7 +136,7 @@ A large number of the commands (cmdlets) commonly available in PowerShell aren't
 or macOS. Often, these commands don't apply to these platforms. For example, commands for
 Windows-specific features like the registry aren't available, and most of the service management
 cmdlets aren't available. Other commands, like `Set-ExecutionPolicy`, are present but not
-functional. Beginning in PowerShell 7.7, the `Get-Service`, `Start-Service`, `Stop-Service`, and
+functional. Beginning in PowerShell 7.8, the `Get-Service`, `Start-Service`, `Stop-Service`, and
 `Restart-Service` cmdlets are also available on Linux and macOS and manage services through the
 system service manager.
 
@@ -228,10 +228,10 @@ The following cmdlets are available with limitations:
 - `Set-Clipboard` - available in PowerShell 7.0+
 - `Restart-Computer` - available for Linux and macOS in PowerShell 7.1+
 - `Stop-Computer` - available for Linux and macOS in PowerShell 7.1+
-- `Get-Service` - available for Linux and macOS in PowerShell 7.7+
-- `Restart-Service` - available for Linux and macOS in PowerShell 7.7+
-- `Start-Service` - available for Linux and macOS in PowerShell 7.7+
-- `Stop-Service` - available for Linux and macOS in PowerShell 7.7+
+- `Get-Service` - available for Linux and macOS in PowerShell 7.8+
+- `Restart-Service` - available for Linux and macOS in PowerShell 7.8+
+- `Start-Service` - available for Linux and macOS in PowerShell 7.8+
+- `Stop-Service` - available for Linux and macOS in PowerShell 7.8+
 
 ### Microsoft.PowerShell.Utility cmdlets
 

@@ -236,7 +236,7 @@ This modules is only available in Windows PowerShell.
 | Get-Process                   | ![Included][01] | ![Included][01] |                                  |
 | Get-PSDrive                   | ![Included][01] | ![Included][01] |                                  |
 | Get-PSProvider                | ![Included][01] | ![Included][01] |                                  |
-| Get-Service                   | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.7 |
+| Get-Service                   | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.8 |
 | Get-TimeZone                  | ![Included][01] | ![Included][01] | Windows only                     |
 | Get-Transaction               | ![Included][01] |                 | Windows only                     |
 | Get-WmiObject                 | ![Included][01] |                 | Windows only                     |
@@ -268,7 +268,7 @@ This modules is only available in Windows PowerShell.
 | Reset-ComputerMachinePassword | ![Included][01] |                 | Windows only                     |
 | Resolve-Path                  | ![Included][01] | ![Included][01] |                                  |
 | Restart-Computer              | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.1 |
-| Restart-Service               | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.7 |
+| Restart-Service               | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.8 |
 | Restore-Computer              | ![Included][01] |                 | Windows only                     |
 | Resume-Service                | ![Included][01] | ![Included][01] | Windows only                     |
 | Set-Clipboard                 | ![Included][01] | ![Included][01] |                                  |
@@ -283,11 +283,11 @@ This modules is only available in Windows PowerShell.
 | Show-EventLog                 | ![Included][01] |                 | Windows only                     |
 | Split-Path                    | ![Included][01] | ![Included][01] |                                  |
 | Start-Process                 | ![Included][01] | ![Included][01] |                                  |
-| Start-Service                 | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.7 |
+| Start-Service                 | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.8 |
 | Start-Transaction             | ![Included][01] |                 | Windows only                     |
 | Stop-Computer                 | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.1 |
 | Stop-Process                  | ![Included][01] | ![Included][01] |                                  |
-| Stop-Service                  | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.7 |
+| Stop-Service                  | ![Included][01] | ![Included][01] | Added Linux/macOS support in 7.8 |
 | Suspend-Service               | ![Included][01] | ![Included][01] | Windows only                     |
 | Test-ComputerSecureChannel    | ![Included][01] |                 | Windows only                     |
 | Test-Connection               | ![Included][01] | ![Included][01] |                                  |

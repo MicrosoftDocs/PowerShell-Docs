@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/10/2026
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Service
@@ -38,36 +38,29 @@ Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]
 
 ## DESCRIPTION
 
-On Windows, the `Restart-Service` cmdlet sends a stop message and then a start message to the
-Windows Service Controller for a specified service. If a service was already stopped, it is started
-without notifying you of an error. You can specify the services by their service names or display
-names, or you can use the **InputObject** parameter to pass an object that represents each service
-that you want to restart.
+> **This cmdlet is only available on the Windows platform.**
 
-Beginning in PowerShell 7.7, this cmdlet is also available on Linux and macOS. On Unix platforms
-the cmdlet restarts services through the system service manager, which it discovers in this order:
-`systemctl` (systemd), `launchctl` (macOS), `service` (sysvinit), and `rc-service` (OpenRC).
-Restarting a service requires root privileges; when not running as root, the cmdlet wraps the
-service manager command with `sudo -n`. For more information, see the [Notes](#notes) section.
+The `Restart-Service` cmdlet sends a stop message and then a start message to the Windows Service
+Controller for a specified service. If a service was already stopped, it is started without
+notifying you of an error. You can specify the services by their service names or display names, or
+you can use the **InputObject** parameter to pass an object that represents each service that you
+want to restart.
 
 ## EXAMPLES
 
 ### Example 1: Restart a service on the local computer
 
 ```powershell
-Restart-Service -Name winmgmt
+PS C:\> Restart-Service -Name winmgmt
 ```
 
 This command restarts the Windows Management Instrumentation service (WinMgmt) on the local
 computer.
 
-On Unix platforms, this command restarts a service by its unit name, for example
-`Restart-Service -Name sshd`.
-
 ### Example 2: Exclude a service
 
 ```powershell
-Restart-Service -DisplayName "net*" -Exclude "net logon"
+PS C:\> Restart-Service -DisplayName "net*" -Exclude "net logon"
 ```
 
 This command restarts the services that have a display name that starts with Net, except for the Net
@@ -76,7 +69,7 @@ Logon service.
 ### Example 3: Start all stopped network services
 
 ```powershell
-Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
+PS C:\> Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
 ```
 
 This command starts all of the stopped network services on the computer.
@@ -126,10 +119,7 @@ Accept wildcard characters: True
 
 ### -Force
 
-On Windows platforms, forces the command to run without asking for user confirmation.
-
-On Unix platforms, the parameter is accepted for script compatibility but has no effect; the system
-service manager handles service ordering and dependencies itself.
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,9 +170,6 @@ Accept wildcard characters: False
 ### -Name
 
 Specifies the service names of the services to restart.
-
-On Unix platforms, service names can be specified with or without the systemd unit suffix
-`.service`.
 
 ```yaml
 Type: System.String[]
@@ -269,52 +256,21 @@ By default, this cmdlet returns no output.
 
 ### System.ServiceProcess.ServiceController
 
-On Windows platforms, when you use the **PassThru** parameter, this cmdlet returns a
-**ServiceController** object representing the restarted service.
-
-### Microsoft.PowerShell.Commands.UnixServiceController
-
-On Unix platforms, when you use the **PassThru** parameter, this cmdlet returns a
-**UnixServiceController** object representing the restarted service.
+When you use the **PassThru** parameter, this cmdlet returns a **ServiceController** object
+representing the restarted service.
 
 ## NOTES
 
-On Windows platforms, `Restart-Service` can control services only when the current user has
-permission to do this. If a command does not work correctly, you might not have the required
-permissions.
+This cmdlet is only available on Windows platforms.
 
-To find the service names and display names of the services on your system, type `Get-Service`".
-The service names appear in the **Name** column, and the display names appear in the
-**DisplayName** column.
+- `Restart-Service` can control services only when the current user has permission to do this. If a
+  command does not work correctly, you might not have the required permissions.
+- To find the service names and display names of the services on your system, type `Get-Service`".
+  The service names appear in the **Name** column, and the display names appear in the
+  **DisplayName** column.
 
 Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To use
 this command on a remote computer, use the `Invoke-Command` to target a remote system.
-
-Unix platform support, beginning in PowerShell 7.7:
-
-- On systemd, `Restart-Service` stops and then starts the unit (`systemctl stop <unit>` followed by
-  `systemctl start <unit>`).
-- On macOS, the cmdlet stops the job (`launchctl kill SIGTERM <domain>/<label>`) and then starts it
-  again (`launchctl kickstart <domain>/<label>`). The domain depends on elevation: a root session
-  manages system-wide daemons installed in `/Library/LaunchDaemons` (the `system` domain), while a
-  non-root session manages the current user's launch agents (the `gui/<uid>` domain).
-- On sysvinit and OpenRC, the cmdlet runs the service script or `rc-service` with the `stop` action
-  and then the `start` action.
-- Restarting a service requires root privileges on Unix. When not running as root, the service
-  management cmdlets (`Start-Service`, `Stop-Service`, and `Restart-Service`) wrap the service
-  manager command with `sudo -n`.
-- `sudo -n` is non-interactive: it never prompts for a password. The wrapped command succeeds only
-  when the sudo credential timestamp is still cached (for example, shortly after running `sudo -v`
-  in the same session) or when `sudoers` grants `NOPASSWD` for the service manager command.
-  Otherwise the cmdlet fails immediately with a non-terminating error instead of blocking on a
-  prompt. Non-interactive scripts and CI pipelines should therefore either run `pwsh` as root (for
-  example, `sudo pwsh`) or configure passwordless `sudo` for the service manager command.
-- The **Force** parameter is accepted for script compatibility but has no effect on Unix; the
-  system service manager handles service ordering and dependencies itself.
-
-> [!NOTE]
-> The other service cmdlets (`Set-Service`, `New-Service`, `Remove-Service`, `Suspend-Service`,
-> and `Resume-Service`) are only available on Windows platforms.
 
 ## RELATED LINKS
 
