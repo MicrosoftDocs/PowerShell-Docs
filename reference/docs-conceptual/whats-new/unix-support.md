@@ -1,6 +1,6 @@
 ---
 description: This article summarizes the differences between PowerShell on Windows and PowerShell on non-Windows platforms.
-ms.date: 05/13/2024
+ms.date: 11/20/2026
 title: PowerShell differences on non-Windows platforms
 ---
 # PowerShell differences on non-Windows platforms
@@ -134,8 +134,11 @@ For non-Windows platforms, PowerShell includes the following modules:
 
 A large number of the commands (cmdlets) commonly available in PowerShell aren't available on Linux
 or macOS. Often, these commands don't apply to these platforms. For example, commands for
-Windows-specific features like the registry or services aren't available. Other commands, like
-`Set-ExecutionPolicy`, are present but not functional.
+Windows-specific features like the registry aren't available, and most of the service management
+cmdlets aren't available. Other commands, like `Set-ExecutionPolicy`, are present but not
+functional. Beginning in PowerShell 7.8, the `Get-Service`, `Start-Service`, `Stop-Service`, and
+`Restart-Service` cmdlets are also available on Linux and macOS and manage services through the
+system service manager.
 
 For a comprehensive list of modules and cmdlets and the platforms they support, see
 [Release history of modules and cmdlets][05].
@@ -212,14 +215,10 @@ The following cmdlets aren't available on Linux and macOS:
 - `Get-ComputerInfo`
 - `Get-HotFix`
 - `Clear-RecycleBin`
-- `Get-Service`
 - `New-Service`
 - `Remove-Service`
-- `Restart-Service`
 - `Resume-Service`
 - `Set-Service`
-- `Start-Service`
-- `Stop-Service`
 - `Suspend-Service`
 - `Set-TimeZone`
 
@@ -229,6 +228,10 @@ The following cmdlets are available with limitations:
 - `Set-Clipboard` - available in PowerShell 7.0+
 - `Restart-Computer` - available for Linux and macOS in PowerShell 7.1+
 - `Stop-Computer` - available for Linux and macOS in PowerShell 7.1+
+- `Get-Service` - available for Linux and macOS in PowerShell 7.8+
+- `Restart-Service` - available for Linux and macOS in PowerShell 7.8+
+- `Start-Service` - available for Linux and macOS in PowerShell 7.8+
+- `Stop-Service` - available for Linux and macOS in PowerShell 7.8+
 
 ### Microsoft.PowerShell.Utility cmdlets
 
