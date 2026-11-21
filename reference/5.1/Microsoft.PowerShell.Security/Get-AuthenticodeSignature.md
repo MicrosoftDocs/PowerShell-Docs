@@ -91,7 +91,7 @@ selects only the signature objects with a status of Valid.
 ```powershell
 $authenticodeSignatureParams = @{
     Content = (Get-Content foo.ps1 -AsByteStream)
-    SourcePathorExtension = "ps1"
+    SourcePathOrExtension = ".ps1"
 }
 Get-AuthenticodeSignature @authenticodeSignatureParams
 ```
