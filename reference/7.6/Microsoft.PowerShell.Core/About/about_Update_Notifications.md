@@ -16,6 +16,12 @@ been released.
 
 ## Long description
 
+This document is for reference only as the feature this about_topic references  
+was removed as part of the PowerShell 7.6.8 release. 
+
+It is safe to remove the mentioned `POWERSHELL_UPDATECHECK` environment variable 
+this feature used as long as you are running a release from 7.6.8 onwards.
+
 Beginning with PowerShell 7.0, PowerShell uses update notifications to alert
 users to the existence of updates to PowerShell. Every time PowerShell starts,
 PowerShell waits 3 seconds before it checks for updated versions. Since
@@ -66,8 +72,34 @@ PowerShell. In the future, there may be more instructions or capabilities to
 update from within PowerShell, but today, you should use the same install
 mechanism you used to install PowerShell to update it.
 
+## Removal in 7.6.8 & getting future notifications of new versions.
+
+This feature was removed as part of the 7.6.8 release. This means that PowerShell
+will no longer provide you with the notification when you start it that there
+has been an update released.  
+
+PowerShell is released regularly to GitHub & then made available to update 
+via package managers, Windows Update and other channels, usually within a 
+week of being released.
+
+If you still require similar functionality to what this feature had provided, 
+you can still easily query the endpoints mentioned above or you can directly
+query the GitHub Repository for up to date Releases using 
+
+- the [GitHub Releases RestAPI endpoint][05]
+- the [metadata.json file in the repository][06]
+- the [gh cli tool & its release list command][07]
+
+Each of these methods can be wrapped in just a few lines of code, providing a
+more flexible and suitable way for you to get notifications of new versions
+in future.
+
 <!-- link references -->
 [01]: ../about/about_Environment_Variables.md
 [02]: https://aka.ms/pwsh-buildinfo-lts
 [03]: https://aka.ms/pwsh-buildinfo-stable
 [04]: https://aka.ms/pwsh-buildinfo-preview
+[05]: https://docs.github.com/en/rest/releases/releases?apiVersion=2026-03-10#list-releases
+[06]: https://github.com/PowerShell/PowerShell/blob/master/tools/metadata.json
+[07]: https://cli.github.com/manual/gh_release_list
+

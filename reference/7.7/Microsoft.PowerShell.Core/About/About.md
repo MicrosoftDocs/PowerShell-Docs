@@ -631,11 +631,6 @@ are used in PowerShell.
 
 Describes the updatable help system in PowerShell.
 
-### [about_Update_Notifications](about_Update_Notifications.md)
-
-Notifies users on startup of PowerShell that a new version of PowerShell has
-been released.
-
 ### [about_Using](about_Using.md)
 
 Allows you to indicate which namespaces are used in the session.

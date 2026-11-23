@@ -19,7 +19,6 @@ programs. PowerShell creates the following environment variables:
 
 - `POWERSHELL_TELEMETRY_OPTOUT`
 - `POWERSHELL_DISTRIBUTION_CHANNEL`
-- `POWERSHELL_UPDATECHECK`
 - `POWERSHELL_DIAGNOSTICS_OPTOUT`
 - `PSExecutionPolicyPreference`
 - `PSModulePath`
@@ -396,24 +395,6 @@ The environment variables that store preferences include:
   This information is included in the telemetry data sent to Microsoft. Users
   shouldn't change this value.
 
-- `POWERSHELL_UPDATECHECK`
-
-  The update notification behavior can be changed using the
-  `POWERSHELL_UPDATECHECK` environment variable. For more information, see
-  [about_Update_Notifications][10].
-
-  The following values are supported:
-
-  - `Off` turns off the update notification feature
-  - `Default` is the same as not defining `POWERSHELL_UPDATECHECK`:
-    - GA releases notify of updates to GA releases
-    - Preview/RC releases notify of updates to GA and preview releases
-  - `LTS` only notifies of updates to long-term-servicing (LTS) GA releases
-
-  Non-default values of environment variable must be set before starting the
-  PowerShell process. See the previous sections for information about creating
-  persistent environment variables.
-
 - `POWERSHELL_DIAGNOSTICS_OPTOUT`
 
   This environment variable was added in PowerShell 7.6-preview.5. By default,
@@ -464,7 +445,7 @@ The environment variables that store preferences include:
   - User-installed modules: These are modules installed by the user.
     `Install-Module` has a **Scope** parameter that allows you to specify
     whether the module is installed for the current user or for all users. For
-    more information, see [Install-Module][14].
+    more information, see [Install-Module][13].
 
     - On Windows, the location of the user-specific **CurrentUser** scope is
       the `$HOME\Documents\PowerShell\Modules` folder. The location of the
@@ -576,7 +557,7 @@ The environment variables that store preferences include:
 - `XDG` variables
 
   On non-Windows platforms, PowerShell uses the following XDG environment
-  variables as defined by the [XDG Base Directory Specification][13].
+  variables as defined by the [XDG Base Directory Specification][12].
 
   - `XDG_CONFIG_HOME`
   - `XDG_DATA_HOME`
@@ -601,13 +582,13 @@ or `NO_COLOR` environment variables.
 
   If `$Env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
   `PlainText`. For more information about the `NO_COLOR` environment
-  variable, see [https://no-color.org/][12].
+  variable, see [https://no-color.org/][11].
 
 ## See also
 
 - [about_Environment_Provider][04]
 - [about_Profiles][07]
-- [about_Variables][11]
+- [about_Variables][10]
 - [Environment Methods][01]
 
 <!-- link references -->
@@ -620,8 +601,7 @@ or `NO_COLOR` environment variables.
 [07]: about_Profiles.md
 [08]: about_PSModulePath.md
 [09]: about_Telemetry.md
-[10]: about_Update_Notifications.md
-[11]: about_Variables.md
-[12]: https://no-color.org/
-[13]: https://specifications.freedesktop.org/basedir/latest/
-[14]: xref:PowerShellGet.Install-Module
+[10]: about_Variables.md
+[11]: https://no-color.org/
+[12]: https://specifications.freedesktop.org/basedir/latest/
+[13]: xref:PowerShellGet.Install-Module
