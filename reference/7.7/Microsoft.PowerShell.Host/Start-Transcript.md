@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 11/05/2025
+ms.date: 10/21/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
@@ -18,21 +18,24 @@ Creates a record of all or part of a PowerShell session to a text file.
 
 ```
 Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber]
- [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-IncludeTimeStamp]
+ [-TimeStampFormat <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
 Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber]
- [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-IncludeTimeStamp]
+ [-TimeStampFormat <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByOutputDirectory
 
 ```
 Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber]
- [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-IncludeTimeStamp]
+ [-TimeStampFormat <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,6 +129,46 @@ Start-Transcript -Path ./transcripts
 Transcript started, output file is /home/username/./transcripts/PowerShell_transcript.hostname.ift21QeV.20251105151236.txt
 ```
 
+### Example 6: Record a timestamp for each line of transcript output
+
+The **IncludeTimeStamp** parameter prefixes each recorded line of command input and output with
+the time it was recorded. The default timestamp format is `yyyy-MM-dd HH:mm:ss`.
+
+```powershell
+Start-Transcript -Path .\transcript.txt -IncludeTimeStamp
+Write-Host 'Processing started'
+Start-Sleep -Seconds 5
+Write-Host 'Processing complete'
+Stop-Transcript
+Get-Content .\transcript.txt | Where-Object { $_ -match '^\d.*Processing' }
+```
+
+```Output
+2026-10-21 19:12:09 Processing started
+2026-10-21 19:12:14 Processing complete
+```
+
+### Example 7: Record timestamps in a custom format
+
+The **TimeStampFormat** parameter accepts any standard or custom .NET date and time format
+string. Specifying it implies the **IncludeTimeStamp** parameter. Timestamps are rendered using
+the invariant culture.
+
+```powershell
+Start-Transcript -Path .\transcript.txt -TimeStampFormat 'HH:mm:ss.fff'
+Write-Host 'Processing started'
+Stop-Transcript
+Get-Content .\transcript.txt | Where-Object { $_ -match '^\d.*Processing' }
+```
+
+```Output
+19:12:09.482 Processing started
+```
+
+For more information about format strings, see
+[standard date and time format strings](/dotnet/standard/base-types/standard-date-and-time-format-strings)
+and [custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings).
+
 ## PARAMETERS
 
 ### -Append
@@ -166,6 +209,28 @@ Accept wildcard characters: False
 ### -IncludeInvocationHeader
 
 Indicates that this cmdlet logs the time stamp when commands are run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeTimeStamp
+
+Indicates that this cmdlet prefixes each recorded line of command input and output with a
+timestamp. By default, the timestamp uses the `yyyy-MM-dd HH:mm:ss` format. Use the
+**TimeStampFormat** parameter to specify a different format.
+
+Standalone native command output on Windows is captured when the command completes, so all lines
+of that output receive the command's completion time. Piping the native command output into a
+PowerShell command records each line as it's produced. This parameter was added in PowerShell 7.7.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -249,6 +314,28 @@ Aliases:
 
 Required: False
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TimeStampFormat
+
+Specifies a .NET standard or custom date and time format string, such as `HH:mm:ss` or `o`, for
+the timestamp prefix added by the **IncludeTimeStamp** parameter. The default format is
+`yyyy-MM-dd HH:mm:ss`. Timestamps are rendered using the invariant culture.
+
+Specifying this parameter implies the **IncludeTimeStamp** parameter. Invalid format strings, or
+format strings that produce multi-line timestamps, cause a terminating error. This parameter was
+added in PowerShell 7.7.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
