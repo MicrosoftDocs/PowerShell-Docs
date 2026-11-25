@@ -41,6 +41,9 @@ versions of the Windows operating system, use Get-WinEvent.
 > This cmdlet can delete operating system event logs, which might cause application failures and
 > unexpected system behavior.
 
+> [!Note]  
+> When you use the command with a remote computer, an error might occur due to compatibility issues between Windows 11, version 24H2 or later and Windows 11, version 23H2 or earlier. A similar compatibility issue might occur between Windows Server 2025 or later and Windows Server 2022 or earlier.
+
 ## EXAMPLES
 
 ### Example 1: Remove an event log from the local computer
