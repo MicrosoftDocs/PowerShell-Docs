@@ -1,6 +1,6 @@
 ---
 description: TableColumnHeader Element
-ms.date: 08/25/2021
+ms.date: 10/28/2026
 title: TableColumnHeader Element
 ---
 # TableColumnHeader Element
@@ -23,7 +23,7 @@ table.
 <TableColumnHeader>
   <Label>DisplayedLabel</Label>
   <Width>NumberOfCharacters</Width>
-  <Alignment>Left, Right, or Centered</Alignment>
+  <Alignment>Left, Right, or Center</Alignment>
 </TableColumnHeader>
 ```
 
@@ -78,7 +78,7 @@ label is centered in the column.
     <TableColumnHeader>
     <Label>Column 2</Label>
     <Width>10</Width>
-    <Alignment>Centered</Alignment>
+    <Alignment>Center</Alignment>
   </TableColumnHeader>
 </TableHeaders>
 ```
