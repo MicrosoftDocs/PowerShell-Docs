@@ -238,6 +238,24 @@ For more information, see [Understanding how packaged desktop apps run on Window
 > [!IMPORTANT]
 > You must be running on Windows build 1903 or higher for this exemption to work.
 
+## Verify the installation
+
+After installation, open a new terminal session and run:
+
+```powershell
+pwsh --version
+```
+
+The command should return the installed version of PowerShell.
+
+To display detailed version information, run:
+
+```powershell
+$PSVersionTable
+```
+
+Verify that `PSEdition` is `Core`.
+
 ## Start PowerShell 7
 
 After installing PowerShell 7, you can start it by running the `pwsh` command or open it from the
