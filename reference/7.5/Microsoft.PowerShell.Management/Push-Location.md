@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 10/16/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/push-location?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -143,7 +143,7 @@ Parameter Sets: Path
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
