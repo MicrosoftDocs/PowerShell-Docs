@@ -1,7 +1,7 @@
 ---
 description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 11/02/2026
 no-loc: [FullLanguage, ConstrainedLanguage, RestrictedLanguage, NoLanguage]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -222,6 +222,14 @@ The features of `ConstrainedLanguage` mode are as follows:
 - The `ToString()` method and the .NET methods of allowed types can be invoked.
 - Users can get all properties of allowed types. Users can set the values of
   properties only on allowed types.
+
+> [!NOTE]
+> In `ConstrainedLanguage` mode, you can create script blocks using
+> `{ ... }` or `[ScriptBlock]{ ... }` and invoke them using `&` or
+> `Invoke-Command`. However, `[ScriptBlock]` isn't an approved type
+> for general .NET method calls or string conversions. For example,
+> calling `$sb.Invoke()` or converting a string to `[ScriptBlock]`
+> is blocked.
 
 The following .NET types are permitted in `ConstrainedLanguage` mode. Users can
 get properties, invoke methods, and convert objects to these types.
